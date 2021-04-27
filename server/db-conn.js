@@ -1,16 +1,17 @@
-const { Sequelize, DataTypes } = require('sequelize')
+const { Sequelize, DataTypes } = require('sequelize');
 
 // Development
 // const db = new Sequelize(
 //   'postgres://postgres:prova123@localhost:5432/test-database'
 // )
 // Production
-const pg = require('pg')
-pg.defaults.ssl = true
+const pg = require('pg');
+
+pg.defaults.ssl = true;
 const db = new Sequelize(process.env.DATABASE_URL, {
   ssl: true,
   dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
-})
+});
 
 /**
  * Function to define the structure of the database
@@ -56,10 +57,10 @@ function defineDatabaseStructure() {
  */
 async function initializeDatabase() {
   // Call the function for the database structure definition
-  defineDatabaseStructure()
+  // defineDatabaseStructure();
   // Synchronize Sequelize with the actual database
-  await db.sync({ force: true })
-  return db
+  await db.sync({ force: true });
+  return db;
 }
 
-export default initializeDatabase
+export default initializeDatabase;

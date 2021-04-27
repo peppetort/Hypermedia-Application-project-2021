@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Add header -->
     <Nuxt />
   </div>
 </template>
