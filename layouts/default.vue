@@ -33,8 +33,18 @@ section{
   flex-direction: row;
 }
 
+section.light{
+  background-color: white;
+}
+
+section.strong {
+  background-color: #f2f2f2;
+}
+
 button {
   text-align: center;
+  font-weight: bold;
+  font-size: 18px;
   height: 50px;
   padding-inline: 30px;
   border-radius: 5px;

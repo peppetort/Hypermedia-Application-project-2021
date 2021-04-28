@@ -1,44 +1,45 @@
 <template>
   <main class="container">
-    <section class="intro">
-      <div class="intro-text">
-        <h1>OUR AREAS</h1>
-        <p>Short overview of the 4 different areas</p>
-        <button class="strong">Go to all areas</button>
-      </div>
-      <div class="intro-image">
-        <img src="~/static/areas/mokup_areas-1.png">
-      </div>
-    </section>
-    <section class="accelerators">
+    <card-intro
+      :background="'light'"
+      :title="'OUR AREAS'"
+      :text="'From networking and data center to collaboration and security, we have IT solutions to meet your organization\'s needs. Find out how we can help.'"
+      :button="'Discover more'"
+      :link="'#allAreas'"
+      :image="require('~/static/areas/mokup_areas-1.png')"
+    >
+    </card-intro>
+    <section class="accelerators strong">
+      <a name="allAreas" />
       <h3>Areas</h3>
       <p>Introductory text of the 4 areas</p>
       <div class="links">
-        <!-- TODO: generare dinamicamente -->
-        <button class="strong">Area1</button>
-        <button class="strong">Area2</button>
-        <button class="strong">Area3</button>
-        <button class="strong">Area4</button>
+        <NuxtLink v-for="area in areas" :key="area.id" :to="area.title"
+          ><button class="strong">
+            {{ area.title }}
+          </button></NuxtLink
+        >
       </div>
     </section>
   </main>
 </template>
 
 <script>
-import axios from 'axios'
+import CardIntro from '~/components/CardIntro.vue'
 
-export default{
-  async asyncData({ $axios }) {
-    const { data } = await $axios.get("${process.env.BASE_URL}/api/areas")
-    const areas = data
+export default {
+  components: { CardIntro },
+  data() {
     return {
-      areas,
+      areas: ''
     }
   },
-
+  async mounted() {
+    const { data } = await this.$axios.get('/api/areas')
+    this.areas = data
+  }
 }
 </script>
-
 
 <style scoped>
 div.intro-text {
@@ -50,23 +51,22 @@ div.intro-image {
   align-content: center;
 }
 
-div.intro-image img{
+div.intro-image img {
   max-width: 1000px;
   height: auto;
   display: block;
   margin-left: auto;
-  margin-right: auto 
+  margin-right: auto;
 }
 
-section.accelerators{
+section.accelerators {
   flex-direction: column;
   text-align: center;
-  background: #f2f2f2;
 }
 
 .links {
   display: flex;
-  width: 600px;
+  padding: 5px;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
