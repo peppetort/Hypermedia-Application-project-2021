@@ -47,6 +47,7 @@ async function init() {
     return res.json(people);
   });
   // api to get all the roles of a person
+  // return an object containing 3 elements: only 1 of them is not null (because each person can have only 1 role)
   app.get('api/roles/:person', async (req, res) => {
     const person = req.params.person;
     const area_resp = await Area.findOne({
