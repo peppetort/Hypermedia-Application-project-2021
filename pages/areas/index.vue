@@ -64,10 +64,11 @@ section.accelerators {
   text-align: center;
 }
 
-.links {
+div.links {
   display: flex;
-  padding: 5px;
+  width: 600px;
   justify-content: space-between;
+  padding: 5px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;

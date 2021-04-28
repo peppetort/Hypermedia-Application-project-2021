@@ -27,6 +27,14 @@ async function init() {
     const areas = await Area.findAll()
     return res.json(areas)
   })
+  //api to get all area of type
+  app.get('/areas/:area', async (req, res) => {
+    const area = req.params.area
+    const selected = await Area.findOne({
+      where: { title: area }
+    })
+    return res.json(selected)
+  })
   // API to get all products by area
   //the parameter :area passed is the id of the area from which we want to retrieve all the products
   app.get('/products/:area', async (req, res) => {

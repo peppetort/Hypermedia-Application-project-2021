@@ -37,11 +37,11 @@ function defineDatabaseStructure() {
   const Area = db.define('Area', {
     title: DataTypes.STRING,
     description: DataTypes.STRING(1000),
-    subtitle: DataTypes.STRING
+    subtitle: DataTypes.STRING(500)
   })
   const Product = db.define('Product', {
     title: DataTypes.STRING,
-    subtitle: DataTypes.STRING,
+    subtitle: DataTypes.STRING(500),
     description: DataTypes.STRING(1000),
     image: DataTypes.STRING
   })

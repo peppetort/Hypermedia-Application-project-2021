@@ -3,7 +3,9 @@
     <div class="intro-text">
       <h1>{{ title }}</h1>
       <p>{{ text }}</p>
-      <a :href="link"><button class="strong">{{ button }}</button></a>
+      <a :href="link"
+        ><button class="strong">{{ button }}</button></a
+      >
     </div>
     <div class="intro-image">
       <img :src="image" />
@@ -19,9 +21,9 @@ export default {
     text: { type: String, default: () => '' },
     button: { type: String, default: () => '' },
     link: { type: String, default: () => '' },
-    image: { type: String, default: () => '' },
-  },
-};
+    image: { type: String, default: () => '' }
+  }
+}
 </script>
 
 <style scoped>

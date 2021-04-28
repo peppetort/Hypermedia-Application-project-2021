@@ -11,9 +11,9 @@ import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
 export default {
   components: {
-    TheHeader,
-    TheFooter,
-  },
+    /* TheHeader,
+    TheFooter */
+  }
 }
 </script>
 
@@ -23,17 +23,25 @@ html {
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
 .container {
   padding: 10px;
 }
 
-section{
+section {
   display: flex;
   padding: 50px;
   flex-direction: row;
 }
 
-section.light{
+section.light {
   background-color: white;
 }
 
@@ -45,6 +53,7 @@ button {
   text-align: center;
   font-weight: bold;
   font-size: 18px;
+  min-width: 100px;
   height: 50px;
   padding-inline: 30px;
   border-radius: 5px;
@@ -62,7 +71,4 @@ button.light {
   border-radius: 5px;
   background-color: white;
 }
-
-
 </style>
-
