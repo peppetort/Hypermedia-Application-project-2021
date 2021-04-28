@@ -5,7 +5,7 @@ pg.defaults.ssl = true
 
 // TODO: spostare url db su nuxt.config.js const db = new Sequelize(process.env.DATABASE_URL
 const db = new Sequelize(
-  'postgres://xuijyptapitgaa:597e47f2bbbe3e7f0935de86d876068e62329f20dc2b81928d6afbb6347f4da4@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/df196knlhloog',
+  'postgres://xuijyptapitgaa:597e47f2bbbe3e7f0935de86d876068e62329f20dc2b81928d6afbb6347f4da4@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/df196knlhloog?currentSchema=hypermediaProject2021',
   {
     ssl: true,
     schema: 'hypermediaProject2021',
@@ -25,36 +25,37 @@ function defineDatabaseStructure() {
     surname: DataTypes.STRING,
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
-    description: DataTypes.STRING,
+    description: DataTypes.STRING(1000),
     role: DataTypes.INTEGER,
     image: DataTypes.STRING
   })
   const Assistance = db.define('Assistance', {})
   const Feature = db.define('Feature', {
     title: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.STRING(1000)
   })
   const Area = db.define('Area', {
     title: DataTypes.STRING,
-    description: DataTypes.STRING,
-    manager: DataTypes.INTEGER,
+    description: DataTypes.STRING(1000),
     subtitle: DataTypes.STRING
   })
   const Product = db.define('Product', {
     title: DataTypes.STRING,
     subtitle: DataTypes.STRING,
-    description: DataTypes.STRING,
+    description: DataTypes.STRING(1000),
     image: DataTypes.STRING
   })
 
-  Area.hasOne(Person, { foreignKey: 'responsible' })
-  Person.belongsTo(Area)
-  Product.hasOne(Area, { foreignKey: 'area' })
-  Product.hasOne(Person, { foreignKey: 'manager' })
-  Feature.hasOne(Area, { foreignKey: 'area', allowNull: true })
-  Feature.hasOne(Product, { foreignKey: 'product', allowNull: true })
-  Person.belongsToMany(Product, { through: Assistance })
-  Product.belongsToMany(Person, { through: Assistance })
+  Person.hasOne(Area, { foreignKey: 'responsible' })
+  Area.hasOne(Product, { foreignKey: 'area' })
+  Person.hasOne(Product, { foreignKey: 'manager' })
+  Area.hasOne(Feature, { foreignKey: 'area' })
+  Product.hasOne(Feature, { foreignKey: 'product' })
+  Person.belongsToMany(Product, { through: Assistance, foreignKey: 'person' })
+  Product.belongsToMany(Person, { through: Assistance, foreignKey: 'product' })
+
+  // Creating the 1 -> N association between Article and Comment
+  // More on association: https://sequelize.org/master/manual/assocs.html
 
   db._tables = {
     Person,
