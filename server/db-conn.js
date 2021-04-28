@@ -21,18 +21,18 @@ const db = new Sequelize(
  */
 function defineDatabaseStructure() {
   const Person = db.define('Person', {
-    name: DataType.STRING,
-    surname: DataType.STRING,
-    email: DataType.STRING,
-    phone: DataType.STRING,
-    description: DataType.STRING,
-    role: DataType.INTEGER,
-    image: DataType.STRING
+    name: DataTypes.STRING,
+    surname: DataTypes.STRING,
+    email: DataTypes.STRING,
+    phone: DataTypes.STRING,
+    description: DataTypes.STRING,
+    role: DataTypes.INTEGER,
+    image: DataTypes.STRING
   })
   const Assistance = db.define('Assistance', {})
   const Feature = db.define('Feature', {
-    title: DataType.STRING,
-    description: DataType.STRING
+    title: DataTypes.STRING,
+    description: DataTypes.STRING
   })
   const Area = db.define('Area', {
     title: DataTypes.STRING,
@@ -41,10 +41,10 @@ function defineDatabaseStructure() {
     subtitle: DataTypes.STRING
   })
   const Product = db.define('Product', {
-    title: DataType.STRING,
-    subtitle: DataType.STRING,
-    description: DataType.STRING,
-    image: DataType.STRING
+    title: DataTypes.STRING,
+    subtitle: DataTypes.STRING,
+    description: DataTypes.STRING,
+    image: DataTypes.STRING
   })
 
   Area.hasOne(Person, { foreignKey: 'responsible' })
@@ -56,15 +56,12 @@ function defineDatabaseStructure() {
   Person.belongsToMany(Product, { through: Assistance })
   Product.belongsToMany(Person, { through: Assistance })
 
-  // Creating the 1 -> N association between Article and Comment
-  // More on association: https://sequelize.org/master/manual/assocs.html
-
   db._tables = {
     Person,
     Assistance,
-    Features,
+    Feature,
     Area,
-    Products
+    Product
   }
 }
 
