@@ -74,16 +74,19 @@ export default {
       title: '',
       subtitle: '',
       description: '',
-      features: []
+      features: ''
     }
   },
   async mounted() {
-    const { name } = this.$route.param
+    const { name } = this.$route.params
     const { data } = await this.$axios.get(`/api/areas/${name}`)
     this.id = data.id
     this.title = data.title
     this.subtitle = data.subtitle
     this.description = data.description
+    this.features = (
+      await this.$axios.get(`/api/areas/features/${data.id}`)
+    ).data
   }
 }
 </script>

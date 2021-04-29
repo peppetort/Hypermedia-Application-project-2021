@@ -2,7 +2,7 @@
   <div class="card">
     <div class="icon"></div>
     <div class="text">
-      <h2>{{ title }}</h2>
+      <h3>{{ title }}</h3>
       <p>{{ text }}</p>
     </div>
   </div>
@@ -49,6 +49,7 @@ div.text {
 
 div.text p {
   display: block;
+  font-size: 17px;
   margin-inline: auto;
   width: 90%;
   word-wrap: wrap;
