@@ -17,18 +17,20 @@ export default {
 
 <style scoped>
 div.card {
-  border: black;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
   background: white;
   width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
+  margin-inline: 35px;
 }
 
 div.icon {
   width: 100%;
   height: 30%;
-  background: red;
 }
 
 div.icon img {
@@ -40,9 +42,14 @@ div.icon img {
 }
 
 div.text {
-  background: blue;
   width: 100%;
-  padding: 20px;
-  text-align: center;
+}
+
+div.text p {
+  display: block;
+  margin-inline: auto;
+  width: 90%;
+  word-wrap: wrap;
+  word-break: break-all;
 }
 </style>

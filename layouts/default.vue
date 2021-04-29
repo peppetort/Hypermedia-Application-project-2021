@@ -31,6 +31,10 @@ h2 {
   font-size: 35px;
 }
 
+p {
+  font-size: 23px;
+}
+
 .container {
   padding: 10px;
 }
@@ -49,8 +53,18 @@ section.strong {
   background-color: #f2f2f2;
 }
 
+section.vertical {
+  flex-direction: column;
+  text-align: center;
+}
+
+section.horizontal {
+  flex-direction: row;
+}
+
 button {
   text-align: center;
+  cursor: pointer;
   font-weight: bold;
   font-size: 18px;
   min-width: 100px;
@@ -65,10 +79,18 @@ button.strong {
   background-color: black;
 }
 
+button.strong:hover {
+  background-color: rgb(48, 46, 46);
+}
+
 button.light {
   color: black;
   border-color: black;
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
+}
+
+button.light:hover {
+  background-color: rgb(204, 204, 204);
 }
 </style>
