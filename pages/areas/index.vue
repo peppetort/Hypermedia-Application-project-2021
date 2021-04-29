@@ -11,7 +11,7 @@
         <a href="#allAreas"><button class="strong">Discover more</button></a>
       </div>
       <div class="image">
-        <img src="~/static/areas/mokup_areas-1.png" />
+        <img src="~/static/areas/areas-intro.webp" />
       </div>
     </section>
     <section class="vertical strong">
