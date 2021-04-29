@@ -2,6 +2,7 @@
   <div class="card">
     <div class="icon"></div>
     <div class="text">
+      <h2>{{ title }}</h2>
       <p>{{ text }}</p>
     </div>
   </div>
@@ -10,6 +11,7 @@
 <script>
 export default {
   props: {
+    title: { type: String, default: () => '' },
     text: { type: String, default: () => '' }
   }
 }

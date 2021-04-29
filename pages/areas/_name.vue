@@ -4,8 +4,9 @@
       <div class="text">
         <h1>{{ this.title }}</h1>
         <p>{{ this.subtitle }}</p>
-        <!-- TODO: add link to Contacts -->
-        <a><button class="light">Contact Us</button></a>
+        <NuxtLink to="/contacts"
+          ><button class="light">Contact Us</button></NuxtLink
+        >
       </div>
       <div class="image">
         <!-- TODO: add image dynamically -->
@@ -24,10 +25,12 @@
       <h2>Features</h2>
       <p>Solutions that matter for your organization​</p>
       <div class="cards">
-        <!-- TODO: generate dynamically -->
-        <feature-card :text="'text text text'"></feature-card>
-        <feature-card :text="'text text text'"></feature-card>
-        <feature-card :text="'text text text'"></feature-card>
+        <feature-card
+          v-for="feature in this.features"
+          :key="feature.id"
+          :title="feature.title"
+          :text="feature.description"
+        ></feature-card>
       </div>
     </section>
     <section class="vertical light">
@@ -70,11 +73,12 @@ export default {
       id: '',
       title: '',
       subtitle: '',
-      description: ''
+      description: '',
+      features: []
     }
   },
   async mounted() {
-    const { name } = this.$route.params
+    const { name } = this.$route.param
     const { data } = await this.$axios.get(`/api/areas/${name}`)
     this.id = data.id
     this.title = data.title
