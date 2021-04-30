@@ -44,6 +44,13 @@ async function init() {
     })
     return res.json(selected)
   })
+  app.get('products/features/:id', async (req, res) => {
+    const id = req.params.id
+    const selected = await Feature.findAll({
+      where: { product: id }
+    })
+    return res.json(selected)
+  })
   // API to get all products by area
   //the parameter :area passed is the id of the area from which we want to retrieve all the products
   app.get('/products/:area', async (req, res) => {
