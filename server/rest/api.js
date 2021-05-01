@@ -17,6 +17,14 @@ async function init() {
     const products = await Product.findAll()
     return res.json(products)
   })
+  //api to get all the products
+  app.get('/products/:id', async (req, res) => {
+    const productId = req.params.id
+    const product = await Product.findOne({
+      where: { id: productId }
+    })
+    return res.json(product)
+  })
   // to get all the people
   app.get('/people', async (req, res) => {
     const people = await Person.findAll()
