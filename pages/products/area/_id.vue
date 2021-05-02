@@ -2,42 +2,47 @@
   <main class="container">
     <section class="horizontal light">
       <div class="text">
-        <h1>{{ area.title }} Products</h1>
-        <p>{{ area.description }}</p>
+        <h1>{{ area_title }} Products</h1>
+        <p>{{ area_description }}</p>
         <NuxtLink to="/contacts"
           ><button class="strong">Contact us</button></NuxtLink
         >
       </div>
     </section>
-    <section class="horizontal light">
+    <section class="vertical light">
       <div class="cards">
-        <product-preview
+        <card-product-preview
           v-for="product in products"
           :key="product.id"
           :title="product.title"
           :id="product.id"
-        ></product-preview>
+        ></card-product-preview>
       </div>
     </section>
   </main>
 </template>
 
 <script>
-import ProductPreview from '~/components/areas/ProductPreview.vue'
+import CardProductPreview from '~/components/CardProductPreview.vue'
 export default {
-  components: { ProductPreview },
+  components: { CardProductPreview },
   data() {
     return {
-      area: '',
+      area_id: '',
+      area_title: '',
+      area_subtitle: '',
+      area_description: '',
       products: ''
     }
   },
   async mounted() {
-    const { name } = this.$route.params
-    const id = 0
-    const { data } = await this.$axios.get(`api/products/area/${id}`)
-    this.area = data.area
-    this.products = data.products
+    const { id } = this.$route.params
+    const { data } = await this.$axios.get(`api/areas/${id}`)
+    this.area_id = data.id
+    this.area_title = data.title
+    this.area_subtitle = data.subtitle
+    this.area_description = data.description
+    this.products = (await this.$axios.get(`api/products/area/${data.id}`)).data
   }
 }
 </script>

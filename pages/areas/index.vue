@@ -23,7 +23,7 @@
         Find out how we can help.
       </p>
       <div class="links">
-        <NuxtLink v-for="area in areas" :key="area.id" :to="area.title"
+        <NuxtLink v-for="area in areas" :key="area.id" :to="`/areas/${area.id}`"
           ><button class="strong">
             {{ area.title }}
           </button></NuxtLink
@@ -31,21 +31,21 @@
       </div>
     </section>
     <div v-for="area in areas" :key="area.id">
-      <section class="horizontal light" v-if="area.id % 2 != 0">
+      <section class="horizontal light" v-if="area.id % 2 == 0">
         <div class="image"><!-- TODO: add image dynamically --></div>
         <div class="text">
           <h2>{{ area.title }}</h2>
           <p>{{ area.subtitle }}</p>
-          <NuxtLink :to="area.title">
+          <NuxtLink :to="`/areas/${area.id}`">
             <button class="light">Learn More</button></NuxtLink
           >
         </div>
       </section>
-      <section class="horizontal strong" v-if="area.id % 2 == 0">
+      <section class="horizontal strong" v-if="area.id % 2 != 0">
         <div class="text">
           <h2>{{ area.title }}</h2>
           <p>{{ area.subtitle }}</p>
-          <NuxtLink :to="area.title">
+          <NuxtLink :to="`/areas/${area.id}`">
             <button class="light">Learn More</button></NuxtLink
           >
         </div>

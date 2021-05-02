@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import FeatureCard from '~/components/areas/CardFeauture.vue'
+import FeatureCard from '~/components/CardFeauture.vue'
 export default {
   components: { FeatureCard },
   data() {

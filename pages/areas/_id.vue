@@ -40,14 +40,15 @@
         meant to be"​
       </p>
       <div class="cards">
-        <!-- TODO: generate dynamically -->
-        <card-product-preview :text="'Prodotto 1'"></card-product-preview>
-        <card-product-preview :text="'Prodotto 2'"></card-product-preview>
-        <card-product-preview :text="'Prodotto 3'"></card-product-preview>
-        <card-product-preview :text="'Prodotto 4'"></card-product-preview>
+        <card-product-preview
+          v-for="product in products"
+          :key="product.id"
+          :title="product.title"
+          :id="product.id"
+        ></card-product-preview>
       </div>
       <div id="link-products">
-        <a href="">See More ></a>
+        <NuxtLink :to="`/products/area/${this.id}`">See More ></NuxtLink>
       </div>
     </section>
     <section class="horizontal strong">
@@ -64,8 +65,8 @@
 </template>
 
 <script>
-import FeatureCard from '~/components/areas/CardFeauture.vue'
-import CardProductPreview from '~/components/areas/CardProductPreview.vue'
+import FeatureCard from '~/components/CardFeauture.vue'
+import CardProductPreview from '~/components/CardProductPreview.vue'
 export default {
   components: { FeatureCard, CardProductPreview },
   data() {
@@ -74,12 +75,13 @@ export default {
       title: '',
       subtitle: '',
       description: '',
-      features: ''
+      features: '',
+      products: ''
     }
   },
   async mounted() {
-    const { name } = this.$route.params
-    const { data } = await this.$axios.get(`/api/areas/${name}`)
+    const { id } = this.$route.params
+    const { data } = await this.$axios.get(`/api/areas/${id}`)
     this.id = data.id
     this.title = data.title
     this.subtitle = data.subtitle
@@ -87,6 +89,9 @@ export default {
     this.features = (
       await this.$axios.get(`/api/areas/features/${data.id}`)
     ).data
+    this.products = (
+      await this.$axios.get(`api/products/area/${data.id}`)
+    ).data.slice(0, 4)
   }
 }
 </script>
