@@ -1,16 +1,19 @@
 <template>
-  <div class="card">
-    <div class="image"></div>
-    <div class="text">
-      <p>{{ text }}</p>
+  <NuxtLink :to="`/products/${id}`">
+    <div class="card">
+      <div class="image"></div>
+      <div class="text">
+        <p>{{ title }}</p>
+      </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script>
 export default {
   props: {
-    text: { type: String, default: () => '' }
+    title: { type: String, default: () => '' },
+    id: { type: Number, default: () => 1 }
   }
 }
 </script>
@@ -29,17 +32,30 @@ div.image {
   height: 300px;
 }
 
+div.image img:hover {
+  opacity: 0.6;
+}
+
 div.text {
   width: 100%;
+  text-decoration: none;
 }
 
 div.text p {
   display: block;
+  color: black;
   margin-inline: 10px;
   width: 100%;
   word-wrap: wrap;
   word-break: break-all;
   text-align: left;
   font-weight: bold;
+}
+
+div.text p:hover {
+  color: gray;
+}
+a {
+  text-decoration: none;
 }
 </style>
