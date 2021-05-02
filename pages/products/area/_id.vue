@@ -2,7 +2,10 @@
   <main class="container">
     <section class="horizontal light">
       <div class="text">
-        <h1>{{ area_title }} Products</h1>
+        <h1>
+          <NuxtLink :to="`/areas/${area_id}`">{{ area_title }}</NuxtLink>
+          Products
+        </h1>
         <p>{{ area_description }}</p>
         <NuxtLink to="/contacts"
           ><button class="strong">Contact us</button></NuxtLink
