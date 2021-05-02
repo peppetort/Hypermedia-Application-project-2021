@@ -125,13 +125,8 @@ div.cards {
 
 #link-products a {
   font-size: 35px;
-  color: black;
   font-weight: bold;
   margin-right: 100px;
   text-decoration: none;
-}
-
-#link-products a:hover {
-  color: grey;
 }
 </style>

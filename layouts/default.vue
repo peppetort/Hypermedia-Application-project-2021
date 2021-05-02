@@ -93,4 +93,13 @@ button.light {
 button.light:hover {
   background-color: rgb(204, 204, 204);
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}
 </style>

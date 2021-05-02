@@ -43,19 +43,11 @@ div.text {
 
 div.text p {
   display: block;
-  color: black;
   margin-inline: 10px;
   width: 100%;
   word-wrap: wrap;
   word-break: break-all;
   text-align: left;
   font-weight: bold;
-}
-
-div.text p:hover {
-  color: gray;
-}
-a {
-  text-decoration: none;
 }
 </style>
