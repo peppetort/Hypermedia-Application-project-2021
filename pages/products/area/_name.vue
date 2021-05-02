@@ -51,11 +51,13 @@ export default {
 }
 
 .cards {
-  padding: 5%;
   display: grid;
-  grid-gap: 2px;
+  padding-left: 5%;
+  padding-right: 5%;
+  grid-gap: 5%;
   grid-template-columns: repeat(4, minmax(100px, 1fr));
   grid-auto-rows: minmax(100px, auto);
+  justify-content: center;
 }
 
 p {
@@ -64,5 +66,27 @@ p {
   margin-right: auto;
   text-align: center;
   width: 50%;
+}
+
+@media (min-width: 200px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1500px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 </style>

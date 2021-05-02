@@ -22,9 +22,8 @@ export default {
 <style scoped>
 div.card {
   width: 300px;
-  display: flex;
   flex-direction: column;
-  margin-inline: 35px;
+  margin-inline: 10px;
   padding-bottom: 20%;
 }
 div.image {
