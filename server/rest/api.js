@@ -52,7 +52,7 @@ async function init() {
     })
     return res.json(selected)
   })
-  app.get('products/features/:id', async (req, res) => {
+  app.get('/products/features/:id', async (req, res) => {
     const id = req.params.id
     const selected = await Feature.findAll({
       where: { product: id }
