@@ -16,21 +16,39 @@
       <h2>Features</h2>
       <p>Solutions that matter for your organization​</p>
       <div class="cards">
-        <feature-card
+        <card-feature
           v-for="feature in this.features"
           :key="feature.id"
           :title="feature.title"
           :text="feature.description"
-        ></feature-card>
+        ></card-feature>
+      </div>
+    </section>
+    <section class="horizontal light">
+      <div class="text">
+        <h2>Project Manager</h2>
+        <p>Description</p>
+        <a><button class="light">See More</button></a>
+      </div>
+      <div class="image">
+        <!-- TODO: generate dynamically -->
+      </div>
+    </section>
+    <section class="vertical strong">
+      <h2>Responsible for Assistence</h2>
+      <div class="cards">
+        <!-- TODO: generate dynamically -->
+        <card-person :name="'Mario Rossi'"></card-person>
       </div>
     </section>
   </main>
 </template>
 
 <script>
-import FeatureCard from '~/components/CardFeauture.vue'
+import CardFeature from '~/components/CardFeauture.vue'
+import CardPerson from '~/components/CardPerson.vue'
 export default {
-  components: { FeatureCard },
+  components: { CardFeature, CardPerson },
   data() {
     return {
       id: '',
