@@ -17,7 +17,7 @@ async function init() {
     const products = await Product.findAll()
     return res.json(products)
   })
-  //api to get all the products
+  //api to get the product with a given id
   app.get('/products/:id', async (req, res) => {
     const productId = req.params.id
     const product = await Product.findOne({
@@ -61,12 +61,17 @@ async function init() {
   })
   // API to get all products by area
   //the parameter :area passed is the id of the area from which we want to retrieve all the products
-  app.get('/products/:area', async (req, res) => {
-    const area = req.params.area
+  app.get('/products/area/:area', async (req, res) => {
+    const area_id = req.params.area
     const products = await Product.findAll({
-      where: { area: area }
+      where: { area: area_id }
     })
-    return res.json(products)
+    const area = await Area.findOne({
+      where: { id: area_id }
+    })
+    console.log(products)
+    console.log(area)
+    return res.json({ products, area })
   })
   // API to get all people by role
   // the parameter :role passed is the identifier of the role consistent with the representation in the db

@@ -57,6 +57,19 @@ function defineDatabaseStructure() {
   Person.belongsToMany(Product, { through: Assistance, foreignKey: 'person' })
   Product.belongsToMany(Person, { through: Assistance, foreignKey: 'product' })
 
+  /*
+  Area.belongsTo(Person, { foreignKey: 'responsible' })
+  Product.belongsTo(Area, { foreignKey: 'area' })
+  Area.hasMany(Product)
+  Product.belongsTo(Person, { foreignKey: 'manager' })
+  Person.hasMany(Product) // -> correct?
+  Feature.belongsTo(Area, { foreignKey: 'area' })
+  Area.hasMany(Feature)
+  Feature.belongsTo(Product, { foreignKey: 'product' })
+  Product.hasMany(Feature)
+  Person.belongsToMany(Product, { through: Assistance, foreignKey: 'person' })
+  Product.belongsToMany(Person, { through: Assistance, foreignKey: 'product' }) */
+
   // Creating the 1 -> N association between Article and Comment
   // More on association: https://sequelize.org/master/manual/assocs.html
 
