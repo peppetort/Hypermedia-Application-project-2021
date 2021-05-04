@@ -1,8 +1,8 @@
 <template>
   <div>
-    <!-- <the-header></the-header> -->
+    <the-header></the-header>
     <Nuxt />
-    <!-- <the-footer></the-footer> -->
+    <the-footer></the-footer>
   </div>
 </template>
 
@@ -11,8 +11,8 @@ import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
 export default {
   components: {
-    /* TheHeader,
-    TheFooter */
+    TheHeader,
+    TheFooter
   }
 }
 </script>
