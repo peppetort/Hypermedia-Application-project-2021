@@ -3,6 +3,31 @@ import initializeDatabase from '../db-conn'
 
 const app = express()
 
+const roles = [
+  {
+    title: 'Area Responsible',
+    description: 'this is a description for the role of an area responsible',
+    image: '',
+    icon: '',
+    responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
+  },
+  {
+    title: 'Product Manager',
+    description: 'this is a description for the role of a manager',
+    image: '',
+    icon: '',
+    responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
+  },
+  {
+    title: 'Product Reference for Assistance',
+    description:
+      'this is a description for the role of a reference of assistance',
+    image: '',
+    icon: '',
+    responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
+  }
+]
+
 // We need this one if we send data inside the body as JSON
 app.use(express.json())
 
@@ -66,7 +91,7 @@ async function init() {
     const products = await Product.findAll({
       where: { area: area_id }
     })
-    /*     const area = await Area.findOne({
+    /*  const area = await Area.findOne({
       where: { id: area_id }
     })
     console.log(products)
@@ -86,7 +111,7 @@ async function init() {
   })
   // api to get all the roles of a person
   // return an object containing 3 elements: only 1 of them is not null (because each person can have only 1 role)
-  app.get('/roles/:person', async (req, res) => {
+  app.get('/roles/person/:person', async (req, res) => {
     const person = req.params.person
     const area_resp = await Area.findOne({
       where: { manager: person }
@@ -97,6 +122,14 @@ async function init() {
     const ref_ass = await Product.findAll(/*find all products for which perso is ref assistant*/)
 
     return res.json({ area_resp, proj_manager, ref_ass })
+  })
+
+  //API that receive the id of a role and return the info about that role
+  // => 0: area resp, 1: proj manager, 2: ref assistant
+  app.get('/roles/:id', async (req, res) => {
+    const id = req.params.id
+    res.send(roles[id])
+    //res.send(roles[0])
   })
 }
 
