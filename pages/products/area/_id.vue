@@ -39,6 +39,7 @@ export default {
     }
   },
   async mounted() {
+    console.log('ciao')
     const { id } = this.$route.params
     const { data } = await this.$axios.get(`api/areas/${id}`)
     this.area_id = data.id
@@ -51,6 +52,12 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  justify-content: center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .text {
   margin-block: block;
   margin-left: auto;
