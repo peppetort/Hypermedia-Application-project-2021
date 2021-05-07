@@ -1,6 +1,8 @@
 <template>
   <div class="card">
-    <div class="icon"></div>
+    <div class="icon">
+      <img :src="`data:image/png;base64,` + image" />
+    </div>
     <div class="text">
       <h3>{{ title }}</h3>
       <p>{{ text }}</p>
@@ -12,7 +14,8 @@
 export default {
   props: {
     title: { type: String, default: () => '' },
-    text: { type: String, default: () => '' }
+    text: { type: String, default: () => '' },
+    image: { type: String, default: () => '' }
   }
 }
 </script>
@@ -32,12 +35,13 @@ div.card {
 
 div.icon {
   width: 100%;
-  height: 30%;
+  height: 15%;
+  padding-top: 20px;
 }
 
 div.icon img {
-  max-width: 90%;
-  max-height: 90%;
+  width: auto;
+  height: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;

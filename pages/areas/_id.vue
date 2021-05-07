@@ -9,12 +9,12 @@
         >
       </div>
       <div class="image">
-        <!-- TODO: add image dynamically -->
+        <img :src="`data:image/png;base64,` + this.main_image" />
       </div>
     </section>
     <section class="horizontal light">
       <div class="image">
-        <!-- TODO: add image dynamically -->
+        <img :src="`data:image/png;base64,` + this.second_image" />
       </div>
       <div class="text">
         <h2>Description</h2>
@@ -30,6 +30,7 @@
           :key="feature.id"
           :title="feature.title"
           :text="feature.description"
+          :image="feature.image"
         ></feature-card>
       </div>
     </section>
@@ -75,6 +76,8 @@ export default {
       title: '',
       subtitle: '',
       description: '',
+      main_image: '',
+      second_image: '',
       features: '',
       products: ''
     }
@@ -86,6 +89,8 @@ export default {
     this.title = data.title
     this.subtitle = data.subtitle
     this.description = data.description
+    this.main_image = data.main_image
+    this.second_image = data.second_image
     this.features = (
       await this.$axios.get(`/api/areas/features/${data.id}`)
     ).data
@@ -106,6 +111,14 @@ div.text {
 
 div.image {
   width: 50%;
+}
+
+div.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.cards {
