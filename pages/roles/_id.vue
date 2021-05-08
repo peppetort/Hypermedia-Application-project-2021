@@ -5,6 +5,7 @@
         ['/roles', 'All roles'],
         [`/roles/${this.id}`, `${this.title}`]
       ]"
+      :look="'strong'"
     />
     <section class="horizontal strong">
       <div class="text">

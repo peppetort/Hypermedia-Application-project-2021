@@ -5,6 +5,7 @@
         ['/areas', 'All areas'],
         [`/areas/${this.id}`, `${this.title}`]
       ]"
+      :look="'strong'"
     />
     <section class="horizontal strong">
       <div class="text">

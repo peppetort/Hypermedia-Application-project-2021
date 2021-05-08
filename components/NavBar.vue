@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div :class="`nav ${look}`">
     <div v-for="(p, index) in path" :key="p">
       <NuxtLink :to="p[0]">{{ p[1] }}</NuxtLink>
       <p v-if="index != path.length - 1">></p>
@@ -10,17 +10,25 @@
 <script>
 export default {
   props: {
-    path: { type: Array, default: () => [] }
+    path: { type: Array, default: () => [] },
+    look: { type: String, default: () => 'light' }
   }
 }
 </script>
 
 <style scoped>
 div.nav {
-  background: #f2f2f2;
   padding: 10px;
   display: flex;
   flex-direction: row;
+}
+
+div.light {
+  background: white;
+}
+
+div.strong {
+  background: #f2f2f2;
 }
 
 div.nav > div {

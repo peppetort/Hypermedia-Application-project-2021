@@ -5,6 +5,7 @@
         ['/products', 'All products'],
         [`/products/area/${this.area_id}`, `${this.area_title} products`]
       ]"
+      :look="'light'"
     />
     <section class="horizontal light">
       <div class="text">
