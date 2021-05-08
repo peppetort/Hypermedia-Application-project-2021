@@ -3,7 +3,7 @@
     <nav-bar
       :path="[
         ['/products', 'All products'],
-        [`/products/area/${this.area_id}`, `${this.area_title}`]
+        [`/products/area/${this.area_id}`, `${this.area_title} products`]
       ]"
     />
     <section class="horizontal light">
