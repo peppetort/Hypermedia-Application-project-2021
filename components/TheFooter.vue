@@ -39,9 +39,9 @@
         </div>
         <div class="column">
           <NuxtLink to="/contacts" class="title">Contacts</NuxtLink>
-          <NuxtLink to="/contacts/#form">Contact us</NuxtLink>
-          <NuxtLink to="/contacts/#number">Phone Number</NuxtLink>
-          <NuxtLink to="/contacts/#map">Visit us</NuxtLink>
+          <NuxtLink to="/contacts#form">Contact us</NuxtLink>
+          <NuxtLink to="/contacts#number">Phone Number</NuxtLink>
+          <NuxtLink to="/contacts#map">Visit us</NuxtLink>
         </div>
         <div class="column">
           <NuxtLink to="/company" class="title">Company</NuxtLink>
