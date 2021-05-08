@@ -1,5 +1,11 @@
 <template>
   <main class="container">
+    <nav-bar
+      :path="[
+        ['/products', 'All products'],
+        [`/products/area/${this.area_id}`, `${this.area_title}`]
+      ]"
+    />
     <section class="horizontal light">
       <div class="text">
         <h1>
@@ -26,9 +32,10 @@
 </template>
 
 <script>
+import NavBar from '~/components/NavBar.vue'
 import CardProductPreview from '~/components/CardProductPreview.vue'
 export default {
-  components: { CardProductPreview },
+  components: { NavBar, CardProductPreview },
   data() {
     return {
       area_id: '',

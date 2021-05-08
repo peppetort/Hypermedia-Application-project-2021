@@ -1,5 +1,11 @@
 <template>
   <main class="container">
+    <nav-bar
+      :path="[
+        ['/areas', 'All areas'],
+        [`/areas/${this.id}`, `${this.title}`]
+      ]"
+    />
     <section class="horizontal strong">
       <div class="text">
         <h1>{{ this.title }}</h1>
@@ -31,7 +37,7 @@
           :title="feature.title"
           :text="feature.description"
           :image="feature.image"
-        ></feature-card>
+        />
       </div>
     </section>
     <section class="vertical light">
@@ -46,7 +52,7 @@
           :key="product.id"
           :title="product.title"
           :id="product.id"
-        ></card-product-preview>
+        />
       </div>
       <div id="link-products">
         <NuxtLink :to="`/products/area/${this.id}`">See More ></NuxtLink>
@@ -66,10 +72,11 @@
 </template>
 
 <script>
+import NavBar from '~/components/NavBar.vue'
 import FeatureCard from '~/components/CardFeauture.vue'
 import CardProductPreview from '~/components/CardProductPreview.vue'
 export default {
-  components: { FeatureCard, CardProductPreview },
+  components: { NavBar, FeatureCard, CardProductPreview },
   data() {
     return {
       id: '',

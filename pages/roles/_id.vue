@@ -1,5 +1,11 @@
 <template>
   <main class="container">
+    <nav-bar
+      :path="[
+        ['/roles', 'All roles'],
+        [`/roles/${this.id}`, `${this.title}`]
+      ]"
+    />
     <section class="horizontal strong">
       <div class="text">
         <h1>{{ this.title }}</h1>
@@ -32,9 +38,10 @@
 </template>
 
 <script>
+import NavBar from '~/components/NavBar.vue'
 import CardResponsibilities from '~/components/CardResponsibilities.vue'
 export default {
-  components: { CardResponsibilities },
+  components: { NavBar, CardResponsibilities },
   data() {
     return {
       title: '',
