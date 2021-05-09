@@ -9,6 +9,7 @@
     </section>
     <section class="horizontal strong">
       <div class="contactInfos">
+        <a name="number" />
         <h2>Call Us</h2>
         <p>+02 35467832</p>
       </div>
@@ -24,6 +25,7 @@
         <p>Via San Vito, 9, 20123 MILAN (MI) - LOMBARDIA</p>
       </div>
       <div class="mapouter">
+        <a name="map" />
         <div class="gmap_canvas">
           <iframe
             id="gmap_canvas"

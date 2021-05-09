@@ -1,8 +1,8 @@
 <template>
   <div>
-    <the-header></the-header>
+    <the-header />
     <Nuxt />
-    <the-footer></the-footer>
+    <the-footer />
   </div>
 </template>
 
@@ -18,6 +18,10 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0px;
+}
+
 html {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;

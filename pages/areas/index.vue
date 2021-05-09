@@ -31,8 +31,10 @@
       </div>
     </section>
     <div v-for="area in areas" :key="area.id">
-      <section class="horizontal light" v-if="area.id % 2 == 0">
-        <div class="image"><!-- TODO: add image dynamically --></div>
+      <section class="horizontal strong" v-if="area.id % 2 == 0">
+        <div class="image">
+          <img :src="`data:image/png;base64,` + area.main_image" />
+        </div>
         <div class="text">
           <h2>{{ area.title }}</h2>
           <p>{{ area.subtitle }}</p>
@@ -41,7 +43,7 @@
           >
         </div>
       </section>
-      <section class="horizontal strong" v-if="area.id % 2 != 0">
+      <section class="horizontal light" v-if="area.id % 2 != 0">
         <div class="text">
           <h2>{{ area.title }}</h2>
           <p>{{ area.subtitle }}</p>
@@ -49,7 +51,9 @@
             <button class="light">Learn More</button></NuxtLink
           >
         </div>
-        <div class="image"><!-- TODO: add image dynamically --></div>
+        <div class="image">
+          <img :src="`data:image/png;base64,` + area.main_image" />
+        </div>
       </section>
     </div>
   </main>

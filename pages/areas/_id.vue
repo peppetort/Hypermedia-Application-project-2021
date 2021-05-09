@@ -1,5 +1,11 @@
 <template>
   <main class="container">
+    <nav-bar
+      :path="[
+        ['/areas', 'All areas'],
+        [`/areas/${this.id}`, `${this.title}`]
+      ]"
+    />
     <section class="horizontal strong">
       <div class="text">
         <h1>{{ this.title }}</h1>
@@ -9,12 +15,12 @@
         >
       </div>
       <div class="image">
-        <!-- TODO: add image dynamically -->
+        <img :src="`data:image/png;base64,` + this.main_image" />
       </div>
     </section>
     <section class="horizontal light">
       <div class="image">
-        <!-- TODO: add image dynamically -->
+        <img :src="`data:image/png;base64,` + this.second_image" />
       </div>
       <div class="text">
         <h2>Description</h2>
@@ -30,7 +36,8 @@
           :key="feature.id"
           :title="feature.title"
           :text="feature.description"
-        ></feature-card>
+          :image="feature.image"
+        />
       </div>
     </section>
     <section class="vertical light">
@@ -45,7 +52,7 @@
           :key="product.id"
           :title="product.title"
           :id="product.id"
-        ></card-product-preview>
+        />
       </div>
       <div id="link-products">
         <NuxtLink :to="`/products/area/${this.id}`">See More ></NuxtLink>
@@ -65,16 +72,19 @@
 </template>
 
 <script>
+import NavBar from '~/components/NavBar.vue'
 import FeatureCard from '~/components/CardFeauture.vue'
 import CardProductPreview from '~/components/CardProductPreview.vue'
 export default {
-  components: { FeatureCard, CardProductPreview },
+  components: { NavBar, FeatureCard, CardProductPreview },
   data() {
     return {
       id: '',
       title: '',
       subtitle: '',
       description: '',
+      main_image: '',
+      second_image: '',
       features: '',
       products: ''
     }
@@ -86,6 +96,8 @@ export default {
     this.title = data.title
     this.subtitle = data.subtitle
     this.description = data.description
+    this.main_image = data.main_image
+    this.second_image = data.second_image
     this.features = (
       await this.$axios.get(`/api/areas/features/${data.id}`)
     ).data
@@ -106,6 +118,14 @@ div.text {
 
 div.image {
   width: 50%;
+}
+
+div.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.cards {

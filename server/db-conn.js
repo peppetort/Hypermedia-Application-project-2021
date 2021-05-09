@@ -27,26 +27,26 @@ function defineDatabaseStructure() {
     phone: DataTypes.STRING,
     description: DataTypes.STRING(1000),
     role: DataTypes.INTEGER,
-    image: DataTypes.STRING
+    image: DataTypes.STRING(200000)
   })
   const Assistance = db.define('Assistance', {})
   const Feature = db.define('Feature', {
     title: DataTypes.STRING,
     description: DataTypes.STRING(1000),
-    image: DataTypes.STRING
+    image: DataTypes.STRING(200000)
   })
   const Area = db.define('Area', {
     title: DataTypes.STRING,
     description: DataTypes.STRING(1000),
     subtitle: DataTypes.STRING(500),
-    main_image: DataTypes.STRING,
-    second_image: DataTypes.STRING
+    main_image: DataTypes.STRING(200000),
+    second_image: DataTypes.STRING(200000)
   })
   const Product = db.define('Product', {
     title: DataTypes.STRING,
     subtitle: DataTypes.STRING(500),
     description: DataTypes.STRING(1000),
-    image: DataTypes.STRING
+    image: DataTypes.STRING(200000)
   })
 
   Person.hasOne(Area, { foreignKey: 'responsible' })

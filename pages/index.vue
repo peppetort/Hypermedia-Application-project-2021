@@ -1,10 +1,3 @@
 <template>
-  <div class="container">
-    <h1>Home</h1>
-    <a href="/company">Company</a>
-    <a href="/contacts">Contacts</a>
-    <a href="/areas">Areas</a>
-    <a href="/products">Products</a>
-    <a href="/roles">Roles</a>
-  </div>
+  <main class="container"></main>
 </template>
