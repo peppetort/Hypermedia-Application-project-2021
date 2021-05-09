@@ -102,11 +102,12 @@ async function init() {
   // API to get all people by role
   // the parameter :role passed is the identifier of the role consistent with the representation in the db
   // => 0: area rep, 1: proj manager, 2: ref assistant
-  app.get('/:role', async (req, res) => {
+  app.get('/person/:role', async (req, res) => {
     const role = req.params.role
     const people = await Person.findAll({
       where: { role: role }
     })
+    console.log(people)
     return res.json(people)
   })
   // api to get all the roles of a person

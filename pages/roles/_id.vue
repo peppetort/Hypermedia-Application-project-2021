@@ -28,20 +28,35 @@
         ></card-responsibilities>
       </div>
     </section>
+    <section class="vertical light">
+      <div class="text center">
+        <h2>Who are our {{ title }}s</h2>
+        <p>Frase potente motivazionale</p>
+      </div>
+      <div class="people">
+        <card-person
+          v-for="person in people"
+          :key="person.id"
+          :name="person.name"
+        ></card-person>
+      </div>
+    </section>
   </main>
 </template>
 
 <script>
 import CardResponsibilities from '~/components/CardResponsibilities.vue'
+import CardPerson from '~/components/CardPerson.vue'
 export default {
-  components: { CardResponsibilities },
+  components: { CardResponsibilities, CardPerson },
   data() {
     return {
       title: '',
       description: '',
       image: '',
       icon: '',
-      responsibilities: ''
+      responsibilities: '',
+      people: ''
     }
   },
   async mounted() {
@@ -52,6 +67,9 @@ export default {
     this.image = data.image
     this.icon = data.icon
     this.responsibilities = data.responsibilities
+
+    const empl = await this.$axios.get(`api/person/${id}`)
+    this.people = empl.data
   }
 }
 </script>
@@ -59,6 +77,7 @@ export default {
 <style scoped>
 div.image {
   width: 400px;
+  min-width: 300px;
   background-color: black;
   margin-left: auto;
   margin-right: auto;
@@ -71,5 +90,50 @@ div.cards {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+}
+
+div.center {
+  margin-block: auto;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+
+div.people {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  padding-left: 5%;
+  padding-right: 5%;
+  grid-gap: 5%;
+  justify-content: center;
+  float: right;
+}
+
+@media (min-width: 300px) {
+  div.people {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+  }
+}
+
+@media (min-width: 600px) {
+  div.people {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+}
+@media (min-width: 900px) {
+  div.people {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+}
+@media (min-width: 1200px) {
+  div.people {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+}
+
+@media (min-width: 1500px) {
+  div.people {
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+  }
 }
 </style>
