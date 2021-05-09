@@ -55,7 +55,7 @@ import NavBar from '~/components/NavBar.vue'
 import CardResponsibilities from '~/components/CardResponsibilities.vue'
 import CardPerson from '~/components/CardPerson.vue'
 export default {
-  components: { NavBar, CardResponsibilities },
+  components: { NavBar, CardResponsibilities, CardPerson },
   data() {
     return {
       title: '',

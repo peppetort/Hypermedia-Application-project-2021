@@ -5,6 +5,7 @@ const app = express()
 
 const roles = [
   {
+    id: 0,
     title: 'Area Responsible',
     description: 'this is a description for the role of an area responsible',
     image: '',
@@ -12,6 +13,7 @@ const roles = [
     responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
   },
   {
+    id: 1,
     title: 'Product Manager',
     description: 'this is a description for the role of a manager',
     image: '',
@@ -19,6 +21,7 @@ const roles = [
     responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
   },
   {
+    id: 2,
     title: 'Product Reference for Assistance',
     description:
       'this is a description for the role of a reference of assistance',
@@ -107,7 +110,6 @@ async function init() {
     const people = await Person.findAll({
       where: { role: role }
     })
-    console.log(people)
     return res.json(people)
   })
   // api to get all the roles of a person
