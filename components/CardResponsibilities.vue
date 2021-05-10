@@ -26,11 +26,21 @@ export default {
   margin-inline: 35px;
 }
 
+p {
+  margin-block: auto;
+  margin-bottom: 20px;
+  align-content: center;
+  font: 30px;
+}
+
 .dot {
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 35px;
   background-color: black;
-  border-radius: 50%;
-  display: inline-block;
+  border-radius: 70%;
+  margin-block: auto;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

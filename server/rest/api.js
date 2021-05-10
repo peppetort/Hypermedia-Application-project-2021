@@ -5,6 +5,7 @@ const app = express()
 
 const roles = [
   {
+    id: 0,
     title: 'Area Responsible',
     description: 'this is a description for the role of an area responsible',
     image: '',
@@ -12,6 +13,7 @@ const roles = [
     responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
   },
   {
+    id: 1,
     title: 'Product Manager',
     description: 'this is a description for the role of a manager',
     image: '',
@@ -19,6 +21,7 @@ const roles = [
     responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
   },
   {
+    id: 2,
     title: 'Product Reference for Assistance',
     description:
       'this is a description for the role of a reference of assistance',
@@ -102,7 +105,7 @@ async function init() {
   // API to get all people by role
   // the parameter :role passed is the identifier of the role consistent with the representation in the db
   // => 0: area rep, 1: proj manager, 2: ref assistant
-  app.get('/:role', async (req, res) => {
+  app.get('/person/:role', async (req, res) => {
     const role = req.params.role
     const people = await Person.findAll({
       where: { role: role }
