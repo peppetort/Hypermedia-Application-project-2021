@@ -58,6 +58,17 @@ async function init() {
     const people = await Person.findAll()
     return res.json(people)
   })
+
+  // api to get the person with the id and the role as a string (not an int)
+  app.get('/roles/people/:id', async (req, res) => {
+    const personId = req.params.id
+    const person = await Person.findOne({
+      where: { id: personId }
+    })
+    person.role = roles[person.role].title
+    return res.json(person)
+  })
+
   //api to get all the areas
   app.get('/areas', async (req, res) => {
     const areas = await Area.findAll()

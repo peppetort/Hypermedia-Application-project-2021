@@ -15,13 +15,10 @@
       <div class="text">
         <h2>WHO WE ARE</h2>
         <p>
-          Ciao noi siamo i più fighi sto freestylando perchè non mi va di
-          cercare e copincollare il lorem ipsum yo senti che rime le stampo
-          meglio di un epson
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
         <p class="subParagraph">
-          Yo ah si continuo col freestyle no non mi fermare dai, senti questi
-          versi fuori da questo mondo anzi fuori dall'universo
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
       </div>
     </section>
@@ -30,8 +27,7 @@
       <div>
         <h2>OUR VALUES</h2>
         <p>
-          Ah, si, sono di nuovo io ascolta ste parole zio fidati di me oggi
-          rappo sul tè, quello verde, quello bianco, quello sordo, quello stanco
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
         </p>
       </div>
     </section>
