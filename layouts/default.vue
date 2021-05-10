@@ -2,6 +2,7 @@
   <div>
     <the-header />
     <Nuxt />
+    <chat />
     <the-footer />
   </div>
 </template>
@@ -9,10 +10,12 @@
 <script>
 import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
+import Chat from '~/components/Chat.vue'
 export default {
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    Chat
   }
 }
 </script>
