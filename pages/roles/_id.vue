@@ -118,6 +118,9 @@ div.people {
   padding-right: 5%;
   grid-gap: 5%;
   justify-content: center;
+  margin-block: auto;
+  margin-left: auto;
+  margin-right: auto;
   float: right;
 }
 

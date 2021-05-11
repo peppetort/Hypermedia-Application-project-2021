@@ -9,7 +9,7 @@
       <div class="text">
         <h2>Responsible</h2>
         <p>Short description</p>
-        <NuxtLink :to="`/roles/0`">
+        <NuxtLink :to="`/roles/1`">
           <button class="light">Learn More</button></NuxtLink
         >
       </div>
@@ -18,7 +18,7 @@
       <div class="text">
         <h2>Project Manager</h2>
         <p>Short description</p>
-        <NuxtLink :to="`/roles/1`">
+        <NuxtLink :to="`/roles/2`">
           <button class="light">Learn More</button></NuxtLink
         >
       </div>
@@ -29,7 +29,7 @@
       <div class="text">
         <h2>Reference Assistence</h2>
         <p>Short description</p>
-        <NuxtLink :to="`/roles/2`">
+        <NuxtLink :to="`/roles/3`">
           <button class="light">Learn More</button></NuxtLink
         >
       </div>
