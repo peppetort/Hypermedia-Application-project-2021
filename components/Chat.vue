@@ -75,7 +75,7 @@ export default {
 .main {
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 10px;
 }
 .chat {
   margin: 0;
@@ -119,10 +119,13 @@ export default {
 }
 .chat-input {
   border-radius: 20px;
-  width: 90%;
+  width: 100%;
+  height: 40px;
+  resize: none;
   position: absolute;
   z-index: 20;
   background-color: lightblue;
+  font: 20px Arial, sans-serif;
 }
 .message {
   width: calc(100% - 8px);
