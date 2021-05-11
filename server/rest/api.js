@@ -38,7 +38,7 @@ async function init() {
   // Call the init function that returns the Database
   const db = await initializeDatabase()
   // Let's extract all the objects we need to perform queries inside the endpoints
-  const { Person, Area, Product, Assistance, Feature } = db._tables
+  const { Person, Area, Product, Assistance, Feature, Role } = db._tables
 
   //api to get all the products
   app.get('/products', async (req, res) => {
@@ -141,9 +141,14 @@ async function init() {
   //API that receive the id of a role and return the info about that role
   // => 0: area resp, 1: proj manager, 2: ref assistant
   app.get('/roles/:id', async (req, res) => {
-    const id = req.params.id
-    res.send(roles[id])
-    //res.send(roles[0])
+    const role_id = req.params.id
+    //res.send(roles[role_id])
+
+    const r = await Role.findOne({
+      where: { id: role_id }
+    })
+    console.log(r)
+    return res.json(r)
   })
 }
 

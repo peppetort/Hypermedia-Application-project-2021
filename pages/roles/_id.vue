@@ -28,11 +28,9 @@
         <p>frase potente motivazionale</p>
       </div>
       <div class="cards">
-        <card-responsibilities
-          v-for="(resp, index) in responsibilities"
-          :key="index"
-          :text="resp"
-        ></card-responsibilities>
+        <card-responsibilities :text="responsibility1"></card-responsibilities>
+        <card-responsibilities :text="responsibility2"></card-responsibilities>
+        <card-responsibilities :text="responsibility3"></card-responsibilities>
       </div>
     </section>
     <section class="vertical light">
@@ -59,22 +57,28 @@ export default {
   components: { NavBar, CardResponsibilities, CardPerson },
   data() {
     return {
+      id: '',
       title: '',
       description: '',
       image: '',
       icon: '',
-      responsibilities: '',
+      responsibility1: '',
+      responsibility2: '',
+      responsibility3: '',
       people: ''
     }
   },
   async mounted() {
     const { id } = this.$route.params
     const { data } = await this.$axios.get(`api/roles/${id}`)
+    this.id = data.id
     this.title = data.title
     this.description = data.description
     this.image = data.image
     this.icon = data.icon
-    this.responsibilities = data.responsibilities
+    this.responsibility1 = data.responsibility1
+    this.responsibility2 = data.responsibility2
+    this.responsibility3 = data.responsibility3
 
     const empl = await this.$axios.get(`api/person/${id}`)
     this.people = empl.data

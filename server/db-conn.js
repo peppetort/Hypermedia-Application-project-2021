@@ -48,6 +48,15 @@ function defineDatabaseStructure() {
     description: DataTypes.STRING(1000),
     image: DataTypes.STRING(200000)
   })
+  const Role = db.define('Role', {
+    title: DataTypes.STRING,
+    description: DataTypes.STRING,
+    image: DataTypes.STRING,
+    icon: DataTypes.STRING,
+    responsibility1: DataTypes.STRING,
+    responsibility2: DataTypes.STRING,
+    responsibility3: DataTypes.STRING
+  })
 
   Person.hasOne(Area, { foreignKey: 'responsible' })
   Area.hasOne(Product, { foreignKey: 'area' })
@@ -56,6 +65,7 @@ function defineDatabaseStructure() {
   Product.hasOne(Feature, { foreignKey: 'product' })
   Person.belongsToMany(Product, { through: Assistance, foreignKey: 'person' })
   Product.belongsToMany(Person, { through: Assistance, foreignKey: 'product' })
+  Role.hasOne(Person, { foreignKey: 'role' })
 
   /*
   Area.belongsTo(Person, { foreignKey: 'responsible' })
@@ -78,7 +88,8 @@ function defineDatabaseStructure() {
     Assistance,
     Feature,
     Area,
-    Product
+    Product,
+    Role
   }
 }
 
@@ -90,6 +101,30 @@ async function initializeDatabase() {
   defineDatabaseStructure()
   await db.sync()
   return db
+}
+
+async function insertData() {
+  const { Person, Area, Product, Assistance, Feature, Role } = db._tables
+
+  await Role.create({
+    title: 'Area Responsible',
+    description: 'this is a description for the role of an area responsible',
+    image: '',
+    icon: '',
+    responsibility1: 'responsibility1',
+    responsibility2: 'responsibility2',
+    responsibility3: 'responsibility3'
+  })
+
+  await Role.create({
+    title: 'Area Responsible',
+    description: 'this is a description for the role of an area responsible',
+    image: '',
+    icon: '',
+    responsibility1: 'responsibility1',
+    responsibility2: 'responsibility2',
+    responsibility3: 'responsibility3'
+  })
 }
 
 export default initializeDatabase
