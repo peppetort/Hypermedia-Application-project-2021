@@ -2,7 +2,7 @@ import express from 'express'
 import initializeDatabase from '../db-conn'
 
 const app = express()
-
+/*
 const roles = [
   {
     id: 0,
@@ -29,7 +29,7 @@ const roles = [
     icon: '',
     responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
   }
-]
+]*/
 
 // We need this one if we send data inside the body as JSON
 app.use(express.json())
@@ -107,9 +107,7 @@ async function init() {
     })
     /*  const area = await Area.findOne({
       where: { id: area_id }
-    })
-    console.log(products)
-    console.log(area) */
+    })*/
     /* return res.json({ products, area }) */
     return res.json(products)
   })
@@ -142,13 +140,16 @@ async function init() {
   // => 0: area resp, 1: proj manager, 2: ref assistant
   app.get('/roles/:id', async (req, res) => {
     const role_id = req.params.id
-    //res.send(roles[role_id])
-
     const r = await Role.findOne({
       where: { id: role_id }
     })
-    console.log(r)
     return res.json(r)
+  })
+
+  app.get('/roles', async (req, res) => {
+    const roles = await Role.findAll()
+    console.log(roles)
+    return res.json(roles)
   })
 }
 

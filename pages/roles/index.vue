@@ -4,36 +4,28 @@
       <h1>Our Roles</h1>
       <p>Short overview of the company roles</p>
     </section>
-    <section class="horizontal light">
-      <div class="image"></div>
-      <div class="text">
-        <h2>Responsible</h2>
-        <p>Short description</p>
-        <NuxtLink :to="`/roles/1`">
-          <button class="light">Learn More</button></NuxtLink
-        >
-      </div>
-    </section>
-    <section class="horizontal strong">
-      <div class="text">
-        <h2>Project Manager</h2>
-        <p>Short description</p>
-        <NuxtLink :to="`/roles/2`">
-          <button class="light">Learn More</button></NuxtLink
-        >
-      </div>
-      <div class="image"></div>
-    </section>
-    <section class="horizontal light">
-      <div class="image"></div>
-      <div class="text">
-        <h2>Reference Assistence</h2>
-        <p>Short description</p>
-        <NuxtLink :to="`/roles/3`">
-          <button class="light">Learn More</button></NuxtLink
-        >
-      </div>
-    </section>
+    <div v-for="role in roles" :key="role.id">
+      <section class="horizontal light" v-if="role.id % 2 != 0">
+        <div class="text">
+          <h2>{{ role.title }}</h2>
+          <p>{{ role.description }}</p>
+          <NuxtLink :to="`/roles/${role.id}`">
+            <button class="light">Learn More</button></NuxtLink
+          >
+        </div>
+        <div class="image"></div>
+      </section>
+      <section class="horizontal strong" v-if="role.id % 2 == 0">
+        <div class="image"></div>
+        <div class="text">
+          <h2>{{ role.title }}</h2>
+          <p>{{ role.description }}</p>
+          <NuxtLink :to="`/roles/${role.id}`">
+            <button class="light">Learn More</button></NuxtLink
+          >
+        </div>
+      </section>
+    </div>
   </main>
 </template>
 
@@ -41,12 +33,12 @@
 export default {
   data() {
     return {
-      areas: ''
+      roles: ''
     }
   },
   async mounted() {
-    const { data } = await this.$axios.get('/api/areas')
-    this.areas = data
+    const { data } = await this.$axios.get('/api/roles')
+    this.roles = data
   }
 }
 </script>

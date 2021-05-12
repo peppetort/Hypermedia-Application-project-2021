@@ -24,6 +24,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin-inline: 35px;
+  margin-top: 10%;
 }
 
 p {

@@ -97,10 +97,9 @@ div.image {
 
 div.cards {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 50px;
 }
 
@@ -112,43 +111,8 @@ div.center {
 }
 
 div.people {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(100px, 1fr));
-  padding-left: 5%;
-  padding-right: 5%;
-  grid-gap: 5%;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-block: auto;
-  margin-left: auto;
-  margin-right: auto;
-  float: right;
-}
-
-@media (min-width: 300px) {
-  div.people {
-    grid-template-columns: repeat(1, minmax(100px, 1fr));
-  }
-}
-
-@media (min-width: 600px) {
-  div.people {
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
-  }
-}
-@media (min-width: 900px) {
-  div.people {
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-  }
-}
-@media (min-width: 1200px) {
-  div.people {
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
-  }
-}
-
-@media (min-width: 1500px) {
-  div.people {
-    grid-template-columns: repeat(5, minmax(100px, 1fr));
-  }
 }
 </style>
