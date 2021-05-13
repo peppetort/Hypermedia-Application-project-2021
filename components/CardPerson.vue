@@ -1,15 +1,18 @@
 <template>
   <div class="card">
-    <div class="image"></div>
-    <div class="text">
-      <h3>{{ name }}</h3>
-    </div>
+    <NuxtLink :to="`/roles/people/${id}`">
+      <div class="image"></div>
+      <div class="text">
+        <h3>{{ name }}</h3>
+      </div></NuxtLink
+    >
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    id: { type: Number, default: 0 },
     name: { type: String, default: () => '' }
   }
 }

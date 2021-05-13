@@ -65,8 +65,10 @@ async function init() {
     const person = await Person.findOne({
       where: { id: personId }
     })
-    person.role = roles[person.role].title
-    return res.json(person)
+    const role = await Role.findOne({
+      where: { id: person.role }
+    })
+    return res.json({ person, role })
   })
 
   //api to get all the areas
@@ -148,7 +150,6 @@ async function init() {
 
   app.get('/roles', async (req, res) => {
     const roles = await Role.findAll()
-    console.log(roles)
     return res.json(roles)
   })
 }

@@ -43,6 +43,7 @@
           v-for="person in people"
           :key="person.id"
           :name="person.name"
+          :id="person.id"
         ></card-person>
       </div>
     </section>
