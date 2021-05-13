@@ -50,12 +50,12 @@ function defineDatabaseStructure() {
   })
   const Role = db.define('Role', {
     title: DataTypes.STRING,
-    description: DataTypes.STRING,
-    image: DataTypes.STRING,
-    icon: DataTypes.STRING,
-    responsibility1: DataTypes.STRING,
-    responsibility2: DataTypes.STRING,
-    responsibility3: DataTypes.STRING
+    description: DataTypes.STRING(1000),
+    image: DataTypes.STRING(200000),
+    icon: DataTypes.STRING(200000),
+    responsibility1: DataTypes.STRING(1000),
+    responsibility2: DataTypes.STRING(1000),
+    responsibility3: DataTypes.STRING(1000)
   })
 
   /*Person.hasOne(Area, { foreignKey: 'responsible' })
@@ -81,9 +81,6 @@ function defineDatabaseStructure() {
   Person.belongsTo(Role, { foreignKey: 'role' })
   Role.hasMany(Person, { foreignKey: 'role' })
 
-  // Creating the 1 -> N association between Article and Comment
-  // More on association: https://sequelize.org/master/manual/assocs.html
-
   db._tables = {
     Person,
     Assistance,
@@ -101,87 +98,250 @@ async function initializeDatabase() {
   // Synchronize Sequelize with the actual database
   defineDatabaseStructure()
   await db.sync()
-  //await insertData()
+  // Remove comment only if db is empty
+  insertData()
   return db
 }
 
-async function insertData() {
-  const { Person, Area, Product, Assistance, Feature, Role } = db._tables
+/**
+ * Function to read image from file and convert it to base64 string
+ */
+function getImage(path) {
+  const img = require('fs')
+  return img.readFileSync(path).toString('base64')
+}
 
-  const area_resp = await Role.create({
-    id: 1,
-    title: 'Area Responsible',
-    description: 'this is a description for the role of an area responsible',
-    image: '',
-    icon: '',
-    responsibility1: 'responsibility1',
-    responsibility2: 'responsibility2',
-    responsibility3: 'responsibility3'
+function insertRole(role) {
+  const { Role } = db._tables
+  const path = require('path')
+
+  role.forEach(async (el) => {
+    var imagePath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'DB',
+      'Images',
+      'Role',
+      el['image'].toString()
+    )
+
+    var iconPath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'DB',
+      'Images',
+      'Role',
+      el['icon'].toString()
+    )
+    await Role.create({
+      id: el['id'],
+      title: el['title'],
+      description: el['description'],
+      image: getImage(imagePath),
+      icon: getImage(iconPath),
+      responsibility1: el['responsibility1'],
+      responsibility2: el['responsibility2'],
+      responsibility3: el['responsibility3']
+    })
   })
+}
 
-  const prod_manager = await Role.create({
-    id: 2,
-    title: 'Project Manager',
-    description: 'this is a description for the role of a Project Manager',
-    image: '',
-    icon: '',
-    responsibility1: 'responsibility1',
-    responsibility2: 'responsibility2',
-    responsibility3: 'responsibility3'
+function insertPerson(person) {
+  const { Person } = db._tables
+  const path = require('path')
+
+  person.forEach(async (el) => {
+    var imagePath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'DB',
+      'Images',
+      'Person',
+      el['image'].toString()
+    )
+
+    await Person.create({
+      id: el['id'],
+      name: el['name'],
+      surname: el['surname'],
+      email: el['email'],
+      phone: el['phone'],
+      description: el['description'],
+      image: getImage(imagePath),
+      role: el['role']
+    })
+    setTimeout(() => {}, 1000)
   })
+}
 
-  const ref_assistance = await Role.create({
-    id: 3,
-    title: 'Reference for Assistance',
-    description:
-      'this is a description for the role of a Reference for Assistance',
-    image: '',
-    icon: '',
-    responsibility1: 'responsibility1',
-    responsibility2: 'responsibility2',
-    responsibility3: 'responsibility3'
+function insertArea(area) {
+  const { Area } = db._tables
+  const path = require('path')
+
+  area.forEach(async (el) => {
+    var mainPath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'DB',
+      'Images',
+      'Area',
+      el['id'].toString(),
+      el['main_image'].toString()
+    )
+    var secondPath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'DB',
+      'Images',
+      'Area',
+      el['id'].toString(),
+      el['second_image'].toString()
+    )
+
+    await Area.create({
+      id: el['id'],
+      title: el['title'],
+      description: el['description'],
+      subtitle: el['subtitle'],
+      main_image: getImage(mainPath),
+      second_image: getImage(secondPath),
+      responsible: el['responsible']
+    })
+    setTimeout(() => {}, 1000)
   })
+}
 
-  const p1 = await Person.create({
-    name: 'mario',
-    surname: 'rossi',
-    email: 'email@email.it',
-    phone: '123 4567890',
-    description: 'this is a good employee',
-    image: ''
+function insertProduct(product) {
+  const { Product } = db._tables
+  const path = require('path')
+
+  product.forEach(async (el) => {
+    var imagePath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'DB',
+      'Images',
+      'Product',
+      el['image'].toString()
+    )
+
+    await Product.create({
+      id: el['id'],
+      title: el['title'],
+      subtitle: el['subtitle'],
+      description: el['description'],
+      image: getImage(imagePath),
+      area: el['area'],
+      manager: el['manager']
+    })
+    setTimeout(() => {}, 1000)
   })
+}
 
-  const p2 = await Person.create({
-    name: 'name1',
-    surname: 'surname1',
-    email: 'email@email.it',
-    phone: '123 4567890',
-    description: 'this is a good employee',
-    image: ''
+function insertAssistance(assistance) {
+  const { Assistance } = db._tables
+
+  assistance.forEach(async (el) => {
+    await Assistance.create({
+      person: el['person'],
+      product: el['prodict']
+    })
+    setTimeout(() => {}, 1000)
   })
+}
 
-  const p3 = await Person.create({
-    name: 'name2',
-    surname: 'surname2',
-    email: 'email@email.it',
-    phone: '123 4567890',
-    description: 'this is a good employee',
-    image: ''
+function insertFeature(feature) {
+  const { Feature } = db._tables
+  const path = require('path')
+
+  feature.forEach(async (el) => {
+    var imagePath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'DB',
+      'Images',
+      'Feature',
+      el['area'].toString(),
+      el['image'].toString()
+    )
+
+    var x
+
+    if (el['area'] != undefined && el['product'] != undefined) {
+      x = {
+        id: el['id'],
+        title: el['title'],
+        description: el['description'],
+        image: getImage(imagePath),
+        area: el['area'],
+        product: el['product']
+      }
+    } else if (el['area'] != undefined && el['product'] == undefined) {
+      x = {
+        id: el['id'],
+        title: el['title'],
+        description: el['description'],
+        image: getImage(imagePath),
+        area: el['area']
+      }
+    } else if (el['area'] == undefined && el['product'] != undefined) {
+      x = {
+        id: el['id'],
+        title: el['title'],
+        description: el['description'],
+        image: getImage(imagePath),
+        product: el['product']
+      }
+    }
+
+    await Feature.create(x)
+    setTimeout(() => {}, 1000)
   })
+}
 
-  const p4 = await Person.create({
-    name: 'name3',
-    surname: 'surname3',
-    email: 'email@email.it',
-    phone: '123 4567890',
-    description: 'this is a good employee',
-    image: ''
+/**
+ * Function to populate the database.
+ */
+function insertData() {
+  const file = require('fs')
+  const path = require('path')
+
+  var jsonPath = path.join(__dirname, '..', '..', 'DB', 'db.json')
+
+  file.readFile(jsonPath, 'utf8', (err, jsonString) => {
+    if (err) {
+      console.log('File read failed:', err)
+      return
+    }
+    try {
+      const content = JSON.parse(jsonString)
+      insertRole(content['Role'])
+      setTimeout(() => {
+        insertPerson(content['Person'])
+      }, 10000)
+      setTimeout(() => {
+        insertArea(content['Area'])
+      }, 10000)
+      setTimeout(() => {
+        insertProduct(content['Product'])
+      }, 20000)
+      setTimeout(() => {
+        insertAssistance(content['Assistance'])
+      }, 10000)
+      setTimeout(() => {
+        insertFeature(content['Feature'])
+      }, 10000)
+    } catch (err) {
+      console.log('Error parsing JSON string:', err)
+    }
   })
-
-  area_resp.addPerson(p1)
-  area_resp.addPerson(p2)
-  area_resp.addPerson(p3)
-  area_resp.addPerson(p4)
 }
 
 export default initializeDatabase

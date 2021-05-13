@@ -3,37 +3,30 @@
     <nav-bar
       :path="[
         ['/areas', 'All areas'],
-        [`/areas/${this.id}`, `${this.title}`]
+        [`/areas/${data.id}`, `${data.title}`]
       ]"
       :look="'strong'"
     />
-    <section class="horizontal strong">
-      <div class="text">
-        <h1>{{ this.title }}</h1>
-        <p>{{ this.subtitle }}</p>
-        <NuxtLink to="/contacts"
-          ><button class="light">Contact Us</button></NuxtLink
-        >
-      </div>
-      <div class="image">
-        <img :src="`data:image/png;base64,` + this.main_image" />
-      </div>
-    </section>
-    <section class="horizontal light">
-      <div class="image">
-        <img :src="`data:image/png;base64,` + this.second_image" />
-      </div>
-      <div class="text">
-        <h2>Description</h2>
-        <p>{{ this.description }}</p>
-      </div>
-    </section>
+    <card-section
+      :props="['strong', 'left', 'h1', 'light']"
+      :title="data.title"
+      :text="data.subtitle"
+      :image="`data:image/png;base64,${data.main_image}`"
+      :link="'/contacts'"
+      :button="'Contact Us'"
+    />
+    <card-section
+      :props="['light', 'right', 'h2']"
+      :title="'Description'"
+      :text="data.description"
+      :image="`data:image/png;base64,${data.second_image}`"
+    />
     <section class="vertical strong">
       <h2>Features</h2>
       <p>Solutions that matter for your organization​</p>
       <div class="cards">
         <feature-card
-          v-for="feature in this.features"
+          v-for="feature in data.features"
           :key="feature.id"
           :title="feature.title"
           :text="feature.description"
@@ -44,91 +37,54 @@
     <section class="vertical light">
       <h2>What product we offer</h2>
       <p>
-        "If you don't try this product, you won't become the superhero you were
+        "If you don't try area product, you won't become the superhero you were
         meant to be"​
       </p>
       <div class="cards">
         <card-product-preview
-          v-for="product in products"
+          v-for="product in data.products"
           :key="product.id"
           :title="product.title"
           :id="product.id"
         />
       </div>
       <div id="link-products">
-        <NuxtLink :to="`/products/area/${this.id}`">See More ></NuxtLink>
+        <NuxtLink :to="`/products/area/${data.id}`">See More ></NuxtLink>
       </div>
     </section>
-    <section class="horizontal strong">
-      <div class="text">
-        <h2>Responsible for {{ this.title }}</h2>
-        <p>Description</p>
-        <a><button class="light">See More</button></a>
-      </div>
-      <div class="image">
-        <!-- TODO: generate dynamically -->
-      </div>
-    </section>
+    <card-section
+      :props="['strong', 'left', 'h2', 'light']"
+      :title="`Responsible for ${data.title}`"
+      :text="`${data.resp.name}  ${data.resp.surname}`"
+      :image="`data:image/png;base64,${data.resp.image}`"
+      :link="`/roles/people/${data.responsible}`"
+      :button="'See More'"
+    />
   </main>
 </template>
 
 <script>
-import NavBar from '~/components/NavBar.vue'
+import NavBar from '~/components/TheNavBar.vue'
+import CardSection from '~/components/TheSection.vue'
 import FeatureCard from '~/components/CardFeauture.vue'
 import CardProductPreview from '~/components/CardProductPreview.vue'
 export default {
-  components: { NavBar, FeatureCard, CardProductPreview },
-  data() {
-    return {
-      id: '',
-      title: '',
-      subtitle: '',
-      description: '',
-      main_image: '',
-      second_image: '',
-      features: '',
-      products: ''
-    }
-  },
-  async mounted() {
-    const { id } = this.$route.params
-    const { data } = await this.$axios.get(`/api/areas/${id}`)
-    this.id = data.id
-    this.title = data.title
-    this.subtitle = data.subtitle
-    this.description = data.description
-    this.main_image = data.main_image
-    this.second_image = data.second_image
-    this.features = (
-      await this.$axios.get(`/api/areas/features/${data.id}`)
-    ).data
-    this.products = (
-      await this.$axios.get(`api/products/area/${data.id}`)
-    ).data.slice(0, 4)
+  components: { NavBar, CardSection, FeatureCard, CardProductPreview },
+  async asyncData({ $axios, params }) {
+    const { id } = params
+    const { data } = await $axios.get(`/api/areas/${id}`)
+    data.features = (await $axios.get(`/api/features/area/${id}`)).data
+    data.products = (await $axios.get(`api/products/area/${id}`)).data.slice(
+      0,
+      4
+    )
+    data.resp = (await $axios.get(`/api/person/${data.responsible}`)).data
+    return { data }
   }
 }
 </script>
 
 <style scoped>
-div.text {
-  min-width: 400px;
-  width: 50%;
-  padding-top: 100px;
-  padding-left: 100px;
-}
-
-div.image {
-  width: 50%;
-}
-
-div.image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 div.cards {
   display: flex;
   padding: 5px;

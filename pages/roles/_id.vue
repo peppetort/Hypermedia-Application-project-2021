@@ -3,44 +3,40 @@
     <nav-bar
       :path="[
         ['/roles', 'All roles'],
-        [`/roles/${this.id}`, `${this.title}`]
+        [`/roles/${data.id}`, `${data.title}`]
       ]"
       :look="'strong'"
     />
-    <section class="horizontal strong">
-      <div class="text">
-        <h1>{{ this.title }}</h1>
-        <p>frase potente motivazionale</p>
-        <a href="#people"><button class="strong">Discover More</button></a>
-      </div>
-      <div class="image"><!--TODO: add image --></div>
-    </section>
-    <section class="horizontal light">
-      <div class="icon"><!--TODO: add image --></div>
-      <div class="text">
-        <h2>Description of the role</h2>
-        <p>{{ description }}</p>
-      </div>
-    </section>
+    <card-section
+      :props="['strong', 'left', 'h1', 'strong']"
+      :title="data.title"
+      :image="`data:image/png;base64,${data.icon}`"
+      :link="`#people`"
+      :button="'Discover More'"
+    />
+    <card-section
+      :props="['light', 'right', 'h2']"
+      :title="'Description'"
+      :text="data.description"
+      :image="`data:image/png;base64,${data.image}`"
+    />
     <section class="vertical strong">
       <div class="text">
         <h2>General {{ title }} responsibilities</h2>
         <p>frase potente motivazionale</p>
       </div>
-      <div class="cards">
+      <div class="card">
         <card-responsibilities :text="responsibility1"></card-responsibilities>
         <card-responsibilities :text="responsibility2"></card-responsibilities>
         <card-responsibilities :text="responsibility3"></card-responsibilities>
       </div>
     </section>
     <section class="vertical light">
-      <div class="text center">
-        <h2>Who are our {{ title }}s</h2>
-        <p>Frase potente motivazionale</p>
-      </div>
-      <div class="people">
+      <h2>Who are our {{ title }}s</h2>
+      <p>Frase potente motivazionale</p>
+      <div class="card">
         <card-person
-          v-for="person in people"
+          v-for="person in data.empl"
           :key="person.id"
           :name="person.name"
           :id="person.id"
@@ -51,66 +47,29 @@
 </template>
 
 <script>
-import NavBar from '~/components/NavBar.vue'
+import NavBar from '~/components/TheNavBar.vue'
+import CardSection from '~/components/TheSection.vue'
 import CardResponsibilities from '~/components/CardResponsibilities.vue'
 import CardPerson from '~/components/CardPerson.vue'
 export default {
-  components: { NavBar, CardResponsibilities, CardPerson },
-  data() {
-    return {
-      id: '',
-      title: '',
-      description: '',
-      image: '',
-      icon: '',
-      responsibility1: '',
-      responsibility2: '',
-      responsibility3: '',
-      people: ''
-    }
-  },
-  async mounted() {
-    const { id } = this.$route.params
-    const { data } = await this.$axios.get(`api/roles/${id}`)
-    this.id = data.id
-    this.title = data.title
-    this.description = data.description
-    this.image = data.image
-    this.icon = data.icon
-    this.responsibility1 = data.responsibility1
-    this.responsibility2 = data.responsibility2
-    this.responsibility3 = data.responsibility3
-
-    const empl = await this.$axios.get(`api/person/${id}`)
-    this.people = empl.data
+  components: { NavBar, CardSection, CardResponsibilities, CardPerson },
+  async asyncData({ $axios, params }) {
+    const { id } = params
+    const { data } = await $axios.get(`api/roles/${id}`)
+    data.empl = await $axios.get(`api/person/role/${id}`).data
+    return { data }
   }
 }
 </script>
 
 <style scoped>
-div.image {
-  width: 400px;
-  min-width: 300px;
-  background-color: black;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div.cards {
+div.card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 5px;
   margin-top: 50px;
 }
-
-div.center {
-  margin-block: auto;
-  margin-left: auto;
-  margin-right: auto;
-  align-content: center;
-}
-
 div.people {
   display: flex;
   flex-wrap: wrap;

@@ -9,7 +9,7 @@
       <h2>Select your Area</h2>
       <div class="links">
         <NuxtLink
-          v-for="area in areas"
+          v-for="area in data"
           :key="area.id"
           :to="`products/area/${area.id}`"
           ><button class="strong">
@@ -23,14 +23,9 @@
 
 <script>
 export default {
-  data() {
-    return {
-      areas: ''
-    }
-  },
-  async mounted() {
-    const { data } = await this.$axios.get('/api/areas')
-    this.areas = data
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get('/api/areas')
+    return { data }
   }
 }
 </script>

@@ -6,14 +6,23 @@
         <h3>{{ name }}</h3>
       </div></NuxtLink
     >
+    <div class="image">
+      <NuxtLink :to="link">
+        <img :src="image" />
+      </NuxtLink>
+    </div>
+    <div class="text">
+      <h3>{{ name }}</h3>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    id: { type: Number, default: 0 },
-    name: { type: String, default: () => '' }
+    name: { type: String, default: () => '' },
+    image: { type: String, default: () => '' },
+    link: { type: String, default: () => '' }
   }
 }
 </script>

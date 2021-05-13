@@ -2,42 +2,11 @@ import express from 'express'
 import initializeDatabase from '../db-conn'
 
 const app = express()
-/*
-const roles = [
-  {
-    id: 0,
-    title: 'Area Responsible',
-    description: 'this is a description for the role of an area responsible',
-    image: '',
-    icon: '',
-    responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
-  },
-  {
-    id: 1,
-    title: 'Product Manager',
-    description: 'this is a description for the role of a manager',
-    image: '',
-    icon: '',
-    responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
-  },
-  {
-    id: 2,
-    title: 'Product Reference for Assistance',
-    description:
-      'this is a description for the role of a reference of assistance',
-    image: '',
-    icon: '',
-    responsibilities: ['responsibility1', 'responsibility2', 'responsibility3']
-  }
-]*/
 
-// We need this one if we send data inside the body as JSON
 app.use(express.json())
 
 async function init() {
-  // Call the init function that returns the Database
   const db = await initializeDatabase()
-  // Let's extract all the objects we need to perform queries inside the endpoints
   const { Person, Area, Product, Assistance, Feature, Role } = db._tables
 
   //api to get all the products
@@ -45,6 +14,7 @@ async function init() {
     const products = await Product.findAll()
     return res.json(products)
   })
+
   //api to get the product with a given id
   app.get('/products/:id', async (req, res) => {
     const productId = req.params.id
@@ -53,22 +23,15 @@ async function init() {
     })
     return res.json(product)
   })
-  // to get all the people
-  app.get('/people', async (req, res) => {
-    const people = await Person.findAll()
-    return res.json(people)
-  })
 
-  // api to get the person with the id and the role as a string (not an int)
-  app.get('/roles/people/:id', async (req, res) => {
-    const personId = req.params.id
-    const person = await Person.findOne({
-      where: { id: personId }
+  // api to get all products by area
+  //:id passed is the id of the area from which we want to retrieve all the products
+  app.get('/products/area/:id', async (req, res) => {
+    const area_id = req.params.id
+    const products = await Product.findAll({
+      where: { area: area_id }
     })
-    const role = await Role.findOne({
-      where: { id: person.role }
-    })
-    return res.json({ person, role })
+    return res.json(products)
   })
 
   //api to get all the areas
@@ -76,6 +39,7 @@ async function init() {
     const areas = await Area.findAll()
     return res.json(areas)
   })
+
   //api to get all area of type
   app.get('/areas/:id', async (req, res) => {
     const area = req.params.id
@@ -84,62 +48,53 @@ async function init() {
     })
     return res.json(selected)
   })
-  //api to get all features of type area
-  //the parameter :area passed is the id of the area from which we want to retrieve all the feature
-  app.get('/areas/features/:id', async (req, res) => {
+
+  //api to get all features of an area
+  //:id is the id of the area from which we want to retrieve all the feature
+  app.get('/features/area/:id', async (req, res) => {
     const id = req.params.id
     const selected = await Feature.findAll({
       where: { area: id }
     })
     return res.json(selected)
   })
-  app.get('/products/features/:id', async (req, res) => {
+
+  //api to get all features of a product
+  //:id is the id of the product from which we want to retrieve all the feature
+  app.get('/features/product/:id', async (req, res) => {
     const id = req.params.id
     const selected = await Feature.findAll({
       where: { product: id }
     })
     return res.json(selected)
   })
-  // API to get all products by area
-  //the parameter :area passed is the id of the area from which we want to retrieve all the products
-  app.get('/products/area/:area', async (req, res) => {
-    const area_id = req.params.area
-    const products = await Product.findAll({
-      where: { area: area_id }
+
+  // api to get person by id
+  app.get('/person/:id', async (req, res) => {
+    const person = req.params.id
+    const selected = await Person.findOne({
+      where: { id: person }
     })
-    /*  const area = await Area.findOne({
-      where: { id: area_id }
-    })*/
-    /* return res.json({ products, area }) */
-    return res.json(products)
+    return res.json(selected)
   })
-  // API to get all people by role
-  // the parameter :role passed is the identifier of the role consistent with the representation in the db
-  // => 0: area rep, 1: proj manager, 2: ref assistant
-  app.get('/person/:role', async (req, res) => {
-    const role = req.params.role
+
+  // api to get all people by role
+  // :id passed is the identifier of the role consistent with the representation in the db
+  app.get('/person/role/:id', async (req, res) => {
+    const role = req.params.id
     const people = await Person.findAll({
       where: { role: role }
     })
     return res.json(people)
   })
-  // api to get all the roles of a person
-  // return an object containing 3 elements: only 1 of them is not null (because each person can have only 1 role)
-  app.get('/roles/person/:person', async (req, res) => {
-    const person = req.params.person
-    const area_resp = await Area.findOne({
-      where: { manager: person }
-    })
-    const proj_manager = await Product.findAll({
-      where: { project_manager: person }
-    })
-    const ref_ass = await Product.findAll(/*find all products for which perso is ref assistant*/)
 
-    return res.json({ area_resp, proj_manager, ref_ass })
+  //api to get all roles
+  app.get('/roles', async (req, res) => {
+    const roles = await Role.findAll()
+    return res.json(roles)
   })
 
-  //API that receive the id of a role and return the info about that role
-  // => 0: area resp, 1: proj manager, 2: ref assistant
+  //api to get role by id
   app.get('/roles/:id', async (req, res) => {
     const role_id = req.params.id
     const r = await Role.findOne({
@@ -151,6 +106,19 @@ async function init() {
   app.get('/roles', async (req, res) => {
     const roles = await Role.findAll()
     return res.json(roles)
+  })
+
+  //api to get all assistance people by product id
+  //TODO: finire query non so come si fa join
+  app.get('/assistance/product/:id', async (req, res) => {
+    const product = req.params.id
+    const people = await Person.findAll({
+      include: {
+        model: Association,
+        where: { product: product }
+      }
+    })
+    return res.json(people)
   })
 }
 

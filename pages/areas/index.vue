@@ -1,19 +1,13 @@
 <template>
   <main class="container">
-    <section class="horizontal light">
-      <div class="text">
-        <h1>OUR AREAS</h1>
-        <p>
-          When everyone and everything is connected, anything is possible. Build
-          network access that's wireless-first, cloud-driven, data-optimized,
-          and highly secure.
-        </p>
-        <a href="#allAreas"><button class="strong">Discover more</button></a>
-      </div>
-      <div class="image">
-        <img src="~/static/areas/areas-intro.webp" />
-      </div>
-    </section>
+    <card-section
+      :props="['light', 'left', 'h1', 'strong']"
+      :title="'OUR AREAS'"
+      :text="'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'"
+      :image="'~/static/areas/areas-intro.webp'"
+      :link="'#allAreas'"
+      :button="'Discover more'"
+    />
     <section class="vertical strong">
       <a name="allAreas" />
       <h3>Areas</h3>
@@ -23,75 +17,48 @@
         Find out how we can help.
       </p>
       <div class="links">
-        <NuxtLink v-for="area in areas" :key="area.id" :to="`/areas/${area.id}`"
+        <NuxtLink v-for="area in data" :key="area.id" :to="`/areas/${area.id}`"
           ><button class="strong">
             {{ area.title }}
           </button></NuxtLink
         >
       </div>
     </section>
-    <div v-for="area in areas" :key="area.id">
-      <section class="horizontal strong" v-if="area.id % 2 == 0">
-        <div class="image">
-          <img :src="`data:image/png;base64,` + area.main_image" />
-        </div>
-        <div class="text">
-          <h2>{{ area.title }}</h2>
-          <p>{{ area.subtitle }}</p>
-          <NuxtLink :to="`/areas/${area.id}`">
-            <button class="light">Learn More</button></NuxtLink
-          >
-        </div>
-      </section>
-      <section class="horizontal light" v-if="area.id % 2 != 0">
-        <div class="text">
-          <h2>{{ area.title }}</h2>
-          <p>{{ area.subtitle }}</p>
-          <NuxtLink :to="`/areas/${area.id}`">
-            <button class="light">Learn More</button></NuxtLink
-          >
-        </div>
-        <div class="image">
-          <img :src="`data:image/png;base64,` + area.main_image" />
-        </div>
-      </section>
+    <div v-for="area in data" :key="area.id">
+      <card-section
+        v-if="area.id % 2 == 0"
+        :props="['strong', 'left', 'h2', 'light']"
+        :title="area.title"
+        :text="area.subtitle"
+        :image="`data:image/png;base64,${area.main_image}`"
+        :link="`/areas/${area.id}`"
+        :button="'Learn More'"
+      />
+      <card-section
+        v-if="area.id % 2 != 0"
+        :props="['light', 'right', 'h2', 'light']"
+        :title="area.title"
+        :text="area.subtitle"
+        :image="`data:image/png;base64,${area.main_image}`"
+        :link="`/areas/${area.id}`"
+        :button="'Learn More'"
+      />
     </div>
   </main>
 </template>
 
 <script>
+import CardSection from '~/components/TheSection.vue'
 export default {
-  data() {
-    return {
-      areas: ''
-    }
-  },
-  async mounted() {
-    const { data } = await this.$axios.get('/api/areas')
-    this.areas = data
+  components: { CardSection },
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get('/api/areas')
+    return { data }
   }
 }
 </script>
 
 <style scoped>
-div.text {
-  min-width: 400px;
-  width: 50%;
-  padding-top: 100px;
-  padding-left: 100px;
-}
-div.image {
-  width: 50%;
-}
-
-div.image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 div.links {
   display: flex;
   width: 600px;
