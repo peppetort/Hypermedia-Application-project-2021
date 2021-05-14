@@ -25,6 +25,7 @@
           v-for="feature in data.features"
           :key="feature.id"
           :title="feature.title"
+          :image="feature.image"
           :text="feature.description"
         ></card-feature>
       </div>

@@ -55,7 +55,7 @@
     </section>
     <card-section
       :props="['strong', 'left', 'light']"
-      :subtitle="`Responsible for ${data.title}`"
+      :subtitle="`${data.title} Area Manager`"
       :text="[`${data.resp.name}  ${data.resp.surname}`]"
       :image="`data:image/png;base64,${data.resp.image}`"
       :link="`/roles/people/${data.responsible}`"

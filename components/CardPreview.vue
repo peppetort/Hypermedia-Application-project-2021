@@ -1,6 +1,16 @@
 <template>
-  <NuxtLink :to="`${link}`">
-    <div class="card">
+  <div>
+    <NuxtLink :to="`${link}`" v-if="link != ''">
+      <div class="card">
+        <div class="image">
+          <img :src="image" />
+        </div>
+        <div class="text">
+          <p>{{ title }}</p>
+        </div>
+      </div>
+    </NuxtLink>
+    <div class="card" v-if="link == ''">
       <div class="image">
         <img :src="image" />
       </div>
@@ -8,7 +18,7 @@
         <p>{{ title }}</p>
       </div>
     </div>
-  </NuxtLink>
+  </div>
 </template>
 
 <script>
@@ -31,12 +41,12 @@ div.card {
 
 div.image {
   width: 100%;
-  height: 200px;
   max-height: 300px;
 }
 
 div.image img {
   max-width: 100%;
+  height: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -52,8 +62,7 @@ div.text p {
   margin-inline: 10px;
   width: 100%;
   word-wrap: wrap;
-  word-break: break-all;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
 }
 </style>

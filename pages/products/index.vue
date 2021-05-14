@@ -2,8 +2,15 @@
   <main class="container">
     <section class="vertical light">
       <h1>Our Products</h1>
-      <p>Descrizione</p>
-      <!-- TODO: insert image -->
+      <p>
+        Want some help finding products that fit your needs? We can provide your
+        organization with solutions for everything from networking and data
+        center to collaboration and security. Find the options best suited to
+        your business needs.
+      </p>
+      <div class="image">
+        <img src="~/assets/products/product.webp" />
+      </div>
     </section>
     <section class="vertical light">
       <h2>Select your Area</h2>
@@ -39,5 +46,18 @@ div.links {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+}
+
+div.image {
+  width: 100%;
+  max-height: 300px;
+}
+
+div.image img {
+  max-width: 100%;
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

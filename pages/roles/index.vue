@@ -2,11 +2,14 @@
   <main class="container">
     <section class="vertical strong">
       <h1>Our Roles</h1>
-      <p>Short overview of the company roles</p>
+      <p>
+        We have a team of specialists for every need. Every day they create,
+        test and produce cutting-edge products for your organization
+      </p>
     </section>
-    <div v-for="role in data" :key="role.id">
+    <div v-for="(role, index) in data" :key="role.id">
       <card-section
-        v-if="role.id % 2 != 0"
+        v-if="index % 2 == 0"
         :props="['light', 'left', 'light']"
         :subtitle="role.title"
         :text="[role.description]"
@@ -15,7 +18,7 @@
         :button="'Learn More'"
       />
       <card-section
-        v-if="role.id % 2 == 0"
+        v-if="index % 2 != 0"
         :props="['strong', 'right', 'light']"
         :subtitle="role.title"
         :text="[role.description]"
