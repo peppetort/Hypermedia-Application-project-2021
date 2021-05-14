@@ -1,11 +1,13 @@
 <template>
   <main class="container">
     <card-section
-      :props="['light', 'left', 'h1', 'strong']"
+      :props="['light', 'left', 'strong']"
       :title="'OUR AREAS'"
-      :text="'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'"
+      :text="[
+        'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'
+      ]"
       :image="'~/static/areas/areas-intro.webp'"
-      :link="'#allAreas'"
+      :link="'/areas/#allAreas'"
       :button="'Discover more'"
     />
     <section class="vertical strong">
@@ -24,21 +26,21 @@
         >
       </div>
     </section>
-    <div v-for="area in data" :key="area.id">
+    <div v-for="(area, index) in data" :key="area.id">
       <card-section
-        v-if="area.id % 2 == 0"
-        :props="['strong', 'left', 'h2', 'light']"
-        :title="area.title"
-        :text="area.subtitle"
+        v-if="index % 2 != 0"
+        :props="['strong', 'left', 'light']"
+        :subtitle="area.title"
+        :text="[area.subtitle]"
         :image="`data:image/png;base64,${area.main_image}`"
         :link="`/areas/${area.id}`"
         :button="'Learn More'"
       />
       <card-section
-        v-if="area.id % 2 != 0"
-        :props="['light', 'right', 'h2', 'light']"
-        :title="area.title"
-        :text="area.subtitle"
+        v-if="index % 2 == 0"
+        :props="['light', 'right', 'light']"
+        :subtitle="area.title"
+        :text="[area.subtitle]"
         :image="`data:image/png;base64,${area.main_image}`"
         :link="`/areas/${area.id}`"
         :button="'Learn More'"

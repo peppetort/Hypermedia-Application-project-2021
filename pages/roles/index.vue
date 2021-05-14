@@ -7,18 +7,18 @@
     <div v-for="role in data" :key="role.id">
       <card-section
         v-if="role.id % 2 != 0"
-        :props="['light', 'left', 'h2', 'light']"
-        :title="role.title"
-        :text="role.description"
+        :props="['light', 'left', 'light']"
+        :subtitle="role.title"
+        :text="[role.description]"
         :image="`data:image/png;base64,${role.image}`"
         :link="`/roles/${role.id}`"
         :button="'Learn More'"
       />
       <card-section
         v-if="role.id % 2 == 0"
-        :props="['strong', 'right', 'h2', 'light']"
-        :title="role.title"
-        :text="role.description"
+        :props="['strong', 'right', 'light']"
+        :subtitle="role.title"
+        :text="[role.description]"
         :image="`data:image/png;base64,${role.image}`"
         :link="`/roles/${role.id}`"
         :button="'Learn More'"

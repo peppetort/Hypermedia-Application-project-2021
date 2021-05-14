@@ -69,6 +69,14 @@ section.horizontal {
   flex-direction: row;
 }
 
+div.cards {
+  display: flex;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
 button {
   text-align: center;
   cursor: pointer;

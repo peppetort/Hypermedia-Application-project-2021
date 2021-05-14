@@ -8,17 +8,17 @@
       :look="'strong'"
     />
     <card-section
-      :props="['strong', 'left', 'h1', 'light']"
+      :props="['strong', 'left', 'light']"
       :title="data.title"
-      :text="data.subtitle"
+      :text="[data.subtitle]"
       :image="`data:image/png;base64,${data.main_image}`"
       :link="'/contacts'"
       :button="'Contact Us'"
     />
     <card-section
-      :props="['light', 'right', 'h2']"
-      :title="'Description'"
-      :text="data.description"
+      :props="['light', 'right']"
+      :subtitle="'Description'"
+      :text="[data.description]"
       :image="`data:image/png;base64,${data.second_image}`"
     />
     <section class="vertical strong">
@@ -41,11 +41,12 @@
         meant to be"​
       </p>
       <div class="cards">
-        <card-product-preview
+        <card-preview
           v-for="product in data.products"
           :key="product.id"
           :title="product.title"
-          :id="product.id"
+          :image="`data:image/png;base64,${product.image}`"
+          :link="`/products/${product.id}`"
         />
       </div>
       <div id="link-products">
@@ -53,9 +54,9 @@
       </div>
     </section>
     <card-section
-      :props="['strong', 'left', 'h2', 'light']"
-      :title="`Responsible for ${data.title}`"
-      :text="`${data.resp.name}  ${data.resp.surname}`"
+      :props="['strong', 'left', 'light']"
+      :subtitle="`Responsible for ${data.title}`"
+      :text="[`${data.resp.name}  ${data.resp.surname}`]"
       :image="`data:image/png;base64,${data.resp.image}`"
       :link="`/roles/people/${data.responsible}`"
       :button="'See More'"
@@ -67,9 +68,9 @@
 import NavBar from '~/components/TheNavBar.vue'
 import CardSection from '~/components/TheSection.vue'
 import FeatureCard from '~/components/CardFeauture.vue'
-import CardProductPreview from '~/components/CardProductPreview.vue'
+import CardPreview from '~/components/CardPreview.vue'
 export default {
-  components: { NavBar, CardSection, FeatureCard, CardProductPreview },
+  components: { NavBar, CardSection, FeatureCard, CardPreview },
   async asyncData({ $axios, params }) {
     const { id } = params
     const { data } = await $axios.get(`/api/areas/${id}`)
@@ -85,14 +86,6 @@ export default {
 </script>
 
 <style scoped>
-div.cards {
-  display: flex;
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-}
-
 #link-products {
   margin-inline: auto;
   width: 1420px;
@@ -103,7 +96,7 @@ div.cards {
 #link-products a {
   font-size: 35px;
   font-weight: bold;
-  margin-right: 100px;
+  margin-right: 80px;
   text-decoration: none;
 }
 </style>

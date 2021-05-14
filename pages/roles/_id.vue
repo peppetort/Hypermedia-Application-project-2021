@@ -8,39 +8,39 @@
       :look="'strong'"
     />
     <card-section
-      :props="['strong', 'left', 'h1', 'strong']"
+      :props="['strong', 'left', 'strong']"
       :title="data.title"
       :image="`data:image/png;base64,${data.icon}`"
       :link="`#people`"
       :button="'Discover More'"
     />
     <card-section
-      :props="['light', 'right', 'h2']"
-      :title="'Description'"
-      :text="data.description"
+      :props="['light', 'right']"
+      :subtitle="'Description'"
+      :text="[data.description]"
       :image="`data:image/png;base64,${data.image}`"
     />
     <section class="vertical strong">
       <div class="text">
-        <h2>General {{ title }} responsibilities</h2>
-        <p>frase potente motivazionale</p>
+        <h2>General {{ data.title }} responsibilities</h2>
       </div>
-      <div class="card">
-        <card-responsibilities :text="responsibility1"></card-responsibilities>
-        <card-responsibilities :text="responsibility2"></card-responsibilities>
-        <card-responsibilities :text="responsibility3"></card-responsibilities>
+      <div class="cards">
+        <!-- TODO: aggiungere immagine -->
+        <card-preview :title="data.responsibility1" :image="``" />
+        <card-preview :title="data.responsibility2" :image="``" />
+        <card-preview :title="data.responsibility3" :image="``" />
       </div>
     </section>
     <section class="vertical light">
-      <h2>Who are our {{ title }}s</h2>
-      <p>Frase potente motivazionale</p>
-      <div class="card">
-        <card-person
+      <h2>Who are our {{ data.title }}s</h2>
+      <div class="cards">
+        <card-preview
           v-for="person in data.empl"
           :key="person.id"
-          :name="person.name"
-          :id="person.id"
-        ></card-person>
+          :title="`${person.name} ${person.surname}`"
+          :image="`data:image/png;base64,${person.image}`"
+          :link="`/role/people/${person.id}`"
+        />
       </div>
     </section>
   </main>
@@ -49,10 +49,9 @@
 <script>
 import NavBar from '~/components/TheNavBar.vue'
 import CardSection from '~/components/TheSection.vue'
-import CardResponsibilities from '~/components/CardResponsibilities.vue'
-import CardPerson from '~/components/CardPerson.vue'
+import CardPreview from '~/components/CardPreview.vue'
 export default {
-  components: { NavBar, CardSection, CardResponsibilities, CardPerson },
+  components: { NavBar, CardSection, CardPreview },
   async asyncData({ $axios, params }) {
     const { id } = params
     const { data } = await $axios.get(`api/roles/${id}`)
@@ -61,18 +60,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-div.card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 5px;
-  margin-top: 50px;
-}
-div.people {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-</style>

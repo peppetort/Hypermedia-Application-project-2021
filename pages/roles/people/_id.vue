@@ -3,21 +3,16 @@
     <nav-bar
       :path="[
         ['/roles', 'All roles'],
-        [`/roles${data.role}`, `${data.rol.title}`],
+        [`/roles/${data.role}`, `${data.rol.title}`],
         [`/roles/people/${data.id}`, `${data.name} ${data.surname}`]
       ]"
       :look="'light'"
     />
     <card-section
-      :props="['light', 'left', 'h1']"
+      :props="['light', 'left']"
       :title="`${data.name} ${data.surname}`"
-      :text="data.description"
-      :image="`data:image/png;base64,${data.image}`"
-    />
-    <card-section
-      :props="['strong', 'right', 'h2']"
-      :title="`${data.name}'s contact informations`"
-      :text="`<ul><li>Phone: ${data.phone}</li><li>Email: ${data.email}</li></ul>`"
+      :subtitle="data.rol.title"
+      :text="[data.phone, data.email, data.description]"
       :image="`data:image/png;base64,${data.image}`"
     />
   </main>
@@ -34,7 +29,7 @@ export default {
   async asyncData({ $axios, params }) {
     const { id } = params
     const { data } = await $axios.get(`/api/person/${id}`)
-    data.rol = await $axios.get(`/api/roles/${data.role}`).data
+    data.rol = (await $axios.get(`/api/roles/${data.role}`)).data
     return { data }
   }
 }

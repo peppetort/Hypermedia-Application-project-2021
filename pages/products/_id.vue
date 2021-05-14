@@ -12,9 +12,9 @@
       <h1>{{ data.title }}</h1>
     </section>
     <card-section
-      :props="['light', 'left', 'h2']"
-      :title="data.subtitle"
-      :text="data.description"
+      :props="['light', 'left']"
+      :subtitle="data.subtitle"
+      :text="[data.description]"
       :image="`data:image/png;base64,${data.image}`"
     />
     <section class="vertical strong">
@@ -30,18 +30,20 @@
       </div>
     </section>
     <card-section
-      :props="['light', 'left', 'h2', 'light']"
-      :title="'Project Manager'"
-      :text="`${data.man.name} ${data.man.surname}`"
+      :props="['light', 'left', 'light']"
+      :subtitle="'Project Manager'"
+      :text="[`${data.man.name} ${data.man.surname}`]"
       :image="`data:image/png;base64,${data.man.image}`"
       :link="`/roles/people/${data.manager}`"
       :button="'See More'"
     />
     <section class="vertical strong">
       <h2>Responsible for Assistence</h2>
-      <div class="cards" v-for="ass in data.assistence" :key="ass.id">
-        <card-person
-          :name="`${ass.name} ${ass.surname}`"
+      <div class="cards">
+        <card-preview
+          v-for="ass in data.assistence"
+          :key="ass.id"
+          :title="`${ass.name} ${ass.surname}`"
           :image="`data:image/png;base64,${ass.image}`"
           :link="`/role/people/${ass.id}`"
         />
@@ -54,9 +56,9 @@
 import NavBar from '~/components/TheNavBar.vue'
 import CardSection from '~/components/TheSection.vue'
 import CardFeature from '~/components/CardFeauture.vue'
-import CardPerson from '~/components/CardPerson.vue'
+import CardPreview from '~/components/CardPreview.vue'
 export default {
-  components: { NavBar, CardSection, CardFeature, CardPerson },
+  components: { NavBar, CardSection, CardFeature, CardPreview },
   async asyncData({ $axios, params }) {
     const { id } = params
     const { data } = await $axios.get(`/api/products/${id}`)
@@ -70,13 +72,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-div.cards {
-  display: flex;
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-}
-</style>

@@ -51,8 +51,8 @@ function defineDatabaseStructure() {
   const Role = db.define('Role', {
     title: DataTypes.STRING,
     description: DataTypes.STRING(1000),
-    image: DataTypes.STRING(200000),
-    icon: DataTypes.STRING(200000),
+    image: DataTypes.STRING(300000),
+    icon: DataTypes.STRING(300000),
     responsibility1: DataTypes.STRING(1000),
     responsibility2: DataTypes.STRING(1000),
     responsibility3: DataTypes.STRING(1000)
@@ -99,7 +99,7 @@ async function initializeDatabase() {
   defineDatabaseStructure()
   await db.sync()
   // Remove comment only if db is empty
-  insertData()
+  //insertData()
   return db
 }
 
@@ -173,7 +173,6 @@ function insertPerson(person) {
       image: getImage(imagePath),
       role: el['role']
     })
-    setTimeout(() => {}, 1000)
   })
 }
 
@@ -212,7 +211,6 @@ function insertArea(area) {
       second_image: getImage(secondPath),
       responsible: el['responsible']
     })
-    setTimeout(() => {}, 1000)
   })
 }
 
@@ -240,7 +238,6 @@ function insertProduct(product) {
       area: el['area'],
       manager: el['manager']
     })
-    setTimeout(() => {}, 1000)
   })
 }
 
@@ -250,9 +247,8 @@ function insertAssistance(assistance) {
   assistance.forEach(async (el) => {
     await Assistance.create({
       person: el['person'],
-      product: el['prodict']
+      product: el['product']
     })
-    setTimeout(() => {}, 1000)
   })
 }
 
@@ -268,7 +264,6 @@ function insertFeature(feature) {
       'DB',
       'Images',
       'Feature',
-      el['area'].toString(),
       el['image'].toString()
     )
 
@@ -302,7 +297,6 @@ function insertFeature(feature) {
     }
 
     await Feature.create(x)
-    setTimeout(() => {}, 1000)
   })
 }
 
@@ -334,10 +328,10 @@ function insertData() {
       }, 20000)
       setTimeout(() => {
         insertAssistance(content['Assistance'])
-      }, 10000)
+      }, 30000)
       setTimeout(() => {
         insertFeature(content['Feature'])
-      }, 10000)
+      }, 30000)
     } catch (err) {
       console.log('Error parsing JSON string:', err)
     }

@@ -18,13 +18,14 @@
       >
     </section>
     <section class="vertical light">
-      <div class="cards">
-        <card-product-preview
+      <div class="grid">
+        <card-preview
           v-for="product in data.products"
           :key="product.id"
           :title="product.title"
-          :id="product.id"
-        ></card-product-preview>
+          :image="`data:image/png;base64,${product.image}`"
+          :link="`/products/${product.id}`"
+        ></card-preview>
       </div>
     </section>
   </main>
@@ -32,9 +33,9 @@
 
 <script>
 import NavBar from '~/components/TheNavBar.vue'
-import CardProductPreview from '~/components/CardProductPreview.vue'
+import CardPreview from '~/components/CardPreview.vue'
 export default {
-  components: { NavBar, CardProductPreview },
+  components: { NavBar, CardPreview },
   async asyncData({ $axios, params }) {
     const { id } = params
     const { data } = await $axios.get(`api/areas/${id}`)
@@ -45,34 +46,34 @@ export default {
 </script>
 
 <style scoped>
-div.cards {
+div.grid {
   display: grid;
   padding-left: 5%;
   padding-right: 5%;
   grid-gap: 5%;
   grid-template-columns: repeat(4, minmax(100px, 1fr));
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-rows: minmax(100px, 100%);
   justify-content: center;
 }
 
 @media (min-width: 200px) {
-  div.cards {
+  div.grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (min-width: 600px) {
-  div.cards {
+  div.grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1200px) {
-  div.cards {
+  div.grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1500px) {
-  div.cards {
+  div.grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
