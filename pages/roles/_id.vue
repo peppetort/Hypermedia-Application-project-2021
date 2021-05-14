@@ -19,24 +19,30 @@
       :subtitle="'Description'"
       :text="[data.description]"
       :image="`data:image/png;base64,${data.image}`"
+      :wrap="'wrap-reverse'"
     />
     <section class="vertical strong">
       <div class="text">
         <h2>General {{ data.title }} responsibilities</h2>
       </div>
-      <div class="cards">
-        <card-preview
-          :title="data.responsibility1"
-          :image="data.staticImages[0]"
-        />
-        <card-preview
-          :title="data.responsibility2"
-          :image="data.staticImages[1]"
-        />
-        <card-preview
-          :title="data.responsibility3"
-          :image="data.staticImages[2]"
-        />
+      <div class="l">
+        <div class="cards">
+          <card-preview
+            class="card"
+            :title="data.responsibility1"
+            :image="data.staticImages[0]"
+          />
+          <card-preview
+            class="card"
+            :title="data.responsibility2"
+            :image="data.staticImages[1]"
+          />
+          <card-preview
+            class="card"
+            :title="data.responsibility3"
+            :image="data.staticImages[2]"
+          />
+        </div>
       </div>
     </section>
     <section class="vertical light">
@@ -73,3 +79,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+div.l {
+  display: flex;
+}
+div.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+div.card {
+  margin-bottom: 20px;
+}
+</style>

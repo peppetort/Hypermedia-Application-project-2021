@@ -1,5 +1,5 @@
 <template>
-  <section :class="`horizontal ${props[0]}`">
+  <section :class="`horizontal ${props[0]}`" :style="{ 'flex-wrap': wrap }">
     <div class="image" v-if="props[1] == 'right'">
       <img :src="image" />
     </div>
@@ -26,27 +26,49 @@ export default {
     text: { type: Array, default: () => [] },
     image: { type: String, default: () => '' },
     link: { type: String, default: () => '' },
-    button: { type: String, default: () => '' }
+    button: { type: String, default: () => '' },
+    wrap: { type: String, default: () => 'wrap' }
   }
 }
 </script>
 
 <style scoped>
 div.text {
-  min-width: 400px;
-  width: 50%;
+  width: 80%;
   padding-top: 100px;
-  padding-left: 100px;
-}
-div.image {
-  width: 50%;
+  text-align: center;
 }
 
 div.image img {
+  margin-top: 10%;
   max-width: 100%;
   height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 700px) {
+  div.image img {
+    margin-left: 30%;
+    margin-right: auto;
+    width: 400px;
+  }
+  div.text {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1100px) {
+  div.image {
+    width: 40%;
+    margin-top: 10%;
+  }
+  div.text {
+    width: 50%;
+  }
+  div.text {
+    text-align: justify;
+  }
 }
 </style>

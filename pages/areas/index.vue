@@ -18,12 +18,17 @@
         IT solutions to meet your organization's needs.<br />
         Find out how we can help.
       </p>
-      <div class="links">
-        <NuxtLink v-for="area in data" :key="area.id" :to="`/areas/${area.id}`"
-          ><button class="strong">
-            {{ area.title }}
-          </button></NuxtLink
-        >
+      <div class="l">
+        <div class="links">
+          <NuxtLink
+            v-for="area in data"
+            :key="area.id"
+            :to="`/areas/${area.id}`"
+            ><button class="strong btn">
+              {{ area.title }}
+            </button></NuxtLink
+          >
+        </div>
       </div>
     </section>
     <div v-for="(area, index) in data" :key="area.id">
@@ -44,6 +49,7 @@
         :image="`data:image/png;base64,${area.main_image}`"
         :link="`/areas/${area.id}`"
         :button="'Learn More'"
+        :wrap="'wrap-reverse'"
       />
     </div>
   </main>
@@ -63,8 +69,20 @@ export default {
 </script>
 
 <style scoped>
+div.l {
+  display: flex;
+}
+button {
+  text-align: center;
+  display: block;
+  height: 80px;
+  width: 140px;
+  margin-top: 10px;
+}
 div.links {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 600px;
   justify-content: space-between;
   padding: 5px;

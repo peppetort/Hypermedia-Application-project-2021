@@ -33,10 +33,9 @@ export default {
 
 <style scoped>
 div.card {
-  width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-inline: 35px;
 }
 
 div.image {
@@ -64,5 +63,12 @@ div.text p {
   word-wrap: wrap;
   text-align: center;
   font-weight: bold;
+}
+
+@media (min-width: 900px) {
+  div.card {
+    width: 300px;
+    margin-inline: 35px;
+  }
 }
 </style>

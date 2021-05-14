@@ -14,15 +14,17 @@
     </section>
     <section class="vertical light">
       <h2>Select your Area</h2>
-      <div class="links">
-        <NuxtLink
-          v-for="area in data"
-          :key="area.id"
-          :to="`products/area/${area.id}`"
-          ><button class="strong">
-            {{ area.title }}
-          </button></NuxtLink
-        >
+      <div class="l">
+        <div class="links">
+          <NuxtLink
+            v-for="area in data"
+            :key="area.id"
+            :to="`products/area/${area.id}`"
+            ><button class="strong">
+              {{ area.title }}
+            </button></NuxtLink
+          >
+        </div>
       </div>
     </section>
   </main>
@@ -38,8 +40,13 @@ export default {
 </script>
 
 <style scoped>
+div.l {
+  display: flex;
+}
 div.links {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 600px;
   justify-content: space-between;
   padding: 5px;
@@ -48,16 +55,29 @@ div.links {
   margin-top: 50px;
 }
 
-div.image {
-  width: 100%;
-  max-height: 300px;
-}
-
 div.image img {
-  max-width: 100%;
-  height: 400px;
+  height: auto;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+button {
+  text-align: center;
+  display: block;
+  height: 80px;
+  width: 140px;
+  margin-top: 10px;
+}
+
+@media (min-width: 900px) {
+  div.image {
+    height: auto;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>

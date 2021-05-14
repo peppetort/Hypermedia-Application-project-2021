@@ -31,6 +31,7 @@ div.card {
   display: flex;
   flex-direction: column;
   margin-inline: 35px;
+  margin-top: 10px;
 }
 
 div.icon {

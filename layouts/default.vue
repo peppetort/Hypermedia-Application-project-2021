@@ -30,6 +30,12 @@ html {
   box-sizing: border-box;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 h1 {
   font-size: 60px;
 }
@@ -49,7 +55,6 @@ p {
 section {
   display: flex;
   padding: 50px;
-  flex-direction: row;
 }
 
 section.light {
