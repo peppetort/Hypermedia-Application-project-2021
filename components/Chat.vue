@@ -35,27 +35,26 @@
 
 <script>
 export default {
-  /*props: {
-      chatList: {
+  props: {
+    chatList: {
       type: Array,
       required: true
     }
-  },*/
+  },
   data() {
     return {
       messageToSend: '',
-      isOpen: true,
-      chatList: []
+      isOpen: true
     }
   },
   methods: {
     sendMessage() {
-      this.chatList.push({
+      /*this.chatList.push({
         sender: false,
         content: this.messageToSend
       })
-      this.messageToSend = ''
-      /*const { WebSocketEventBus } = require('mmcc/WebSocketEventBus')
+      this.messageToSend = ''*/
+      const { WebSocketEventBus } = require('mmcc/WebSocketEventBus')
       this.$store.commit('addMessage', {
         sender: false,
         content: this.messageToSend
@@ -65,7 +64,7 @@ export default {
         configurationId: process.env.configurationId
       }
       WebSocketEventBus.$emit('send', packet)
-      this.messageToSend = ''*/
+      this.messageToSend = ''
     }
   }
 }

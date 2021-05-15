@@ -2,7 +2,8 @@ export default {
   ssr: true,
   target: 'server',
   env: {
-    BASE_URL: '' // Development URL
+    BASE_URL: '', // Development URL
+    configurationId: 'e90a00dd-bae1-4293-9025-ef23767a2b8b'
   },
   serverMiddleware: [
     {

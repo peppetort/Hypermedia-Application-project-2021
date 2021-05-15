@@ -1,4 +1,4 @@
 import Vue from 'vue'
-//import OnClick from 'mmcc/Onclick.vue'
+import OnClick from 'mmcc/Onclick.vue'
 
-//Vue.component('mmcc-on-click', OnClick)
+Vue.component('mmcc-on-click', OnClick)
