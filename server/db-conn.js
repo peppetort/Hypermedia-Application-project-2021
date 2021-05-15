@@ -58,20 +58,11 @@ function defineDatabaseStructure() {
     responsibility3: DataTypes.STRING(1000)
   })
 
-  /*Person.hasOne(Area, { foreignKey: 'responsible' })
-  Area.hasOne(Product, { foreignKey: 'area' })
-  Person.hasOne(Product, { foreignKey: 'manager' })
-  Area.hasOne(Feature, { foreignKey: 'area' })
-  Product.hasOne(Feature, { foreignKey: 'product' })
-  Person.belongsToMany(Product, { through: Assistance, foreignKey: 'person' })
-  Product.belongsToMany(Person, { through: Assistance, foreignKey: 'product' })
-  Role.hasOne(Person, { foreignKey: 'role' })*/
-
   Area.belongsTo(Person, { foreignKey: 'responsible' })
   Product.belongsTo(Area, { foreignKey: 'area' })
   Area.hasMany(Product, { foreignKey: 'area' })
   Product.belongsTo(Person, { foreignKey: 'manager' })
-  Person.hasMany(Product, { foreignKey: 'manager' }) // -> correct?
+  Person.hasMany(Product, { foreignKey: 'manager' })
   Feature.belongsTo(Area, { foreignKey: 'area' })
   Area.hasMany(Feature, { foreignKey: 'area' })
   Feature.belongsTo(Product, { foreignKey: 'product' })
@@ -95,7 +86,6 @@ function defineDatabaseStructure() {
  * Function to initialize the database. This is exported and called in the main api.js file
  */
 async function initializeDatabase() {
-  // Synchronize Sequelize with the actual database
   defineDatabaseStructure()
   await db.sync()
   // Remove comment only if db is empty

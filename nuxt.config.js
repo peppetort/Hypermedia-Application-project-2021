@@ -2,7 +2,9 @@ export default {
   ssr: true,
   target: 'server',
   env: {
-    BASE_URL: '' // Development URL
+    BASE_URL: '', // Development URL
+    DATABASE_URL:
+      'postgres://xuijyptapitgaa:597e47f2bbbe3e7f0935de86d876068e62329f20dc2b81928d6afbb6347f4da4@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/df196knlhloog?currentSchema=hypermediaProject2021'
   },
   serverMiddleware: [
     {
@@ -12,7 +14,7 @@ export default {
   ],
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'A WebSite - WoW',
+    title: 'TechToch',
     htmlAttrs: {
       lang: 'en'
     },

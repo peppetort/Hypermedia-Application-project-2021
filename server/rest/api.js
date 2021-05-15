@@ -34,6 +34,15 @@ async function init() {
     return res.json(products)
   })
 
+  //api to get all products related to a person
+  app.get('/products/person/:id', async (req, res) => {
+    const person = req.params.id
+    const people = await Product.findAll({
+      where: { manager: person }
+    })
+    return res.json(people)
+  })
+
   //api to get all the areas
   app.get('/areas', async (req, res) => {
     const areas = await Area.findAll()
@@ -45,6 +54,15 @@ async function init() {
     const area = req.params.id
     const selected = await Area.findOne({
       where: { id: area }
+    })
+    return res.json(selected)
+  })
+
+  //api to get all area by manager id
+  app.get('/areas/manager/:id', async (req, res) => {
+    const manager = req.params.id
+    const selected = await Area.findOne({
+      where: { responsible: manager }
     })
     return res.json(selected)
   })
@@ -103,22 +121,28 @@ async function init() {
     return res.json(r)
   })
 
-  app.get('/roles', async (req, res) => {
-    const roles = await Role.findAll()
-    return res.json(roles)
-  })
-
   //api to get all assistance people by product id
-  //TODO: finire query non so come si fa join
   app.get('/assistance/product/:id', async (req, res) => {
     const product = req.params.id
     const people = await Person.findAll({
       include: {
-        model: Association,
-        where: { product: product }
+        model: Product,
+        where: { id: product }
       }
     })
     return res.json(people)
+  })
+
+  //api to get all assistance product by person id
+  app.get('/assistance/person/:id', async (req, res) => {
+    const person = req.params.id
+    const products = await Product.findAll({
+      include: {
+        model: Person,
+        where: { id: person }
+      }
+    })
+    return res.json(products)
   })
 }
 

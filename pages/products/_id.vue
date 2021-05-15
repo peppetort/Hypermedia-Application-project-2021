@@ -3,7 +3,7 @@
     <nav-bar
       :path="[
         ['/products', 'All products'],
-        [`/products/area/${data.area}`, `${data.area_title} products`],
+        [`/products/area/${data.area}`, `${data.area_ref.title} products`],
         [`/products/${data.id}`, `${data.title}`]
       ]"
       :look="'light'"
@@ -12,10 +12,12 @@
       <h1>{{ data.title }}</h1>
     </section>
     <card-section
-      :props="['light', 'left']"
+      :props="['light', 'left', 'light']"
       :subtitle="data.subtitle"
       :text="[data.description]"
       :image="`data:image/png;base64,${data.image}`"
+      :link="`/areas/${data.area_ref.id}`"
+      :button="`#${data.area_ref.title.toLowerCase()}`"
     />
     <section class="vertical strong">
       <h2>Features</h2>
@@ -46,7 +48,7 @@
           :key="ass.id"
           :title="`${ass.name} ${ass.surname}`"
           :image="`data:image/png;base64,${ass.image}`"
-          :link="`/role/people/${ass.id}`"
+          :link="`/roles/people/${ass.id}`"
         />
       </div>
     </section>
@@ -63,12 +65,12 @@ export default {
   async asyncData({ $axios, params }) {
     const { id } = params
     const { data } = await $axios.get(`/api/products/${id}`)
-    data.area_title = (await $axios.get(`/api/areas/${data.area}`)).data.title
+    data.area_ref = (await $axios.get(`/api/areas/${data.area}`)).data
     data.features = (await $axios.get(`/api/features/product/${data.id}`)).data
     data.man = (await $axios.get(`/api/person/${data.manager}`)).data
-    /*     data.assistence = (
+    data.assistence = (
       await $axios.get(`/api/assistance/product/${data.id}`)
-    ).data */
+    ).data
     return { data }
   }
 }

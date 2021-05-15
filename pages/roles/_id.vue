@@ -26,17 +26,14 @@
       </div>
       <div class="cards">
         <card-preview
-          class="card"
           :title="data.responsibility1"
           :image="data.staticImages[0]"
         />
         <card-preview
-          class="card"
           :title="data.responsibility2"
           :image="data.staticImages[1]"
         />
         <card-preview
-          class="card"
           :title="data.responsibility3"
           :image="data.staticImages[2]"
         />
@@ -45,13 +42,13 @@
     <section class="vertical light">
       <a href="people" />
       <h2>Who are our {{ data.title }}s</h2>
-      <div class="cards">
+      <div class="grid">
         <card-preview
           v-for="person in data.empl"
           :key="person.id"
           :title="`${person.name} ${person.surname}`"
           :image="`data:image/png;base64,${person.image}`"
-          :link="`/role/people/${person.id}`"
+          :link="`/roles/people/${person.id}`"
         />
       </div>
     </section>
@@ -66,8 +63,8 @@ export default {
   components: { NavBar, CardSection, CardPreview },
   async asyncData({ $axios, params }) {
     const { id } = params
-    const { data } = await $axios.get(`api/roles/${id}`)
-    data.empl = await $axios.get(`api/person/role/${id}`).data
+    const { data } = await $axios.get(`/api/roles/${id}`)
+    data.empl = (await $axios.get(`/api/person/role/${id}`)).data
     var resp1 = require('~/assets/roles/1.png')
     var resp2 = require('~/assets/roles/2.png')
     var resp3 = require('~/assets/roles/3.png')

@@ -81,6 +81,15 @@ div.links {
   margin-right: auto;
   margin-top: 50px;
 }
+div.grid {
+  display: grid;
+  padding-left: 5%;
+  padding-right: 5%;
+  grid-gap: 5%;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-auto-rows: minmax(100px, 100%);
+  justify-content: center;
+}
 
 button {
   text-align: center;
@@ -138,6 +147,28 @@ a:hover {
     align-items: center;
     margin-left: 0px;
     margin-right: 0px;
+  }
+}
+
+@media (min-width: 200px) {
+  div.grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 600px) {
+  div.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  div.grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1500px) {
+  div.grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 </style>
