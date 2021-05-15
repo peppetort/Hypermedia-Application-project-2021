@@ -30,12 +30,6 @@ html {
   box-sizing: border-box;
 }
 
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 h1 {
   font-size: 60px;
 }
@@ -46,10 +40,6 @@ h2 {
 
 p {
   font-size: 23px;
-}
-
-.container {
-  padding: 10px;
 }
 
 section {
@@ -79,6 +69,16 @@ div.cards {
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
+}
+
+div.links {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  justify-content: space-between;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 50px;
 }
 
@@ -91,6 +91,7 @@ button {
   height: 50px;
   padding-inline: 30px;
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 button.strong {
@@ -121,5 +122,22 @@ a {
 
 a:hover {
   color: grey;
+}
+
+@media (max-width: 800px) {
+  div.links {
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+}
+
+@media (max-width: 1500px) {
+  div.cards {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 </style>

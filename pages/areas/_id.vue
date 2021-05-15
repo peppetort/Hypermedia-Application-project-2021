@@ -49,9 +49,9 @@
           :link="`/products/${product.id}`"
         />
       </div>
-      <div id="link-products">
-        <NuxtLink :to="`/products/area/${data.id}`">See More ></NuxtLink>
-      </div>
+      <NuxtLink id="link-products" :to="`/products/area/${data.id}`"
+        >See More ></NuxtLink
+      >
     </section>
     <card-section
       :props="['strong', 'left', 'light']"
@@ -87,15 +87,10 @@ export default {
 
 <style scoped>
 #link-products {
-  margin-inline: auto;
-  width: 1420px;
-  margin-top: 80px;
   text-align: right;
-}
-
-#link-products a {
   font-size: 35px;
   font-weight: bold;
+  margin-top: 80px;
   margin-right: 80px;
   text-decoration: none;
 }

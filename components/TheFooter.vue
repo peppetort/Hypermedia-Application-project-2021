@@ -74,7 +74,7 @@ export default {
 <style scoped>
 div.footer {
   padding: 10px;
-  background-color: #f2f2f2;
+  background-color: #bdbdbd;
   display: flex;
   flex-direction: column;
 }
@@ -115,5 +115,19 @@ div.column p {
 div.column .title {
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+@media (max-width: 1300px) {
+  div.content {
+    text-align: center;
+    flex-direction: column;
+    padding-inline: 0px;
+    padding-top: 100px;
+    padding-bottom: 0px;
+  }
+
+  div.left {
+    display: none;
+  }
 }
 </style>

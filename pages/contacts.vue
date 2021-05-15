@@ -74,10 +74,8 @@ div.verticalLine {
 }
 
 div.mapouter {
-  position: relative;
-  text-align: right;
-  height: 500px;
-  width: 600px;
+  height: 100%;
+  width: 100%;
 }
 
 div.gmap_canvas {
@@ -114,11 +112,26 @@ form.contact input {
 form.contact textarea {
   resize: none;
   height: 200px;
-  width: 400px;
+  width: auto;
   border-radius: 5px;
 }
 
 form.contact button {
   margin-top: 50px;
+}
+
+@media (max-width: 1400px) {
+  section.horizontal {
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+  }
+
+  div.text {
+    padding-top: 0px;
+    padding-left: 0px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }
 </style>

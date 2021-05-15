@@ -20,16 +20,14 @@
     <section class="vertical strong">
       <h2>Features</h2>
       <p>Solutions that matter for your organization​</p>
-      <div class="l">
-        <div class="cards">
-          <card-feature
-            v-for="feature in data.features"
-            :key="feature.id"
-            :title="feature.title"
-            :image="feature.image"
-            :text="feature.description"
-          ></card-feature>
-        </div>
+      <div class="cards">
+        <card-feature
+          v-for="feature in data.features"
+          :key="feature.id"
+          :title="feature.title"
+          :image="feature.image"
+          :text="feature.description"
+        ></card-feature>
       </div>
     </section>
     <card-section
@@ -39,7 +37,6 @@
       :image="`data:image/png;base64,${data.man.image}`"
       :link="`/roles/people/${data.manager}`"
       :button="'See More'"
-      :wrap="'wrap-reverse'"
     />
     <section class="vertical strong">
       <h2>Responsible for Assistence</h2>
@@ -76,14 +73,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-div.l {
-  display: flex;
-}
-div.cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-</style>
