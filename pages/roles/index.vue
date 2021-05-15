@@ -25,7 +25,6 @@
         :image="`data:image/png;base64,${role.image}`"
         :link="`/roles/${role.id}`"
         :button="'Learn More'"
-        :wrap="'wrap-reverse'"
       />
     </div>
   </main>
