@@ -1,20 +1,48 @@
-# ha_21_Cattaneo-Francella-Sacchetti-Tortorelli
+# Cattaneo-Francella-Sacchetti-Tortorelli
 
-## Build Setup
+## Group Members
 
-```bash
-# install dependencies
-$ npm install
+### Simone Cattaneo
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+- "Codice Persona": 10580991
+- Mail: simone6.cattaneo@mail.polimi.it
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+1. Development of a third of the pages
+2. Back-end database specification
+3. Back-end API development
 
-# generate static project
-$ npm run generate
-```
+### Martina Francella
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+- "Codice Persona": 10744619
+- Mail: @mail.polimi.it
+
+1. Creation of the site design
+2. Writing documentation
+
+### Tommaso Sacchetti
+
+- "Codice Persona": 10694822
+- Mail: tommaso1.sacchetti@mail.polimi.it
+
+1. Development of a third of the pages
+
+### Giuseppe Tortorelli
+
+- "Codice Persona": 10582962
+- Mail: giuseppe.tortorelli@mail.polimi.it
+
+1. Development of a third of the pages
+2. Development of components
+3. Development of the back-end function to populate the DB
+
+## Technical Documentation
+
+### Server
+
+### DB
+
+### Components
+
+### Plugins
+
+## Usage of Nuxt best practices
