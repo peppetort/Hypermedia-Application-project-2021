@@ -51,25 +51,8 @@ div.image img {
   margin-right: auto;
   margin-top: 10%;
 }
-@media (max-width: 1400px) {
-  div.text {
-    padding-top: 0px;
-    padding-left: 0px;
-    text-align: center;
-    padding-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-  }
 
-  div.image {
-    padding-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 900px) {
+@media (max-width: 12 00px) {
   div.image {
     width: 80%;
     height: auto;
