@@ -20,6 +20,7 @@
       :subtitle="'Description'"
       :text="[data.description]"
       :image="`data:image/png;base64,${data.second_image}`"
+      :wrap="'wrap-reverse'"
     />
     <section class="vertical strong">
       <h2>Features</h2>

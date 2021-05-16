@@ -1,5 +1,5 @@
 <template>
-  <section :class="`horizontal ${props[0]}`">
+  <section :class="`horizontal ${props[0]}`" :style="{ 'flex-wrap': wrap }">
     <div class="image" v-if="props[1] == 'right'">
       <img :src="image" />
     </div>
@@ -26,7 +26,8 @@ export default {
     text: { type: Array, default: () => [] },
     image: { type: String, default: () => '' },
     link: { type: String, default: () => '' },
-    button: { type: String, default: () => '' }
+    button: { type: String, default: () => '' },
+    wrap: { type: String, default: () => 'wrap' }
   }
 }
 </script>
@@ -39,7 +40,7 @@ div.text {
 }
 
 div.image {
-  width: 50%;
+  width: 40%;
 }
 
 div.image img {
@@ -48,24 +49,40 @@ div.image img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10%;
 }
-
 @media (max-width: 1400px) {
-  section.horizontal {
-    flex-direction: column;
-    align-items: center;
-    padding: 0px;
-  }
-
   div.text {
     padding-top: 0px;
     padding-left: 0px;
     text-align: center;
     padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
   }
 
   div.image {
     padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  div.image {
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div.text {
+    padding-top: 0px;
+    padding-left: 0px;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 </style>

@@ -11,12 +11,14 @@
 import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
 import Chat from '~/components/Chat.vue'
+import MMCCMixin from '~/mixins/mmcc-mixin'
 export default {
   components: {
     TheHeader,
     TheFooter,
     Chat
-  }
+  },
+  mixins: [MMCCMixin]
 }
 </script>
 
@@ -66,6 +68,7 @@ section.horizontal {
 
 div.cards {
   display: flex;
+  flex-wrap: wrap;
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
@@ -141,12 +144,12 @@ a:hover {
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1300px) {
   div.cards {
     flex-direction: column;
     align-items: center;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -155,7 +158,7 @@ a:hover {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   div.grid {
     grid-template-columns: repeat(2, 1fr);
   }

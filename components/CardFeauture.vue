@@ -60,4 +60,10 @@ div.text p {
   word-wrap: wrap;
   word-break: break-all;
 }
+
+@media (max-width: 600px) {
+  div.card {
+    width: 80%;
+  }
+}
 </style>

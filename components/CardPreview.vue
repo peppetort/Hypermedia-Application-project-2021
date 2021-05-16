@@ -65,4 +65,10 @@ div.text p {
   text-align: center;
   font-weight: bold;
 }
+
+@media (max-width: 600px) {
+  div.card {
+    width: 80%;
+  }
+}
 </style>
