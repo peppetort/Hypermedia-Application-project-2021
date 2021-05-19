@@ -9,7 +9,7 @@
         your business needs.
       </p>
       <div class="image">
-        <img src="~/assets/products/product.webp" />
+        <img src="/products/product.webp" />
       </div>
     </section>
     <section class="vertical light">

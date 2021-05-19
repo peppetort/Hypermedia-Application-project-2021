@@ -6,8 +6,8 @@
       :text="[
         'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'
       ]"
-      :image="data.staticImages[0]"
-      :link="'#allAreas'"
+      :image="'/areas/areas.png'"
+      :link="{ path: '/areas', hash: '#allAreas' }"
       :button="'Discover more'"
     />
     <section class="vertical strong">
@@ -57,8 +57,6 @@ export default {
   components: { CardSection },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/areas')
-    var image = require('~/assets/areas/areas.png')
-    data.staticImages = [image]
     return { data }
   }
 }
