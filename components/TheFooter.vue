@@ -8,7 +8,7 @@
     </div>
     <div class="content">
       <div class="right">
-        <h3>TechToch</h3>
+        <img src="/logo.svg" />
         <p>2010 - 2021</p>
         <p>Privacy terms</p>
       </div>

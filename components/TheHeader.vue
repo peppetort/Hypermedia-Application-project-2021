@@ -3,7 +3,7 @@
     <div class="header">
       <div class="logo">
         <NuxtLink to="/">
-          <img src="/logo.png" />
+          <img src="/logo.svg" />
         </NuxtLink>
       </div>
       <div class="nav-mobile">
@@ -118,7 +118,7 @@ div.nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-right: 60px;
+  margin-right: 40px;
 }
 
 div.nav a {
@@ -184,7 +184,7 @@ div.mobile-menu a {
   margin-top: 10px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
   div.nav {
     display: none;
   }
