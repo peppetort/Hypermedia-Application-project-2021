@@ -8,7 +8,7 @@
     </div>
     <div class="content">
       <div class="right">
-        <h3>NAME</h3>
+        <h3>TechToch</h3>
         <p>2010 - 2021</p>
         <p>Privacy terms</p>
       </div>

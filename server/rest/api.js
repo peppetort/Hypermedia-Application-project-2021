@@ -135,12 +135,17 @@ async function init() {
 
   //api to get all assistance product by person id
   app.get('/assistance/person/:id', async (req, res) => {
-    const person = req.params.id
+    const person_id = req.params.id
+    const obj = await Assistance.findAll({
+      where: { person: person_id },
+      raw: true
+    })
+    var products_id = []
+    for (var o of obj) {
+      products_id.push(o['product'])
+    }
     const products = await Product.findAll({
-      include: {
-        model: Person,
-        where: { id: person }
-      }
+      where: { id: products_id }
     })
     return res.json(products)
   })

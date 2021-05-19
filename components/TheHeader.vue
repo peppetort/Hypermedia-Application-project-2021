@@ -1,5 +1,5 @@
 <template>
-  <div class="m">
+  <div class="container">
     <div class="header">
       <div class="logo">
         <NuxtLink to="/">
@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style scoped>
-div.m {
+div.container {
   height: auto;
   background-color: #bdbdbd;
   display: flex;

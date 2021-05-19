@@ -2,7 +2,7 @@
   <main class="container">
     <section class="vertical strong">
       <div>
-        <h1>Company Name</h1>
+        <h1>TechToch</h1>
       </div>
       <a href="#discover"><button class="strong">Discover more</button></a>
     </section>
@@ -11,7 +11,7 @@
       :props="['light', 'right']"
       :subtitle="'WHO WE ARE'"
       :text="[
-        'Founded in Italy in 2000, today X is a multinational group that focuses its consulting offering on hard technology challenges with large-scale business impact in performance engineering, analytics, security and IoT.',
+        'Founded in Italy in 2000, today TechToch is a multinational group that focuses its consulting offering on hard technology challenges with large-scale business impact in performance engineering, analytics, security and IoT.',
         'By working with some of the most demanding enterprise customers worldwide, X has systematically spun-off, and invested in, industry-leading software companies.'
       ]"
       :image="'/company/milan.png'"

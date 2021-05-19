@@ -5,7 +5,7 @@
       <h2>It seems that the page you are looking for does not exist</h2>
       <NuxtLink to="/"><button class="strong">Home</button></NuxtLink>
     </section>
-    <img id="cat" src="~/static/cat.png" />
+    <img id="cat" src="/cat.png" />
   </main>
 </template>
 
