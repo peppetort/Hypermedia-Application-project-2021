@@ -1,51 +1,56 @@
 <template>
-  <div class="header">
-    <div class="logo">
-      <NuxtLink to="/">
-        <img src="~/static/logo.png" />
-      </NuxtLink>
+  <div class="m">
+    <div class="header">
+      <div class="logo">
+        <NuxtLink to="/">
+          <img src="/logo.png" />
+        </NuxtLink>
+      </div>
+      <div class="nav-mobile">
+        <img id="icon" src="/menu.svg" @click="toggleMenu" />
+      </div>
+      <div class="nav">
+        <div class="dropdown">
+          <NuxtLink to="/areas">Areas</NuxtLink>
+          <div class="dropdown-content">
+            <NuxtLink
+              v-for="area in areas"
+              :key="area.id"
+              :to="`/areas/${area.id}`"
+              >{{ area.title }}</NuxtLink
+            >
+          </div>
+        </div>
+        <div class="dropdown">
+          <NuxtLink to="/products">Products</NuxtLink>
+          <div class="dropdown-content">
+            <NuxtLink
+              v-for="area in areas"
+              :key="area.id"
+              :to="`/products/area/${area.id}`"
+              >{{ area.title }} products</NuxtLink
+            >
+          </div>
+        </div>
+        <div class="dropdown">
+          <NuxtLink to="/roles">Roles</NuxtLink>
+          <div class="dropdown-content">
+            <NuxtLink
+              v-for="role in roles"
+              :key="role.id"
+              :to="`/roles/${role.id}`"
+              >{{ role.title }}</NuxtLink
+            >
+          </div>
+        </div>
+        <NuxtLink to="/company">Company</NuxtLink>
+        <NuxtLink to="/contacts">Contacts</NuxtLink>
+      </div>
     </div>
-    <div class="nav-mobile">
+    <div class="mobile-menu" @click="toggleMenu">
       <NuxtLink to="/areas">Areas</NuxtLink>
       <NuxtLink to="/products">Products</NuxtLink>
       <NuxtLink to="/roles">Roles</NuxtLink>
-      <NuxtLink to="/company">Company</NuxtLink>
-      <NuxtLink to="/contacts">Contacts</NuxtLink>
-    </div>
-    <div class="nav">
-      <div class="dropdown">
-        <NuxtLink to="/areas">Areas</NuxtLink>
-        <div class="dropdown-content">
-          <NuxtLink
-            v-for="area in areas"
-            :key="area.id"
-            :to="`/areas/${area.id}`"
-            >{{ area.title }}</NuxtLink
-          >
-        </div>
-      </div>
-      <div class="dropdown">
-        <NuxtLink to="/products">Products</NuxtLink>
-        <div class="dropdown-content">
-          <NuxtLink
-            v-for="area in areas"
-            :key="area.id"
-            :to="`/products/area/${area.id}`"
-            >{{ area.title }} products</NuxtLink
-          >
-        </div>
-      </div>
-      <div class="dropdown">
-        <NuxtLink to="/roles">Roles</NuxtLink>
-        <div class="dropdown-content">
-          <NuxtLink
-            v-for="role in roles"
-            :key="role.id"
-            :to="`/roles/${role.id}`"
-            >{{ role.title }}</NuxtLink
-          >
-        </div>
-      </div>
       <NuxtLink to="/company">Company</NuxtLink>
       <NuxtLink to="/contacts">Contacts</NuxtLink>
     </div>
@@ -59,11 +64,32 @@ export default {
       areas: this.$store.state.areas,
       roles: this.$store.state.roles
     }
+  },
+  methods: {
+    toggleMenu() {
+      var icon = document.getElementById('icon')
+      var menu = document.getElementsByClassName('mobile-menu')[0]
+
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none'
+        icon.setAttribute('src', '/menu.svg')
+      } else {
+        menu.style.display = 'flex'
+        icon.setAttribute('src', '/close.svg')
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
+div.m {
+  height: auto;
+  background-color: #bdbdbd;
+  display: flex;
+  flex-direction: column;
+}
+
 div.header {
   height: auto;
   background-color: #bdbdbd;
@@ -86,13 +112,8 @@ div.logo img {
   margin-right: auto;
 }
 
-div.nav-mobile {
-  display: none;
-}
-
 div.nav {
   height: 100%;
-  min-width: 530px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -102,7 +123,6 @@ div.nav {
 
 div.nav a {
   text-align: center;
-  border-radius: 2px;
   padding: 20px;
   font-weight: bold;
 }
@@ -118,12 +138,12 @@ div.dropdown-content {
   position: absolute;
   top: 74px;
   background-color: #f2f2f2;
-  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 div.dropdown-content a {
   text-align: left;
+  border-radius: 0px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -135,30 +155,41 @@ div.dropdown-content a {
   color: white;
 }
 
+div.nav-mobile {
+  display: none;
+}
+
+div.nav-mobile img {
+  width: auto;
+  height: 60px;
+  display: block;
+}
+
+div.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+div.mobile-menu a {
+  background: black;
+  color: white;
+  font-weight: bold;
+  width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
 @media (max-width: 750px) {
-  div.header {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
   div.nav {
     display: none;
   }
 
   div.nav-mobile {
-    text-align: center;
     display: flex;
-    flex-direction: column;
-  }
-
-  div.nav-mobile a {
-    background: black;
-    color: white;
-    font-weight: bold;
-    width: 150px;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
   }
 }
 </style>
