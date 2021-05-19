@@ -24,9 +24,12 @@
         </div>
         <div class="column">
           <NuxtLink to="/roles" class="title">Roles</NuxtLink>
-          <NuxtLink to="/roles/0">Area Responsible</NuxtLink>
-          <NuxtLink to="/roles/1">Project Manager</NuxtLink>
-          <NuxtLink to="/roles/2">Assistence Referent</NuxtLink>
+          <NuxtLink
+            v-for="role in roles"
+            :key="role.id"
+            :to="`/roles/${role.id}`"
+            >{{ role.title }}</NuxtLink
+          >
         </div>
         <div class="column">
           <NuxtLink to="/products" class="title">Products</NuxtLink>
@@ -45,12 +48,8 @@
         </div>
         <div class="column">
           <NuxtLink to="/company" class="title">Company</NuxtLink>
-          <NuxtLink to="/compnayy/#">Who we are</NuxtLink>
-          <!-- TODO: completare il link -->
-          <NuxtLink to="/company/#">Partners</NuxtLink>
-          <!-- TODO: completare il link -->
-          <NuxtLink to="/company/#">Our values</NuxtLink>
-          <!-- TODO: completare il link -->
+          <NuxtLink to="/compnay#about">Who we are</NuxtLink>
+          <NuxtLink to="/company#values">Our values</NuxtLink>
         </div>
       </div>
     </div>
@@ -61,12 +60,9 @@
 export default {
   data() {
     return {
-      areas: ''
+      areas: this.$store.state.areas,
+      roles: this.$store.state.roles
     }
-  },
-  async mounted() {
-    const { data } = await this.$axios.get('/api/areas')
-    this.areas = data
   }
 }
 </script>

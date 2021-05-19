@@ -52,7 +52,7 @@ div.image img {
   margin-top: 10%;
 }
 
-@media (max-width: 12 00px) {
+@media (max-width: 1200px) {
   div.image {
     width: 80%;
     height: auto;

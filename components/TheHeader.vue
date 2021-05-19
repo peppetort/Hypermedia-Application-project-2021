@@ -38,9 +38,12 @@
       <div class="dropdown">
         <NuxtLink to="/roles">Roles</NuxtLink>
         <div class="dropdown-content">
-          <NuxtLink to="/roles/1">Responsible of Area</NuxtLink>
-          <NuxtLink to="/roles/2">Project Manager</NuxtLink>
-          <NuxtLink to="/roles/3">Reference for Assistence</NuxtLink>
+          <NuxtLink
+            v-for="role in roles"
+            :key="role.id"
+            :to="`/roles/${role.id}`"
+            >{{ role.title }}</NuxtLink
+          >
         </div>
       </div>
       <NuxtLink to="/company">Company</NuxtLink>
@@ -53,12 +56,9 @@
 export default {
   data() {
     return {
-      areas: ''
+      areas: this.$store.state.areas,
+      roles: this.$store.state.roles
     }
-  },
-  async mounted() {
-    const { data } = await this.$axios.get('/api/areas')
-    this.areas = data
   }
 }
 </script>
