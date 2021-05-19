@@ -64,6 +64,7 @@ div.text p {
 @media (max-width: 600px) {
   div.card {
     width: 80%;
+    height: auto;
   }
 }
 </style>

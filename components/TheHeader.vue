@@ -157,11 +157,12 @@ div.dropdown-content a {
 
 div.nav-mobile {
   display: none;
+  align-items: center;
 }
 
 div.nav-mobile img {
   width: auto;
-  height: 60px;
+  height: 50px;
   display: block;
 }
 

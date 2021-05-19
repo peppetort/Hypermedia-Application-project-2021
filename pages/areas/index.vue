@@ -45,7 +45,6 @@
         :image="`data:image/png;base64,${area.main_image}`"
         :link="`/areas/${area.id}`"
         :button="'Learn More'"
-        :wrap="'wrap-reverse'"
       />
     </div>
   </main>
