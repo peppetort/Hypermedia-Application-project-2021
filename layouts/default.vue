@@ -2,7 +2,7 @@
   <div>
     <the-header />
     <Nuxt />
-    <chat />
+    <chat :chatList="list" />
     <the-footer />
   </div>
 </template>

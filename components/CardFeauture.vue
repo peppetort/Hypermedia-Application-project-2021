@@ -58,7 +58,7 @@ div.text p {
   margin-inline: auto;
   width: 90%;
   word-wrap: wrap;
-  word-break: break-all;
+  word-break: keep-all;
 }
 
 @media (max-width: 600px) {

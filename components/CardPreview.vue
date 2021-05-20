@@ -64,6 +64,7 @@ div.text p {
   word-wrap: wrap;
   text-align: center;
   font-weight: bold;
+  word-break: keep-all;
 }
 
 @media (max-width: 600px) {

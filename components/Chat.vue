@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <textarea
+      <input
         class="chat-input"
         v-model="messageToSend"
         type="text"
@@ -80,7 +80,7 @@ export default {
   margin: 0;
 }
 .button {
-  margin-top: 60px;
+  margin-top: 40px;
   height: 40px;
   width: 40px;
   border: 1px solid black;
@@ -94,9 +94,11 @@ export default {
 .chat-container {
   border: 1px solid black;
   background: white;
+  border-radius: 20px;
   border-radius: 4px;
   height: 500px;
   width: 300px;
+  overflow: auto;
 }
 .chat-top {
   height: 10%;
@@ -119,12 +121,12 @@ export default {
 .chat-input {
   border-radius: 20px;
   width: 100%;
-  height: 40px;
+  height: auto;
   resize: none;
   position: absolute;
-  z-index: 20;
   background-color: lightblue;
   font: 20px Arial, sans-serif;
+  word-break: keep-all;
 }
 .message {
   width: calc(100% - 8px);
@@ -142,11 +144,18 @@ export default {
   color: black;
   border: 1px solid black;
   border-radius: 10px;
-  word-break: break-all;
+  word-break: keep-all;
 }
 .message-content.sender {
   background: black;
   color: white;
   border: 1px solid black;
+}
+
+@media (max-height: 700px) {
+  .chat-container {
+    height: 350px;
+    width: 250px;
+  }
 }
 </style>

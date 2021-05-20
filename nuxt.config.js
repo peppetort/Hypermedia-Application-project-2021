@@ -5,7 +5,7 @@ export default {
     BASE_URL: '', // Development URL,
     DATABASE_URL:
       'postgres://xuijyptapitgaa:597e47f2bbbe3e7f0935de86d876068e62329f20dc2b81928d6afbb6347f4da4@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/df196knlhloog?currentSchema=hypermediaProject2021',
-    configurationId: '603436eb-6b36-404d-a38b-6c489d0d91f5'
+    configurationId: 'f313bbc0-e7a8-4977-bdfd-244ff2f198fa'
   },
   serverMiddleware: [
     {
