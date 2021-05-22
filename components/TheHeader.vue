@@ -47,7 +47,7 @@
         <NuxtLink to="/contacts">Contacts</NuxtLink>
       </div>
     </div>
-    <div class="mobile-menu" @click="toggleMenu">
+    <div class="mobile-menu" id="mobile-menu" @click="toggleMenu">
       <NuxtLink to="/areas">Areas</NuxtLink>
       <NuxtLink to="/products">Products</NuxtLink>
       <NuxtLink to="/roles">Roles</NuxtLink>
@@ -64,6 +64,14 @@ export default {
       areas: this.$store.state.areas,
       roles: this.$store.state.roles
     }
+  },
+  mounted() {
+    window.addEventListener('resize', (e) => {
+      if (window.innerWidth > 900) {
+        document.getElementById('mobile-menu').style.display = 'none'
+        document.getElementById('icon').setAttribute('src', '/menu.svg')
+      }
+    })
   },
   methods: {
     toggleMenu() {
