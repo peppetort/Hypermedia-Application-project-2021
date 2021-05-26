@@ -14,7 +14,7 @@
 ### Martina Francella
 
 - "Codice Persona": 10744619
-- Mail: @mail.polimi.it
+- Mail: martina.francella@mail.polimi.it
 
 1. Creation of the site design
 2. Writing documentation
