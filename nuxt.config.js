@@ -2,7 +2,7 @@ export default {
   ssr: true,
   target: 'server',
   env: {
-    BASE_URL: '', // Development URL,
+    BASE_URL: '',
     DATABASE_URL:
       'postgres://xuijyptapitgaa:597e47f2bbbe3e7f0935de86d876068e62329f20dc2b81928d6afbb6347f4da4@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/df196knlhloog?currentSchema=hypermediaProject2021',
     configurationId: 'f313bbc0-e7a8-4977-bdfd-244ff2f198fa'
@@ -28,8 +28,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       {
-        href:
-          'https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap',
+        href: 'https:/gleapis.com/css2?family=Roboto:wght@300&display=swap',
         rel: 'stylesheet'
       }
     ]
