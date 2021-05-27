@@ -7,7 +7,8 @@
         'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'
       ]"
       :image="'/areas/areas.png'"
-      :link="{ path: '/areas', hash: '#allAreas' }"
+      :alt="'Image for all areas'"
+      :link="'#allAreas'"
       :button="'Discover more'"
     />
     <section class="vertical strong">
@@ -34,6 +35,7 @@
         :subtitle="area.title"
         :text="[area.subtitle]"
         :image="`data:image/png;base64,${area.main_image}`"
+        :alt="`Image for ${area.title}`"
         :link="`/areas/${area.id}`"
         :button="'Learn More'"
       />
@@ -43,6 +45,7 @@
         :subtitle="area.title"
         :text="[area.subtitle]"
         :image="`data:image/png;base64,${area.main_image}`"
+        :alt="`Image for ${area.title}`"
         :link="`/areas/${area.id}`"
         :button="'Learn More'"
       />

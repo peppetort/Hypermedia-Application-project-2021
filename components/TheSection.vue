@@ -1,7 +1,7 @@
 <template>
   <section :class="`horizontal ${props[0]} ${props[1]}`">
     <div class="image" v-if="props[1] == 'right'">
-      <img :src="image" />
+      <img :src="image" :alt="alt" />
     </div>
     <div class="text">
       <h1 v-if="title != undefined">{{ title }}</h1>
@@ -12,7 +12,7 @@
       >
     </div>
     <div class="image" v-if="props[1] == 'left'">
-      <img :src="image" />
+      <img :src="image" :alt="alt" />
     </div>
   </section>
 </template>
@@ -25,6 +25,7 @@ export default {
     subtitle: { type: String, default: () => '' },
     text: { type: Array, default: () => [] },
     image: { type: String, default: () => '' },
+    alt: { type: String, default: () => '' },
     link: { type: String, default: () => '' },
     button: { type: String, default: () => '' }
   }
@@ -69,6 +70,7 @@ div.image img {
   div.text {
     padding-top: 0px;
     padding-left: 0px;
+    width: 100%;
     text-align: center;
     padding-bottom: 20px;
     margin-left: auto;

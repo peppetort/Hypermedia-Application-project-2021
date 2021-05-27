@@ -12,6 +12,7 @@
       :title="data.title"
       :text="[data.subtitle]"
       :image="`data:image/png;base64,${data.main_image}`"
+      :alt="`Image for ${data.title}`"
       :link="'/contacts'"
       :button="'Contact Us'"
     />
@@ -20,6 +21,7 @@
       :subtitle="'Description'"
       :text="[data.description]"
       :image="`data:image/png;base64,${data.second_image}`"
+      :alt="`Second image for ${data.title}`"
     />
     <section class="vertical strong">
       <h2>Features</h2>
@@ -31,6 +33,7 @@
           :title="feature.title"
           :text="feature.description"
           :image="feature.image"
+          :alt="`Icon for feature number ${feature.id} of ${data.title} area`"
         />
       </div>
     </section>
@@ -46,6 +49,7 @@
           :key="product.id"
           :title="product.title"
           :image="`data:image/png;base64,${product.image}`"
+          :alt="`Image of ${product.title}`"
           :link="`/products/${product.id}`"
         />
       </div>
@@ -58,6 +62,7 @@
       :subtitle="`${data.title} Area Manager`"
       :text="[`${data.resp.name}  ${data.resp.surname}`]"
       :image="`data:image/png;base64,${data.resp.image}`"
+      :alt="`Portrait of ${data.title} area manager`"
       :link="`/roles/people/${data.responsible}`"
       :button="'See More'"
     />

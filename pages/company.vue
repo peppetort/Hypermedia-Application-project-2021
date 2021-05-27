@@ -15,6 +15,7 @@
         'By working with some of the most demanding enterprise customers worldwide, X has systematically spun-off, and invested in, industry-leading software companies.'
       ]"
       :image="'/company/milan.png'"
+      :alt="'Comapny city image'"
     />
     <a href="values" />
     <section class="vertical strong">
@@ -29,14 +30,17 @@
         <card-preview
           :title="'Our recipe is simple and our goal is ambitious'"
           :image="'/company/value-1.png'"
+          :alt="'Image of value number 1 of the company'"
         />
         <card-preview
           :title="'Engineering is at the core of our business'"
           :image="'/company/value-2.png'"
+          :alt="'Image of value number 2 of the company'"
         />
         <card-preview
           :title="'A company in which consulting and technology businesses coexist'"
           :image="'/company/value-3.png'"
+          :alt="'Image of value number 3 of the company'"
         />
       </div>
     </section>

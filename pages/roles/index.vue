@@ -14,6 +14,7 @@
         :subtitle="role.title"
         :text="[role.description]"
         :image="`data:image/png;base64,${role.image}`"
+        :alt="`${role.title} main image`"
         :link="`/roles/${role.id}`"
         :button="'Learn More'"
       />
@@ -23,6 +24,7 @@
         :subtitle="role.title"
         :text="[role.description]"
         :image="`data:image/png;base64,${role.image}`"
+        :alt="`${role.title} main image`"
         :link="`/roles/${role.id}`"
         :button="'Learn More'"
       />

@@ -11,6 +11,7 @@
       :props="['strong', 'left', 'strong']"
       :title="data.title"
       :image="`data:image/png;base64,${data.icon}`"
+      :alt="`${data.title} second image`"
       :link="{ path: `/roles/${data.id}`, hash: '#people' }"
       :button="'Discover More'"
     />
@@ -19,6 +20,7 @@
       :subtitle="'Description'"
       :text="[data.description]"
       :image="`data:image/png;base64,${data.image}`"
+      :alt="`${data.title} main image`"
     />
     <section class="vertical strong">
       <div class="text">
@@ -39,6 +41,7 @@
           :key="person.id"
           :title="`${person.name} ${person.surname}`"
           :image="`data:image/png;base64,${person.image}`"
+          :alt="`${data.title} feature number ${person.id} image`"
           :link="`/roles/people/${person.id}`"
         />
       </div>

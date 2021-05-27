@@ -16,6 +16,7 @@
       :subtitle="data.subtitle"
       :text="[data.description]"
       :image="`data:image/png;base64,${data.image}`"
+      :alt="`Image of ${data.title}`"
       :link="`/areas/${data.area_ref.id}`"
       :button="`#${data.area_ref.title.toLowerCase()}`"
     />
@@ -28,6 +29,7 @@
           :key="feature.id"
           :title="feature.title"
           :image="feature.image"
+          :alt="`Icon of feature number ${feature.id} of ${data.title}}`"
           :text="feature.description"
         ></card-feature>
       </div>
@@ -38,6 +40,7 @@
       :text="[`${data.man.name} ${data.man.surname}`]"
       :image="`data:image/png;base64,${data.man.image}`"
       :link="`/roles/people/${data.manager}`"
+      :alt="`Portrait of ${data.title} project manager`"
       :button="'See More'"
     />
     <section class="vertical strong">
@@ -48,6 +51,7 @@
           :key="ass.id"
           :title="`${ass.name} ${ass.surname}`"
           :image="`data:image/png;base64,${ass.image}`"
+          :alt="`Portrait of ${ass.name} ${ass.surname}`"
           :link="`/roles/people/${ass.id}`"
         />
       </div>

@@ -24,6 +24,7 @@
           :key="product.id"
           :title="product.title"
           :image="`data:image/png;base64,${product.image}`"
+          :alt="`Image of ${product.title}`"
           :link="`/products/${product.id}`"
         ></card-preview>
       </div>

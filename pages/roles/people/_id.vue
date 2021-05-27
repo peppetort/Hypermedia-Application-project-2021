@@ -15,6 +15,7 @@
       :subtitle="`${data.rol.title}`"
       :text="[data.phone, data.email, data.description]"
       :image="`data:image/png;base64,${data.image}`"
+      :alt="`Portrait of ${data.name} ${data.surname}`"
     />
     <card-section
       v-if="data.area != undefined"
@@ -23,6 +24,7 @@
       :subtitle="`${data.area.title} ${data.rol.title}`"
       :text="[data.phone, data.email, data.description]"
       :image="`data:image/png;base64,${data.image}`"
+      :alt="`Portrait of ${data.name} ${data.surname}`"
       :link="`/areas/${data.area.id}`"
       :button="`${data.area.title}`"
     />
@@ -34,6 +36,7 @@
           :key="product.id"
           :title="product.title"
           :image="`data:image/png;base64,${product.image}`"
+          :alt="`Image of ${product.title}`"
           :link="`/products/${product.id}`"
         ></card-preview>
       </div>

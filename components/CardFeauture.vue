@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="icon">
-      <img :src="`data:image/png;base64,` + image" />
+      <img :src="`data:image/png;base64,` + image" :alt="alt" />
     </div>
     <div class="text">
       <h3>{{ title }}</h3>
@@ -15,7 +15,8 @@ export default {
   props: {
     title: { type: String, default: () => '' },
     text: { type: String, default: () => '' },
-    image: { type: String, default: () => '' }
+    image: { type: String, default: () => '' },
+    alt: { type: String, default: () => '' }
   }
 }
 </script>
@@ -61,7 +62,7 @@ div.text p {
   word-break: keep-all;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1300px) {
   div.card {
     width: 80%;
     height: auto;

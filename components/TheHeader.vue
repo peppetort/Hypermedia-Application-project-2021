@@ -3,11 +3,16 @@
     <div class="header">
       <div class="logo">
         <NuxtLink to="/">
-          <img src="/logo.svg" />
+          <img src="/logo-small.png" alt="company logo icon" />
         </NuxtLink>
       </div>
       <div class="nav-mobile">
-        <img id="icon" src="/menu.svg" @click="toggleMenu" />
+        <img
+          id="icon"
+          src="/menu.svg"
+          alt="burger menu icon"
+          @click="toggleMenu"
+        />
       </div>
       <div class="nav">
         <div class="dropdown">
@@ -70,6 +75,7 @@ export default {
       if (window.innerWidth > 900) {
         document.getElementById('mobile-menu').style.display = 'none'
         document.getElementById('icon').setAttribute('src', '/menu.svg')
+        document.getElementById('icon').setAttribute('alt', 'X icon')
       }
     })
   },
