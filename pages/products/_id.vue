@@ -41,7 +41,7 @@
       :image="`data:image/png;base64,${data.man.image}`"
       :link="`/roles/people/${data.manager}`"
       :alt="`Portrait of ${data.title} project manager`"
-      :button="'See More'"
+      :button="'Discover More'"
     />
     <section class="vertical strong">
       <h2>Responsible for Assistence</h2>

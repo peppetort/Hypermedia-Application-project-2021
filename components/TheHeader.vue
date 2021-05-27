@@ -99,7 +99,6 @@ export default {
 <style scoped>
 div.container {
   height: auto;
-  background-color: #bdbdbd;
   display: flex;
   flex-direction: column;
 }

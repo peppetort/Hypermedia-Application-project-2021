@@ -103,12 +103,12 @@ export default {
 .chat-top {
   height: 10%;
   border: black;
-  background: lightblue;
+  background: #bdbdbd;
   text-align: center;
   padding: 10px 0;
 }
 .chat-title {
-  color: white;
+  color: black;
   margin-block: auto;
   margin-left: auto;
   margin-right: auto;
@@ -124,7 +124,7 @@ export default {
   height: auto;
   resize: none;
   position: absolute;
-  background-color: lightblue;
+  background-color: #bdbdbd;
   font: 20px Arial, sans-serif;
   word-break: keep-all;
 }

@@ -64,7 +64,7 @@
       :image="`data:image/png;base64,${data.resp.image}`"
       :alt="`Portrait of ${data.title} area manager`"
       :link="`/roles/people/${data.responsible}`"
-      :button="'See More'"
+      :button="'Discover More'"
     />
   </main>
 </template>

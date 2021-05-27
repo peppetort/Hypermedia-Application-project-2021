@@ -37,7 +37,7 @@
         :image="`data:image/png;base64,${area.main_image}`"
         :alt="`Image for ${area.title}`"
         :link="`/areas/${area.id}`"
-        :button="'Learn More'"
+        :button="'Discover More'"
       />
       <card-section
         v-if="index % 2 == 0"
@@ -47,7 +47,7 @@
         :image="`data:image/png;base64,${area.main_image}`"
         :alt="`Image for ${area.title}`"
         :link="`/areas/${area.id}`"
-        :button="'Learn More'"
+        :button="'Discover More'"
       />
     </div>
   </main>
