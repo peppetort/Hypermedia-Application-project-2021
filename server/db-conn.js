@@ -3,18 +3,14 @@ const { Sequelize, DataTypes } = require('sequelize')
 const pg = require('pg')
 pg.defaults.ssl = true
 
-// TODO: spostare url db su nuxt.config.js const db = new Sequelize(process.env.DATABASE_URL
-const db = new Sequelize(
-  'postgres://xuijyptapitgaa:597e47f2bbbe3e7f0935de86d876068e62329f20dc2b81928d6afbb6347f4da4@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/df196knlhloog?currentSchema=hypermediaProject2021',
-  {
-    ssl: true,
-    schema: 'hypermediaProject2021',
-    define: {
-      timestamps: false
-    },
-    dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }
-  }
-)
+const db = new Sequelize(process.env.DATABASE_URL, {
+  ssl: true,
+  schema: 'hypermediaProject2021',
+  define: {
+    timestamps: false
+  },
+  dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }
+})
 
 /**
  * Function to define the structure of the database
