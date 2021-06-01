@@ -2,6 +2,7 @@ export default {
   ssr: true,
   target: 'server',
   env: {
+    BASE_URL: 'https://techtoch.herokuapp.com',
     configurationId: 'f313bbc0-e7a8-4977-bdfd-244ff2f198fa'
   },
   serverMiddleware: [

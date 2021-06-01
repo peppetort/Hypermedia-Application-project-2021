@@ -3,7 +3,7 @@
     <NuxtLink :to="`${link}`" v-if="link != ''">
       <div class="card">
         <div class="image">
-          <img :src="image" />
+          <img :src="image" :alt="alt" />
         </div>
         <div class="text">
           <p>{{ title }}</p>
@@ -12,7 +12,7 @@
     </NuxtLink>
     <div class="card" v-if="link == ''">
       <div class="image">
-        <img :src="image" />
+        <img :src="image" :alt="alt" />
       </div>
       <div class="text">
         <p>{{ title }}</p>
@@ -26,7 +26,8 @@ export default {
   props: {
     title: { type: String, default: () => '' },
     image: { type: String, default: () => '' },
-    link: { type: String, default: () => '' }
+    link: { type: String, default: () => '' },
+    alt: { type: String, default: () => '' }
   }
 }
 </script>
