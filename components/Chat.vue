@@ -10,18 +10,21 @@
             class="message"
             :class="{ sender: message.sender }"
           >
+            <div v-if="message.sender" class="chat_img">
+              <img class="chat_icon" src="/chatbot.png" />
+            </div>
             <div class="message-content" :class="{ sender: message.sender }">
               {{ message.content }}
             </div>
           </div>
         </div>
+        <input
+          class="chat-input"
+          v-model="messageToSend"
+          type="text"
+          @keypress.enter="sendMessage"
+        />
       </div>
-      <input
-        class="chat-input"
-        v-model="messageToSend"
-        type="text"
-        @keypress.enter="sendMessage"
-      />
     </div>
     <div class="button" @click="isOpen = !isOpen">
       <img
@@ -80,7 +83,7 @@ export default {
   margin: 0;
 }
 .button {
-  margin-top: 40px;
+  margin-top: 20px;
   height: 40px;
   width: 40px;
   border: 1px solid black;
@@ -120,7 +123,7 @@ export default {
 }
 .chat-input {
   border-radius: 20px;
-  width: 100%;
+  width: 90%;
   height: auto;
   resize: none;
   position: absolute;
@@ -150,6 +153,12 @@ export default {
   background: black;
   color: white;
   border: 1px solid black;
+}
+
+img.chat_icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
 }
 
 @media (max-height: 700px) {

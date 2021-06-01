@@ -56,14 +56,12 @@
 
 <style scoped>
 div.text {
-  min-width: 400px;
   width: 50%;
   padding-top: 100px;
   padding-left: 100px;
 }
 
 div.contactInfos {
-  min-width: 400px;
   width: 50%;
   text-align: center;
 }
@@ -87,7 +85,7 @@ div.gmap_canvas {
 }
 
 div.gmap_canvas iframe {
-  width: 100%;
+  width: 90%;
   min-width: 100px;
   height: 500px;
   display: block;
@@ -118,6 +116,10 @@ form.contact textarea {
 
 form.contact button {
   margin-top: 50px;
+}
+
+button {
+  margin-bottom: 30px;
 }
 
 @media (max-width: 1400px) {
