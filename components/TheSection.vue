@@ -48,6 +48,8 @@ div.text {
 }
 
 div.image {
+  margin-top: auto;
+  margin-bottom: auto;
   width: 40%;
 }
 
@@ -60,7 +62,7 @@ div.image img {
   margin-top: 10%;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1150px) {
   div.image {
     width: 80%;
     height: auto;
