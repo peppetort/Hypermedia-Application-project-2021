@@ -36,7 +36,7 @@
         loading="lazy"
         class="chat_btn"
         src="https://img.icons8.com/ios-filled/452/chat--v1.png"
-        alt=""
+        alt="chatbot icon"
       />
     </div>
   </div>

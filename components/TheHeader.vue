@@ -105,8 +105,9 @@ div.container {
 }
 
 div.header {
-  height: auto;
-  background-color: #bdbdbd;
+  height: 40px;
+  /* background-color: #bdbdbd; */
+  background: black;
   display: flex;
   flex-direction: row;
   padding: 10px;
@@ -114,7 +115,7 @@ div.header {
 }
 
 div.logo {
-  height: 60px;
+  height: 40px;
   width: auto;
 }
 
@@ -136,22 +137,24 @@ div.nav {
 }
 
 div.nav a {
+  color: #f2f2f2;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   font-weight: bold;
+  margin-right: 10px;
 }
 
 div.nav a:hover {
-  background: black;
-  color: white;
+  color: #bdbdbd;
 }
 
 div.dropdown-content {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 74px;
-  background-color: #f2f2f2;
+  top: 50px;
+  background: black;
+  /* background-color: #f2f2f2; */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -176,7 +179,8 @@ div.nav-mobile {
 
 div.nav-mobile img {
   width: auto;
-  height: 50px;
+  height: 35px;
+  color: #f2f2f2;
   display: block;
 }
 

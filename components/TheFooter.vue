@@ -68,9 +68,26 @@ export default {
 </script>
 
 <style scoped>
+div.footer p,
+h1,
+h2,
+h3,
+a {
+  color: white;
+}
+
+div.footer button {
+  color: white;
+  border-color: white;
+}
+
+div.footer button:hover {
+  background-color: rgb(48, 46, 46);
+}
+
 div.footer {
   padding: 10px;
-  background-color: #bdbdbd;
+  background-color: black;
   display: flex;
   flex-direction: column;
 }
@@ -81,7 +98,7 @@ div.content {
   flex-direction: row;
   justify-content: space-between;
   padding-inline: 100px;
-  padding-top: 100px;
+  padding-top: 40px;
   padding-bottom: 50px;
 }
 
