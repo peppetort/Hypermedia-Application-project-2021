@@ -12,7 +12,7 @@
       :button="'Discover more'"
     />
     <section class="vertical strong">
-      <a name="allAreas" />
+      <a id="allAreas" />
       <h3>Areas</h3>
       <p>
         From networking and data center to collaboration and security, we have

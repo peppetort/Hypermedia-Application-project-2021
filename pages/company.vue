@@ -4,9 +4,9 @@
       <div>
         <h1>TechToch</h1>
       </div>
-      <a href="#discover"><button class="strong">Discover more</button></a>
+      <a href="#about"><button class="strong">Discover more</button></a>
     </section>
-    <a href="about" />
+    <a id="about" />
     <card-section
       :props="['light', 'right']"
       :subtitle="'WHO WE ARE'"
@@ -17,7 +17,7 @@
       :image="'/company/milan.png'"
       :alt="'Comapny city image'"
     />
-    <a href="values" />
+    <a id="values" />
     <section class="vertical strong">
       <h2>OUR VALUES</h2>
       <p>

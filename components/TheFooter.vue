@@ -48,7 +48,7 @@
         </div>
         <div class="column">
           <NuxtLink to="/company" class="title">Company</NuxtLink>
-          <NuxtLink to="/compnay#about">Who we are</NuxtLink>
+          <NuxtLink to="/company#about">Who we are</NuxtLink>
           <NuxtLink to="/company#values">Our values</NuxtLink>
         </div>
       </div>

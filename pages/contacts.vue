@@ -9,14 +9,16 @@
     </section>
     <section class="horizontal strong">
       <div class="contactInfos">
-        <a name="number" />
+        <a id="number" />
         <h2>Call Us</h2>
         <p>+02 35467832</p>
       </div>
       <div class="verticalLine" />
       <div class="contactInfos">
         <h2>Send Us a Message</h2>
-        <a href="#form"><button class="strong">Send Message</button></a>
+        <NuxtLink to="#form"
+          ><button class="strong">Send Message</button></NuxtLink
+        >
       </div>
     </section>
     <section class="horizontal light">
@@ -25,7 +27,7 @@
         <p>Via San Vito, 9, 20123 MILAN (MI) - LOMBARDIA</p>
       </div>
       <div class="mapouter">
-        <a name="map" />
+        <a id="map" />
         <div class="gmap_canvas">
           <iframe
             id="gmap_canvas"
@@ -37,7 +39,7 @@
       </div>
     </section>
     <section class="vertical strong">
-      <a name="form" />
+      <a id="form" />
       <h2>Contact Us</h2>
       <form class="contact">
         <p>Name*</p>
@@ -54,14 +56,26 @@
   </main>
 </template>
 
+<script>
+export default {
+  mounted() {
+    setTimeout(() => {
+      //TODO: controllare # -> this.Rounter.push(...)
+    }, 1000)
+  }
+}
+</script>
+
 <style scoped>
 div.text {
+  min-width: 400px;
   width: 50%;
   padding-top: 100px;
   padding-left: 100px;
 }
 
 div.contactInfos {
+  min-width: 400px;
   width: 50%;
   text-align: center;
 }
@@ -85,7 +99,7 @@ div.gmap_canvas {
 }
 
 div.gmap_canvas iframe {
-  width: 90%;
+  width: 100%;
   min-width: 100px;
   height: 500px;
   display: block;
@@ -116,10 +130,6 @@ form.contact textarea {
 
 form.contact button {
   margin-top: 50px;
-}
-
-button {
-  margin-bottom: 30px;
 }
 
 @media (max-width: 1400px) {

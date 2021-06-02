@@ -12,7 +12,7 @@
       :title="data.title"
       :image="`data:image/png;base64,${data.icon}`"
       :alt="`${data.title} second image`"
-      :link="{ path: `/roles/${data.id}`, hash: '#people' }"
+      :link="'#people'"
       :button="'Discover More'"
     />
     <card-section
@@ -33,7 +33,7 @@
       </div>
     </section>
     <section class="vertical light">
-      <a href="people" />
+      <a id="people" />
       <h2>Who are our {{ data.title }}s</h2>
       <div class="grid">
         <card-preview
