@@ -5,7 +5,7 @@ pg.defaults.ssl = true
 
 //TODO: cambiare con process.env.DATABASE_URL quando pushato su heroku
 const db = new Sequelize(
-  'postgres://xuijyptapitgaa:597e47f2bbbe3e7f0935de86d876068e62329f20dc2b81928d6afbb6347f4da4@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/df196knlhloog',
+  'postgres://wxreoxkuwuwpat:5440d56f5038c3bd4f0fb39d0227952f0147fb76a2311184a272aac31546b4b2@ec2-34-253-116-145.eu-west-1.compute.amazonaws.com:5432/dbr6pff9k296r2',
   {
     ssl: true,
     schema: 'hypermediaProject2021',
