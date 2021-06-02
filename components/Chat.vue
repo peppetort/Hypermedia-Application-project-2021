@@ -11,12 +11,7 @@
             :class="{ sender: message.sender }"
           >
             <div v-if="message.sender" class="chat_img">
-              <img
-                loading="lazy"
-                class="chat_icon"
-                src="/chatbot.png"
-                alt="chatbot icon"
-              />
+              <img class="chat_icon" src="/chatbot.png" />
             </div>
             <div class="message-content" :class="{ sender: message.sender }">
               {{ message.content }}
@@ -33,10 +28,9 @@
     </div>
     <div class="button" @click="isOpen = !isOpen">
       <img
-        loading="lazy"
         class="chat_btn"
         src="https://img.icons8.com/ios-filled/452/chat--v1.png"
-        alt="chatbot icon"
+        alt=""
       />
     </div>
   </div>
@@ -54,6 +48,14 @@ export default {
     return {
       messageToSend: '',
       isOpen: true
+    }
+  },
+  watch: {
+    '$store.state.messages'() {
+      setTimeout(() => {
+        var chat = document.getElementById('chat-window')
+        chat.scrollTop = chat.scrollHeight
+      }, 100)
     }
   },
   methods: {
@@ -74,6 +76,8 @@ export default {
       }
       WebSocketEventBus.$emit('send', packet)
       this.messageToSend = ''
+      var chat = document.getElementById('chat-window')
+      chat.scrollTop = chat.scrollHeight
     }
   }
 }
@@ -163,7 +167,7 @@ export default {
 
 img.chat_icon {
   width: 40px;
-  height: auto;
+  height: 40px;
   border-radius: 10%;
 }
 
