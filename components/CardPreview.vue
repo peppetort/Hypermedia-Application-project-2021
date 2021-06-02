@@ -3,7 +3,7 @@
     <NuxtLink :to="`${link}`" v-if="link != ''">
       <div class="card">
         <div class="image">
-          <img :src="image" :alt="alt" />
+          <img loading="lazy" :src="image" :alt="alt" />
         </div>
         <div class="text">
           <p>{{ title }}</p>
@@ -12,7 +12,7 @@
     </NuxtLink>
     <div class="card" v-if="link == ''">
       <div class="image">
-        <img :src="image" :alt="alt" />
+        <img loading="lazy" :src="image" :alt="alt" />
       </div>
       <div class="text">
         <p>{{ title }}</p>

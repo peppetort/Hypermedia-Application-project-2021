@@ -3,11 +3,12 @@
     <div class="header">
       <div class="logo">
         <NuxtLink to="/">
-          <img src="/logo-small.png" alt="company logo icon" />
+          <img loading="lazy" src="/logo-small.png" alt="company logo icon" />
         </NuxtLink>
       </div>
       <div class="nav-mobile">
         <img
+          loading="lazy"
           id="icon"
           src="/menu.svg"
           alt="burger menu icon"

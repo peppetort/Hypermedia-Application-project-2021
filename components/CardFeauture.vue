@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="icon">
-      <img :src="`data:image/png;base64,` + image" :alt="alt" />
+      <img loading="lazy" :src="`data:image/png;base64,` + image" :alt="alt" />
     </div>
     <div class="text">
       <h3>{{ title }}</h3>

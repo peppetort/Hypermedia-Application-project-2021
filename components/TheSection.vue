@@ -1,7 +1,7 @@
 <template>
   <section :class="`horizontal ${props[0]} ${props[1]}`">
     <div class="image" v-if="props[1] == 'right'">
-      <img :src="image" :alt="alt" />
+      <img loading="lazy" :src="image" :alt="alt" />
     </div>
     <div class="text">
       <h1 v-if="title != undefined">{{ title }}</h1>
@@ -12,7 +12,7 @@
       >
     </div>
     <div class="image" v-if="props[1] == 'left'">
-      <img :src="image" :alt="alt" />
+      <img loading="lazy" :src="image" :alt="alt" />
     </div>
   </section>
 </template>

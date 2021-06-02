@@ -8,7 +8,7 @@
     </div>
     <div class="content">
       <div class="right">
-        <img src="/logo-long.svg" alt="company logo with name" />
+        <img loading="lazy" src="/logo-long.svg" alt="company logo with name" />
         <p>2010 - 2021</p>
         <p>Privacy terms</p>
       </div>
