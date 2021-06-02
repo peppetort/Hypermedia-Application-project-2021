@@ -109,7 +109,6 @@ function insertRole(role) {
     var imagePath = path.join(
       __dirname,
       '..',
-      '..',
       'DB',
       'Images',
       'Role',
@@ -118,7 +117,6 @@ function insertRole(role) {
 
     var iconPath = path.join(
       __dirname,
-      '..',
       '..',
       'DB',
       'Images',
@@ -146,7 +144,6 @@ function insertPerson(person) {
     var imagePath = path.join(
       __dirname,
       '..',
-      '..',
       'DB',
       'Images',
       'Person',
@@ -173,7 +170,6 @@ function insertArea(area) {
   area.forEach(async (el) => {
     var mainPath = path.join(
       __dirname,
-      '..',
       '..',
       'DB',
       'Images',
@@ -212,7 +208,6 @@ function insertProduct(product) {
     var imagePath = path.join(
       __dirname,
       '..',
-      '..',
       'DB',
       'Images',
       'Product',
@@ -249,7 +244,6 @@ function insertFeature(feature) {
   feature.forEach(async (el) => {
     var imagePath = path.join(
       __dirname,
-      '..',
       '..',
       'DB',
       'Images',
@@ -297,7 +291,7 @@ function insertData() {
   const file = require('fs')
   const path = require('path')
 
-  var jsonPath = path.join(__dirname, '..', '..', 'DB', 'db.json')
+  var jsonPath = path.join(__dirname, '..', 'DB', 'db.json')
 
   file.readFile(jsonPath, 'utf8', (err, jsonString) => {
     if (err) {

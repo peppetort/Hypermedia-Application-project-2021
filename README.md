@@ -10,6 +10,7 @@
 1. Development of a third of the pages
 2. Back-end database specification
 3. Back-end API development
+4. ChatBot development
 
 ### Martina Francella
 
@@ -39,10 +40,17 @@
 
 ### Server
 
+To implement the server we used the _Express_ framework.<br/>
+By sending a request to the specific URL, the data is extracted from the database and sent back in the form of JSON
+
 ### DB
+
+To implement the DB we used _Sequelize_.<br/>
 
 ### Components
 
 ### Plugins
+
+//TODO
 
 ## Usage of Nuxt best practices

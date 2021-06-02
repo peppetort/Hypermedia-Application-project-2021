@@ -1,0 +1,1642 @@
+{
+  "Person": [
+    {
+      "id": 1,
+      "name": "Carla",
+      "surname": "Placido",
+      "email": "carla.placido@mail.com",
+      "phone": "324 125987",
+      "description": " Employees who take responsibility for their actions, are dependable, arrive on time, do what they say, and don’t let the others in their team down, are highly valued employees",
+      "role": 1,
+      "image": "1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Lena",
+      "surname": "Celeste",
+      "email": "lena.celeste@mail.com",
+      "phone": "324 125912",
+      "description": "Good employees address and resolve conflict maturely, rather than trying to avoid it, by maintaining respect for those involved, not placing blame, and not acquiescing just to keep the peace",
+      "role": 1,
+      "image": "2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Maria",
+      "surname": "Salvatore",
+      "email": "maria.salvatore@mail.com",
+      "phone": "328 125987",
+      "description": " Emotional intelligence (EQ) is about being mindful of one’s own state of emotions, as well as those in the team. Knowing how to manage these well is an important key to being a good employee",
+      "role": 1,
+      "image": "3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Francesco",
+      "surname": "Augusto",
+      "email": "francesco.augusto@mail.com",
+      "phone": "325 125987",
+      "description": "Employees who bring a positive attitude to work have a positive impact on those around them and improve the energy in the team",
+      "role": 1,
+      "image": "4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Ferdinando",
+      "surname": "Loreto",
+      "email": "ferdinando.loreto@mail.com",
+      "phone": "324 125987",
+      "description": "The ability to work with other people in a team, by fostering relationships in a professional manner, in order to achieve a common goal, is an asset to any company",
+      "role": 2,
+      "image": "5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Giovanna",
+      "surname": "Orso",
+      "email": "giovanna.orso@mail.com",
+      "phone": "324 125987",
+      "description": "Hard skills attained through education are not enough for good employees – they’re open minded to new ideas, and they share their thoughts and personal insights with the team.",
+      "role": 2,
+      "image": "6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Maria",
+      "surname": "Rossi",
+      "email": "maria.rossi@mail.com",
+      "phone": "324 125987",
+      "description": " Not all people are born creative, but creativity is a skill that can be learned through experimentation, imagination, questions, collaboration, and information processing",
+      "role": 2,
+      "image": "7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Corrado",
+      "surname": "Durante",
+      "email": "corrado.durante@mail.com",
+      "phone": "324 125987",
+      "description": " Good employees coach and mentor those around them. They generously share their experiences and expertise. They understand that knowledge is only power when it’s shared with others",
+      "role": 2,
+      "image": "8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Paola",
+      "surname": "Calogero",
+      "email": "paola.calogero@mail.com",
+      "phone": "324 125987",
+      "description": "Good employees know the reason why their job exists, above just knowing how to do their job. This allows them to come up with new suggestions and ideas to improve their tasks",
+      "role": 3,
+      "image": "9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Francesca",
+      "surname": "Rossi",
+      "email": "francesca.rossi@mail.com",
+      "phone": "324 125987",
+      "description": "Being polite, well-spoken, calm, and presentable is all part of being professional at work",
+      "role": 3,
+      "image": "10.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Martina",
+      "surname": "Fiorino",
+      "email": "martina.fiorino@mail.com",
+      "phone": "324 125987",
+      "description": "Telling the truth about tricky subjects, such as workload, work/life balance, difficult customers or colleagues, and ineffective procedures makes for a good employee",
+      "role": 3,
+      "image": "11.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Pierluigi",
+      "surname": "Emiliano",
+      "email": "pierluigi.emiliano@mail.com",
+      "phone": "324 125987",
+      "description": " When employees have a clear, personal career plan or goal in mind, they’re not under the assumption that their employer will drive their career for them, so they strive for advancement",
+      "role": 3,
+      "image": "12.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Oliviero",
+      "surname": "Rossi",
+      "email": "oliviero.rossi@mail.com",
+      "phone": "324 125987",
+      "description": " Employees who take responsibility for their actions, are dependable, arrive on time, do what they say, and don’t let the others in their team down, are highly valued employees",
+      "role": 3,
+      "image": "13.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Vasco",
+      "surname": "Tancredi",
+      "email": "vasco.tancredi@mail.com",
+      "phone": "324 125987",
+      "description": "Good employees address and resolve conflict maturely, rather than trying to avoid it, by maintaining respect for those involved, not placing blame, and not acquiescing just to keep the peace",
+      "role": 3,
+      "image": "14.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Antonio",
+      "surname": "Cirino",
+      "email": "antonio.cirino@mail.com",
+      "phone": "324 125987",
+      "description": "Employees who bring a positive attitude to work have a positive impact on those around them and improve the energy in the team",
+      "role": 3,
+      "image": "15.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Marco",
+      "surname": "Renzo",
+      "email": "marco.renzo@mail.com",
+      "phone": "324 125987",
+      "description": "Emotional intelligence (EQ) is about being mindful of one’s own state of emotions, as well as those in the team. Knowing how to manage these well is an important key to being a good employee",
+      "role": 3,
+      "image": "16.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Leonardo",
+      "surname": "Filiberto",
+      "email": "leonardo.filiberto@mail.com",
+      "phone": "324 125987",
+      "description": "Good employees know the reason why their job exists, above just knowing how to do their job. This allows them to come up with new suggestions and ideas to improve their tasks",
+      "role": 3,
+      "image": "17.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Saverio",
+      "surname": "Oreste",
+      "email": "saverio.oreste@mail.com",
+      "phone": "324 125987",
+      "description": "Employees who bring innovative ideas and suggestions forward that will impact positively are an asset to a company. Stagnation and complacency are the enemy of growth",
+      "role": 3,
+      "image": "18.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Augusto",
+      "surname": "Rossi",
+      "email": "augusto.rossi@mail.com",
+      "phone": "324 125987",
+      "description": "Good employees coach and mentor those around them. They generously share their experiences and expertise. They understand that knowledge is only power when it’s shared with others",
+      "role": 3,
+      "image": "19.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Lucrezia",
+      "surname": "Primo",
+      "email": "lucrezia.primo@mail.com",
+      "phone": "324 125987",
+      "description": "Good employees coach and mentor those around them. They generously share their experiences and expertise. They understand that knowledge is only power when it’s shared with others",
+      "role": 3,
+      "image": "20.jpg"
+    }
+    ],
+    "Area": [
+      {
+        "id": 1,
+        "title": "Network",
+        "description": "Enterprise networks today face unrelenting challenges . A completely new approach to design, deployment, and management is required. Digital Network Architecture  helps you build the new network for campus, branch, and WAN and deliver better experiences so you can focus on your business, not on your network. ",
+        "subtitle": "The intent-based network. Build a strong resilient buisness. Focus on what you need to get done, not on how you do it",
+        "main_image": "network-1.png",
+        "second_image": "network-2.png",
+        "responsible": 1
+      },
+       {
+        "id": 2,
+        "title": "Security",
+        "description": "As a security professional today, you’re dealing with unprecedented challenges. Your business leaders want you to secure everything with limited resources, while your infrastructure continues to evolve and become more complex.But it doesn’t have to be this way",
+        "subtitle": "Combine network and security functionality in a single, cloud-native service to help secure access wherever users and applications reside",
+        "main_image": "security-1.png",
+        "second_image": "security-2.png",
+        "responsible": 2
+      },
+      {
+        "id": 3,
+        "title": "IoT",
+        "description": "Securely connect assets, applications, and data in real-time to apply transformative business changes in both carpeted and non-carpeted spaces.",
+        "subtitle": "Improve business outcomes with our end-to-end IoT portfolio",
+        "main_image": "iot-1.png",
+        "second_image": "iot-2.png",
+        "responsible": 3
+      },
+      {
+        "id": 4,
+        "title": "Cloud Computing",
+        "description": "From the data center to the cloud to the Internet of Things, software helps you secure your network, collaborate freely, analyze data, and run your infrastructure. Whether you buy individually, in bundles, or an enterprise agreement, we have flexible options for a subscription that fits your needs.   ",
+        "subtitle": "Turn your vision of an intelligent network to reality with Software",
+        "main_image": "cloud-1.png",
+        "second_image": "cloud-2.png",
+        "responsible": 4
+      }
+      
+    ],
+      "Product":[
+        {
+          "id": 1,
+          "title": "1000 Series Integrated Services Routers",
+          "subtitle": "Reliability, security, and performance",
+          "description": "Get wireless access, advanced security, and network services in one device. 1000 Series Integrated Services Routers (ISRs) are fixed, high-performance routers that are easy to deploy and manage. Small yet powerful, they provide highly secure broadband, Metro Ethernet, and wireless LAN connectivity.",
+          "image": "1.png",
+          "area": 1,
+          "manager": 5
+        },
+        {
+          "id": 2,
+          "title": "1800 Series Integrated Services Routers",
+          "subtitle": "Integrated services for offices of all sizes",
+          "description": "The award-winning 1800 Series is ideal for small to midsize businesses and branch offices. Use these routers to reduce costs. Deploy a single, resilient system for fast, secure delivery of mission-critical business services.",
+          "image": "2.png",
+          "area": 1,
+          "manager": 5
+        },
+        {
+          "id": 3,
+          "title": "4000 Series Integrated Services Routers",
+          "subtitle": "Build your digital branch",
+          "description": "The 4000 Series Integrated Services Routers provide routing, hosting, security, and switching--all in a single, trustworthy platform. Build your digital branch to be secure, fast, and scalable. Quickly adopt the latest technologies, from SD-WAN to edge computing, while meeting the explosive network-performance needs driven by cloud applications and digital transformation.",
+          "image": "3.png",
+          "area": 1,
+          "manager": 5
+        },
+      
+        {
+          "id": 4,
+          "title": "Catalyst 1000 Series Switches",
+          "subtitle": "Simplicity, flexibility, and security",
+          "description": "Catalyst 1000 Series switches provide enterprise-grade network access sized for small businesses. With a wide range of Power over Ethernet (PoE) and port combinations, these easy-to-manage switches provide the performance a modern small office needs.",
+          "image": "4.png",
+          "area": 1,
+          "manager": 5
+        },
+        {
+          "id": 5,
+          "title": "Catalyst Digital Building Series Switches",
+          "subtitle": "Make buildings smarter",
+          "description": "Save on energy costs and enhance flexibility, safety, and productivity. Our Catalyst Digital Building plenum-rated UPOE fan-less switches are designed for smart buildings and optimized for low-voltage PoE. Combine lighting, air conditioning, security systems, and more on one IP network with seamless security and easy installation and management.",
+          "image": "5.png",
+          "area": 1,
+          "manager": 5
+        },
+        {
+          "id": 6,
+          "title": "Catalyst Micro Switches",
+          "subtitle": "Just what you need, right where you need it",
+          "description": "Offering enterprise-class security, management and reliability, Catalyst Micro Switches are optimized for smart buildings and fiber-to-the-office (FTTO) networks. They're the smart choice for delivering copper or fiber connectivity directly to the end device.",
+          "image": "6.png",
+          "area": 1,
+          "manager": 5
+        },
+        {
+          "id": 7,
+          "title": "Catalyst 9100 Access Point",
+          "subtitle": "Begin your Wi-Fi 6 journey",
+          "description": "Catalyst 9100 Access Points go beyond the Wi-Fi 6 standards by offering more than the standards-based features. These access points have higher capacity, improved latency, and better power efficiency, but they go much further. They're resilient and intelligent and provide integrated security for mobile and IoT devices with rapid threat containment. And they're ideal for work-from-home users who need the enterprise network extended to them.",
+          "image": "7.png",
+          "area": 1,
+          "manager": 5
+        },
+        {
+          "id": 8,
+          "title": "Catalyst 9800 Series Wireless Controllers",
+          "subtitle": "Your network, your way",
+          "description": "Wi-Fi 6 devices are rapidly making their way into your users' hands. Empowered with higher capacity, reduced latency, stronger security, and better power efficiency, a Wi-Fi 6-supported Catalyst 9800 Series Wireless Controller fortifies your network and allows it to be deployed anywhere—including the cloud. Or choose the Embedded Wireless Controller with Catalyst Access Points, for controller features without a dedicated appliance.",
+          "image": "8.png",
+          "area": 1,
+          "manager": 5
+        },
+        {
+          "id": 9,
+          "title": "Catalyst 9800 Series Wireless Controllers",
+          "subtitle": "Get high-performance, highly secure connectivity",
+          "description": "Deliver business-class, high-capacity wireless LAN and guest access services that are highly secure and reliable, without a controller. Easy to deploy and use, these access points offer 802.11ac and 802.11n wireless connectivity for indoor and outdoor environments. Get exceptional performance and coverage for mobile devices and bandwidth-heavy applications.",
+          "image": "9.png",
+          "area": 1,
+          "manager": 5
+        },
+        {
+          "id": 10,
+          "title": "ASA 5500-X with FirePOWER Services",
+          "subtitle": "Stop more threats with the threat-focused 5500-X NGFW",
+          "description": "Beat sophisticated cyber attacks with a superior security appliance. We offer the industry’s first threat-focused next-generation firewall (NGFW), the ASA 5500-X Series.",
+          "image": "10.png",
+          "area": 2,
+          "manager": 6
+        },
+        {
+          "id": 11,
+          "title": "Firepower 1000 Series",
+          "subtitle": "Simplified management and robust protection for small offices",
+          "description": "Simplify your security. With 1000 Series firewalls and Defense Orchestrator, you get class-leading security while spending less time on firewall administration. Defense Orchestrator upgrades firewalls with one touch, automatically de-conflicts overlapping security policies, and even centralizes management of your AWS VPC image security rules. Best of all, it manages firewalls with both Adaptive Security Appliance (ASA) and Firepower NGFW software.",
+          "image": "11.png",
+          "area": 2,
+          "manager": 6
+        },
+      
+        {
+          "id": 12,
+          "title": "Firepower 2100 Series",
+          "subtitle": "The foundation for your open security platform",
+          "description": "The 2100 Series firewalls, part of Cisco's open security platform, amplify your security visibility, control, and investment. With the 2100 Series, security doesn't come at the expense of network throughput. Firepower's innovative architecture optimizes simultaneous firewall, cryptographic, and threat inspection performance, keeping you in command of network performance.",
+          "image": "12.png",
+          "area": 2,
+          "manager": 6
+        },
+      
+        {
+          "id": 13,
+          "title": "Firepower 4100 Series",
+          "subtitle": "Security, performance, and scalability in a small footprint",
+          "description": "Designed for the large campus and data center, 4100 Series appliances enable you to create separate, logical firewalls for deployment flexibility and resource optimization. Quickly inspect encrypted web traffic, gain visibility across applications, detect and block network intrusions, deploy scalable VPNs, and enjoy integrated protection against DDoS attacks. Cluster devices for performance and high availability to scale as you grow.",
+          "image": "13.png",
+          "area": 2,
+          "manager": 6
+        },
+      
+        {
+          "id": 14,
+          "title": "Firepower 9300",
+          "subtitle": "High-performance, scalable security in a modular platform",
+          "description": "Designed for service providers and high-performance data centers, the 9300 appliance delivers carrier-grade performance in a modular chassis. Create separate logical firewalls for deployment flexibility, quickly inspect encrypted traffic, gain application visibility, detect and block network intrusions, deploy scalable VPNs, and enjoy integrated protection against DDoS attacks. Cluster devices for performance and high availability.",
+          "image": "14.png",
+          "area": 2,
+          "manager": 6
+        },
+      
+        {
+          "id": 15,
+          "title": "Industrial Security Appliance 3000 (ISA)",
+          "subtitle": "Simplify compliance with IIoT cyber-security.Industrial networks have advanced threat protection needs, requiring a ruggedized solution that helps to ensure safe, reliable service delivery.",
+          "description": "The ISA 3000 delivers on these needs with the proven enterprise firewall and network security policies of Cisco. It’s available in several options:-Adaptive Security Appliance (ASA)-ASA + FirePOWER (FPR)-Firepower Threat Defense (FTD) services",
+          "image": "15.png",
+          "area": 2,
+          "manager": 6
+        },
+        {
+          "id": 16,
+          "title": "Business Dashboard",
+          "subtitle": "Simplified network management",
+          "description": "Business Dashboard is a network management tool for Business switches, routers, and wireless access points. It simplifies the job of managing a business network, by automating the deployment, monitoring and lifecycle management of the network.",
+          "image": "16.png",
+          "area": 3,
+          "manager": 7
+        },
+        {
+          "id": 17,
+          "title": "IOx",
+          "subtitle": "Develop IoT business applications at the edge",
+          "description": "The IOx application environment combines IOS and the Linux OS for highly secure networking. Execute IoT applications with secure connectivity with IOS software, and get powerful services for rapid, reliable integration with IoT sensors and the cloud. ",
+          "image": "17.png",
+          "area": 3,
+          "manager": 7
+        },
+        {
+          "id": 18,
+          "title": "1100 Series Industrial Integrated Services Routers",
+          "subtitle": "Reliability, security, and performance",
+          "description": "Get wireless access, advanced security, and network services in one device. 1000 Series Integrated Services Routers (ISRs) are fixed, high-performance routers that are easy to deploy and manage. Small yet powerful, they provide highly secure broadband, Metro Ethernet, and wireless LAN connectivity.",
+          "image": "18.png",
+          "area": 3,
+          "manager": 7
+        },
+        {
+          "id": 19,
+          "title": "Cyber Vision",
+          "subtitle": "Secure your Industrial Control Systems",
+          "description": "The deeper integration between IT, cloud and industrial control networks (ICS) is exposing your industrial operations to cyber threats. Cyber Vision has been specifically developed for OT and IT teams to work together to ensure production continuity, resilience and safety. You can now deploy Industrial Internet of Things (IIoT) technologies and capture the benefits of your industry digitization efforts.",
+          "image": "19.png",
+          "area": 3,
+          "manager": 7
+        },
+        {
+          "id": 20,
+          "title": "Edge Intelligence",
+          "subtitle": "Simplify, secure, and scale IoT Data",
+          "description": "Your data should drive your business to new levels. Edge Intelligence orchestration software simplifies getting IoT data to the right applications at the right time.",
+          "image": "20.png",
+          "area": 3,
+          "manager": 7
+        },
+        {
+          "id": 21,
+          "title": "Catalyst IE3200 Rugged Series",
+          "subtitle": "Accelerate your digital transformation",
+          "description": "Cisco's Catalyst IE3200 Rugged Series is a secure, fixed, full-Gigabit industrial switching platform managed with DNA Center. With 8 PoE+ in a compact form factor, these rugged switches are designed for power and space-constrained areas. The Catalyst IE3200 Rugged Series brings intent-based networking to industrial use cases.",
+          "image": "21.png",
+          "area": 3,
+          "manager": 7
+        },
+        {
+          "id": 22,
+          "title": "Catalyst IE3400 Heavy Duty Series",
+          "subtitle": "The Catalyst you know in a heavy-duty design",
+          "description": "The Catalyst IE3400 Heavy Duty Series is an industrial ethernet switching platform for extending IoT connectivity to harsh environments, with a dust and waterproof design that is IP67 rated. Powered by IOS XE, its innovative and robust feature set includes software-based segmentation and flow visibility for security-threat detection, and isolation.",
+          "image": "22.png",
+          "area": 3,
+          "manager": 7
+        },
+        {
+          "id": 23,
+          "title": "Cloud Services Router 1000V Series",
+          "subtitle": "Securely connect to any cloud",
+          "description": "Extend your enterprise network to public and private clouds with the CSR 1000V Series. Offer routing, security, and network management as cloud services with multitenancy. The series is infrastructure agnostic and programmable across the LAN and WAN and in the cloud.",
+          "image": "23.png",
+          "area": 4,
+          "manager": 8
+        },
+        {
+          "id": 24,
+          "title": "Cloudlock",
+          "subtitle": "Protect your cloud users, data, and apps",
+          "description": "Cloudlock is a cloud-native cloud access security broker (CASB) that helps you move to the cloud safely. It protects your cloud users, data, and apps. Cloudlock's simple, open, and automated approach uses APIs to manage the risks in your cloud app ecosystem. With Cloudlock you can more easily combat data breaches while meeting compliance regulations.",
+          "image": "24.png",
+          "area": 4,
+          "manager": 8
+        },
+        {
+          "id": 25,
+          "title": "SecureX",
+          "subtitle": "A simplified security experience",
+          "description": "SecureX is a cloud-native, built-in platform that connects our Secure portfolio and your infrastructure. It allows you to radically reduce dwell time and human-powered tasks.",
+          "image": "25.png",
+          "area": 4,
+          "manager": 8
+        },
+        {
+          "id": 26,
+          "title": "Container Platform",
+          "subtitle": "Container management for a multicloud world",
+          "description": "Everybody loves using containers. Nobody loves deploying, monitoring, and managing them -- especially across multiple public and private clouds. There are simply too many tools and too little standardization. Container Platform (CCP) automates the repetitive things and simplifies the complex ones so everyone can just go back to enjoying the magic of containers.",
+          "image": "26.png",
+          "area": 4,
+          "manager": 8
+        },
+        {
+          "id": 27,
+          "title": "Intersight Kubernetes Service",
+          "subtitle": "Deploy production-grade Kubernetes anywhere",
+          "description": "Simplify Kubernetes day 0 to day N operations across data centers, the edge and public clouds, and increase application agility with a turnkey SaaS platform.",
+          "image": "27.png",
+          "area": 4,
+          "manager": 8
+        },
+        {
+          "id": 28,
+          "title": "Intersight Workload Optimizer",
+          "subtitle": "Simplify application resource management for hybrid cloud",
+          "description": "Continuously optimize critical IT resources, help ensure workload performance, and lower operational costs on-premises and in the cloud with Intersight Workload Optimizer.",
+          "image": "28.png",
+          "area": 4,
+          "manager": 8
+        },
+        {
+          "id": 29,
+          "title": "Integrated System for Microsoft Azure Stack Hub",
+          "subtitle": "Optimize Microsoft Azure Stack Hub infrastructure with UCS",
+          "description": "Deploy Microsoft Azure Stack Hub on the system designed for cloud: purpose-built for rapid user scalability and remote system deployments. Leverage UCS proven operational advantages: 40% faster infrastructure deployment and 38% reduction in ongoing management costs as compared to other Azure Stack Hub systems.",
+          "image": "29.png",
+          "area": 4,
+          "manager": 8
+        },
+        {
+          "id": 30,
+          "title": "CloudCenter Suite",
+          "subtitle": "Multicloud management made easier",
+          "description": "CloudCenter Suite is a set of integrated modules that simplifies the lifecycle management of multicloud applications, workflows, and their infrastructure. Securely design, automate, and deploy across any infrastructure while optimizing cost and governance with comprehensive reporting, visibility, and policy-enforcement.",
+          "image": "30.png",
+          "area": 4,
+          "manager": 8
+        }
+    ],
+    "Assistance": [
+    {
+        "product":1,
+        "person":9
+    },
+    {
+        "product":1,
+        "person":10
+    },
+    {
+        "product":1,
+        "person":11
+    },
+    {
+        "product":2,
+        "person":12
+    },
+    {
+        "product":2,
+        "person":13
+    },
+    {
+        "product":2,
+        "person":14
+    },
+    {
+        "product":3,
+        "person":15
+    },
+    {
+        "product":3,
+        "person":16
+    },
+    {
+        "product":3,
+        "person":17
+    },
+    {
+        "product":4,
+        "person":18
+    },
+    {
+        "product":4,
+        "person":19
+    },
+    {
+        "product":4,
+        "person":20
+    },
+    {
+        "product":5,
+        "person":9
+    },
+    {
+        "product":5,
+        "person":10
+    },
+    {
+        "product":5,
+        "person":11
+    },
+    {
+        "product":6,
+        "person":12
+    },
+    {
+        "product":6,
+        "person":13
+    },
+    {
+        "product":6,
+        "person":14
+    },
+    {
+        "product":7,
+        "person":15
+    },
+    {
+        "product":7,
+        "person":16
+    },
+    {
+        "product":7,
+        "person":17
+    },
+    {
+        "product":8,
+        "person":18
+    },
+    {
+        "product":8,
+        "person":19
+    },
+    {
+        "product":8,
+        "person":20
+    },
+    {
+        "product":9,
+        "person":9
+    },
+    {
+        "product":9,
+        "person":10
+    },
+    {
+        "product":9,
+        "person":11
+    },
+    {
+        "product":10,
+        "person":12
+    },
+    {
+        "product":10,
+        "person":13
+    },
+    {
+        "product":10,
+        "person":14
+    },
+    {
+        "product":11,
+        "person":15
+    },
+    {
+        "product":11,
+        "person":16
+    },
+    {
+        "product":11,
+        "person":17
+    },
+    {
+        "product":12,
+        "person":18
+    },
+    {
+        "product":12,
+        "person":19
+    },
+    {
+        "product":12,
+        "person":20
+    },
+    {
+        "product":13,
+        "person":9
+    },
+    {
+        "product":13,
+        "person":10
+    },
+    {
+        "product":13,
+        "person":11
+    },
+    {
+        "product":14,
+        "person":12
+    },
+    {
+        "product":14,
+        "person":13
+    },
+    {
+        "product":14,
+        "person":14
+    },
+    {
+        "product":15,
+        "person":15
+    },
+    {
+        "product":15,
+        "person":16
+    },
+    {
+        "product":15,
+        "person":17
+    },
+    {
+        "product":16,
+        "person":18
+    },
+    {
+        "product":16,
+        "person":19
+    },
+    {
+        "product":16,
+        "person":20
+    },
+    {
+        "product":17,
+        "person":9
+    },
+    {
+        "product":17,
+        "person":10
+    },
+    {
+        "product":17,
+        "person":11
+    },
+    {
+        "product":18,
+        "person":12
+    },
+    {
+        "product":18,
+        "person":13
+    },
+    {
+        "product":18,
+        "person":14
+    },
+    {
+        "product":19,
+        "person":15
+    },
+    {
+        "product":19,
+        "person":16
+    },
+    {
+        "product":19,
+        "person":17
+    },
+    {
+        "product":20,
+        "person":18
+    },
+    {
+        "product":20,
+        "person":19
+    },
+    {
+        "product":20,
+        "person":20
+    },
+    {
+        "product":21,
+        "person":9
+    },
+    {
+        "product":21,
+        "person":10
+    },
+    {
+        "product":21,
+        "person":11
+    },
+    {
+        "product":22,
+        "person":12
+    },
+    {
+        "product":22,
+        "person":13
+    },
+    {
+        "product":22,
+        "person":14
+    },
+    {
+        "product":23,
+        "person":15
+    },
+    {
+        "product":23,
+        "person":16
+    },
+    {
+        "product":23,
+        "person":17
+    },
+    {
+        "product":24,
+        "person":18
+    },
+    {
+        "product":24,
+        "person":19
+    },
+    {
+        "product":24,
+        "person":20
+    },
+    {
+        "product":25,
+        "person":9
+    },
+    {
+        "product":25,
+        "person":10
+    },
+    {
+        "product":25,
+        "person":11
+    },
+    {
+        "product":26,
+        "person":12
+    },
+    {
+        "product":26,
+        "person":13
+    },
+    {
+        "product":26,
+        "person":14
+    },
+    {
+        "product":27,
+        "person":15
+    },
+    {
+        "product":27,
+        "person":16
+    },
+    {
+        "product":27,
+        "person":17
+    },
+    {
+        "product":28,
+        "person":18
+    },
+    {
+        "product":28,
+        "person":19
+    },
+    {
+        "product":28,
+        "person":20
+    },
+    {
+        "product":29,
+        "person":9
+    },
+    {
+        "product":29,
+        "person":10
+    },
+    {
+        "product":29,
+        "person":11
+    },
+    {
+        "product":30,
+        "person":12
+    },
+    {
+        "product":30,
+        "person":13
+    },
+    {
+        "product":30,
+        "person":14
+    }
+    ],
+    "Feature": [
+    {
+        "id":1,
+        "title":"Define high-level polices",
+        "description":"With DNA, you can create policies that reflect your organization's business intent for particular aspects of your network, such as network access. DNA Center takes the information collected in a policy and translates it into network-specific and device-specific configurations.",
+        "image":"1.png",
+        "area":1
+         
+    },
+    {
+        "id":2,
+        "title":"Obtain insights and automated tasks",
+        "description":"Use the collection and correlation of performance data to obtain business nsights, proactively identify issues, and get actionable guidance to deliver better, more personalized experiences. Improve service and keep operations secure by automating many of your repetitive tasks ",
+        "image":"2.png",
+        "area":1
+         
+    },
+    {
+        "id":3,
+        "title":"Support business continuity",
+        "description":"With location-based services you can monitor presence and compliance with physical-distancing guidelines, help ensure safety of employees by using insights from location-based services and get crucial information through captive portals and engagement toolkits.",
+        "image":"3.png",
+        "area":1
+         
+    },
+    {
+      "id":4,
+      "title":"Secure access service edge",
+      "description":"Combine network and security functionality in a single, cloud-native service to help secure access wherever users and applications reside",
+      "image":"4.png",
+      "area":2
+       
+  },
+  {
+      "id":5,
+      "title":"Extended detection and response",
+      "description":"Boost operational productivity using a cloud-native platform with analytics and automation built in",
+      "image":"5.png",
+      "area":2
+       
+  },
+  {
+      "id":6,
+      "title":"Zero trust",
+      "description":"Balance security and usability while you protect against threats to users, networks, and applications",
+      "image":"6.png",
+      "area":2
+       
+  },
+  {
+    "id":7,
+    "title":"Securely manage critical operations from anywhere at scale",
+    "description":"A health crisis or natural disaster can threaten worker safety and topple your industrial productivity. Plan for the unexpected and build a trusted workplace. Empower your team to monitor, manage and optimize equipment and processes like they’re on the factory floor or in the field – from anywhere.",
+    "image":"7.png",
+    "area":3
+     
+},
+{
+  "id":8,
+  "title":"Reduce downtime with full visibility and control",
+  "description":"Choose from a variety of management tools that allow you to design, provision, enable policy, and assure network performance from one place. Easily deploy and operate remotely at scale with centralized management of IoT infrastructure and applications.Gain full visibility into the network and automation devices. Faster troubleshooting minimizes network downtime.",
+  "image":"8.png",
+  "area":3
+   
+},
+{
+  "id":9,
+  "title":"A bridge between IT and operations",
+  "description":"We often hear customers describe what it is they want out of an IoT deployment: a dashboard with buttons that allows them to see data or analytics of that data to understand what is happening in the operating environment. It’s obvious they have a clear vision of the outcome they want, but they don’t know how to get there. And they can’t — at least, not by themselves.",
+  "image":"9.png",
+  "area":3
+   
+},
+{
+  "id":10,
+  "title":"Security",
+  "description":"Our security products give you the scope, scale, and capabilities to keep up with the complexity and volume of threats.",
+  "image":"10.png",
+  "area":4
+   
+},
+{
+"id":11,
+"title":"Networking",
+"description":"Our networking solutions take a software-delivered approach to automate and assure services across your WAN, campus, and branch networks.",
+"image":"11.png",
+"area":4
+  
+},
+{
+"id":12,
+"title":"Collaboration",
+"description":"Accelerate teamwork and create more meaningful experiences.",
+"image":"12.png",
+"area":4
+ 
+},
+{
+  "id":13,
+  "title":"Simple device set up",
+  "description":"Zero-touch deployment eliminates complexity while improves business agility",
+  "image": "13.png",
+  "product": 16
+  },
+  {
+    "id":14,
+    "title":"Automation",
+    "description":"Automatically discovers your network devices and provides a topology diagram and detailed inventory report.",
+    "image": "14.png",
+    "product": 16
+    },
+    {
+      "id":15,
+      "title":"Monitoring",
+      "description":"A customizable monitoring dashboard allows you to easily see the current state and the performance of your network.",
+      "image": "15.png",
+      "product": 16
+      },
+          {
+            "id":16,
+            "title":"Ecosystem extensibility",
+            "description":"Simplified orchestration and workflow automation provide seamless integration within the suite and externally through a broad set of adapters and standardized interfaces.",
+            "image": "16.png",
+            "product": 1
+          },
+      {
+        "id":17,
+        "title":"Lifecycle management",
+        "description":"Provides detailed lifecycle information about your network devices—including maintenance and warranty status and end-of-life bulletins. ",
+        "image": "17.png",
+        "product": 1
+      },
+      {
+        "id":18,
+        "title":"Simplified network configuration",
+        "description":"Single interface to configure system information, wireless networks, virtual LANs, and Ethernet switching. ",
+        "image": "18.png",
+        "product": 1
+      },
+      {
+        "id":19,
+        "title":"Rapid application building and deployment",
+        "description":"IOx allows consistent deployment of applications that are independent of your network infrastructure and docker tooling for development.",
+        "image": "19.png",
+        "product": 17
+      },
+      {
+        "id":20,
+        "title":"Broad support for application types",
+        "description":"Accelerate development and test deployment of applications for faster onboarding, proofs of concept, and demos.",
+        "image": "20.png",
+        "product": 17
+      },
+      {
+        "id":21,
+        "title":"Application lifecycle management at scale",
+        "description":"With an intuitive GUI for on-premises or cloud-based management, IOx lets you back up and restore application data. You can also perform upgrades and view troubleshooting logs.",
+        "image": "21.png",
+        "product": 17
+      },
+      {
+        "id":22,
+        "title":"Built-in security",
+        "description":"Built-in container security allows you to run only trusted applications with application signing and verification.",
+        "image": "22.png",
+        "product": 2
+      },
+      {
+        "id":23,
+        "title":"Modularity and investment protection",
+        "description":"The IR1101 has highly modular and expandable hardware designed to extend product lifetime. Internal and expansion modules give you the flexibility to add or upgrade WAN and storage components as technologies and your needs evolve.",
+        "image": "23.png",
+        "product": 18
+        },
+        {
+          "id":24,
+          "title":"A 5G-ready, dual WAN gigabit router",
+          "description":"When provisioned with two cellular modules, the IR1101 enables concurrent connectivity to two cellular networks for WAN redundancy, enhanced data throughputs, load balancing, and differentiated services. The hardware is future-proofed to handle 5G.",
+          "image": "24.png",
+          "product": 18
+        },
+        {
+          "id":25,
+          "title":"Ruggedized and compact, with low power consumption.",
+          "description":"With its small form-factor (less than 2RU) and low typical power consumption of 10 W, the IR1101 is easy to install and integrate into space- and power-constrained cabinet installations.",
+          "image": "25.png",
+          "product": 18
+        },
+        {
+          "id":26,
+          "title":"Software-defined WAN on the IR1101",
+          "description":"Now you can leverage IT expertise to a broad, distributed network, operate at scale, and lower total cost of ownership. Cisco SD-WAN architecture delivers scale, simplicity, and unified management for extending enterprise networks to a distributed IoT deployment.",
+          "image": "26.png",
+          "product": 2
+          },
+          {
+            "id":27,
+            "title":"Open extensible platform with IOS-XE at the edge",
+            "description":"Cisco IOS XE is highly programmable, with open and standards-based APIs, and next-generation, multilayer security built in. This unified software stack is ideal for process and workflow automation, enabling you to qualify and deploy new services more quickly.",
+            "image": "27.png",
+            "product": 2
+          },
+          {
+            "id":28,
+            "title":"Secure your industrial network at scale",
+            "description":"No need for dedicated appliances and out-of-band networks. Cisco Cyber Vision is embedded into Cisco’s industrial network equipment. You will appreciate the unique simplicity and the lower costs when looking for deploying OT security at scale.",
+            "image": "28.png",
+            "product": 19
+          },
+          {
+            "id":29,
+            "title":"Gain 100% visibility",
+            "description":"Cyber Vision leverages a unique combination of passive and active discovery to identify all your assets with no risk to devices and processes. As discovery is performed by your industrial network elements, inquiries are not blocked by firewalls or NAT boundaries, resulting in 100% visibility.",
+            "image": "29.png",
+            "product": 19
+          },
+          {
+            "id":30,
+            "title":"Real-time insights into your industrial processes",
+            "description":"Maintain system integrity and production continuity. Cisco Cyber Vision understands proprietary industrial protocols to keep track of process anomalies, asset modifications and variable changes. It’s the “flight recorder” of your industrial infrastructure.",
+            "image": "30.png",
+            "product": 19
+          },
+          {
+            "id":31,
+            "title":"Threat intelligence built-in",
+            "description":"Identify asset vulnerabilities in a snap. Immediately detect intrusions. Cisco Cyber Vision includes threat intelligence from Cisco Talos, the IoT Security Lab, CISA and other CERT so you can fix vulnerabilities, known and emerging threats before they hit you.",
+            "image": "31.png",
+            "product": 3
+          },
+          {
+            "id":32,
+            "title":"Advanced anomaly detection",
+            "description":"Cisco Cyber Vision behavioral analytics detects process anomalies, faulty devices and unknown attacks. Create baselines to model the normal state of your production infrastructure and set rules that will trigger alerts covering all scenarios.",
+            "image": "32.png",
+            "product": 3
+          },
+          {
+            "id":33,
+            "title":"Edge to multi-cloud data orchestration",
+            "description":"Experience seamless integration with multiple cloud partners.",
+            "image": "33.png",
+            "product": 20
+          },
+          {
+            "id":34,
+            "title":"Ultimate data control",
+            "description":"Direct data to local or multi-cloud environments or both.",
+            "image": "34.png",
+            "product": 20
+          },
+          {
+            "id":35,
+            "title":"Secure",
+            "description":"Built on Cisco’s industry-leading multi-layered security.",
+            "image": "35.png",
+            "product": 20
+          },
+          {
+            "id":36,
+            "title":"Integrated",
+            "description":"Single-vendor solution: deploy, manage and scale more easily.",
+            "image": "36.png",
+            "product": 3
+          },
+          {
+            "id":37,
+            "title":"Data normalization",
+            "description":"Create, test and deploy code using popular developer-friendly tools.",
+            "image": "37.png",
+            "product": 4
+          },
+          {
+            "id":38,
+            "title":"Scalability for industrial networks",
+            "description":"Accelerate digital transformation and upgrade your IoT infrastructure to Gigabit speeds. The IE3200 packs 10 ports of Gigabit Ethernet for a wide variety of industrial and extended enterprise connectivity needs.",
+            "image": "38.png",
+            "product": 21
+          },
+          {
+            "id":39,
+            "title":"Compact form factor for rugged use cases",
+            "description":"The Catalyst IE3200 ruggedized ethernet switch is optimized for size, weight, and power, and it is easy to integrate into space- and power-constrained cabinet installations. With its rugged, die-cast chassis, the IE3200 is well suited for the harshest environments.",
+            "image": "39.png",
+            "product": 21
+          },
+          {
+            "id":40,
+            "title":"High-density PoE+",
+            "description":"Reduce complexity with one cable for connectivity and power. The Cisco Catalyst IE3200 Rugged Series provides high-density industrial switching PoE/PoE+ to power up to eight devices, making them an ideal choice to power Wi-Fi access points, IP cameras, and sensors.",
+            "image": "40.png",
+            "product": 21
+          },
+          {
+            "id":41,
+            "title":"Open extensible platform with IOS XE",
+            "description":"Learn about Cisco IOS XE is the next-generation network operating system, with open and standards-based APIs, and multilayer security, and trust built-in. This unified software stack is ideal for improving process speeds and workflow automation, enabling you to qualify and deploy new services quicker.",
+            "image": "41.png",
+            "product": 4
+          },
+          {
+            "id":42,
+            "title":"Extend IoT connectivity to the harshest environments",
+            "description":"These dust and waterproof IP67 rated switches are also hardened to withstand extreme temperature exposure as well as severe shock and vibration.",
+            "image": "42.png",
+            "product": 22
+          },
+          {
+            "id":43,
+            "title":"Simple and robust security",
+            "description":"Segment IoT endpoints without redesigning the network and enforce access policies for users, applications, and devices. Get real-time visibility into traffic patterns. Detect endpoint security threats and rapidly contain them by isolating attacks and vulnerable endpoints.",
+            "image": "43.png",
+            "product": 22
+          },
+          {
+            "id":44,
+            "title":"Easy management of the extended enterprise",
+            "description":"Scale with centralized and consistent policy management across the network. Enable intent-based networking to the IoT Edge with Cisco Software-Defined Access and easily manage IoT endpoints with the same tools that manage the IT network, such as Cisco DNA Center.",
+            "image": "44.png",
+            "product": 22
+          },
+          {
+            "id":45,
+            "title":"Multitenancy in any cloud",
+            "description":"The CSR 1000V Series serves as a secure single-tenant router in a multitenant, shared-resource public cloud environment. It provides end-to-end managed connectivity.",
+            "image": "45.png",
+            "product": 23
+          },
+          {
+            "id":46,
+            "title":"Infrastructure agnostic",
+            "description":"Gain complete independence, regardless of the infrastructure that your enterprise or data center network uses. The CSR 1000V Series works with VMware ESXi, Red Hat KVM, SUSE Linux KVM, Citrix Xen, Microsoft Hyper-V and Azure, Google Cloud Platform, and Amazon Web Services.",
+            "image": "46.png",
+            "product": 23
+          },
+          {
+            "id":47,
+            "title":"Reduced security risk",
+            "description":"Deploy a complete, hypervisor-isolated, multiservice secure instance for each tenant. Secure features include IPsec VPNs and built-in zone-based firewalls, among others.",
+            "image": "47.png",
+            "product": 23
+          },
+          {
+            "id":48,
+            "title":"Network scalability",
+            "description":"Scale beyond the limitations of IEEE 802.1Q VLAN tagging. Build a VXLAN network or extend Layer 3 routing deeper into the cloud environment.",
+            "image": "48.png",
+            "product": 4
+          },
+          {
+            "id":49,
+            "title":"User security",
+            "description":"Cloudlock uses advanced machine learning algorithms to detect anomalies based on multiple factors. It also identifies activities outside allowed countries and spots actions that seem to take place at impossible speeds across distances.",
+            "image": "49.png",
+            "product": 24
+          },
+          {
+            "id":50,
+            "title":"Data security",
+            "description":"Cloudlock's data loss prevention (DLP) technology continuously monitors cloud environments to detect and secure sensitive information. It provides countless out-of-the-box policies as well as highly tunable custom policies.",
+            "image": "50.png",
+            "product": 24
+          },
+          {
+            "id":51,
+            "title":"App security",
+            "description":"The Cloudlock Apps Firewall discovers and controls cloud apps connected to your corporate environment. You can see a crowd-sourced Community Trust Rating for individual apps, and you can ban or allowlist them based on risk.",
+            "image": "51.png",
+            "product": 24
+          },
+          {
+            "id":52,
+            "title":"Integrations",
+            "description":"Get an integrated and open platform that simplifies your existing ecosystem and works with third-party solutions.",
+            "image": "52.png",
+            "product": 25
+          },
+          {
+            "id":53,
+            "title":"Threat response",
+            "description":"Accelerate threat investigations and incident management by aggregating and correlating global intelligence and local context in one view.",
+            "image": "53.png",
+            "product": 25
+          },
+          {
+            "id":54,
+            "title":"Visibility with context",
+            "description":"Experience unified visibility with a customizable dashboard and maintain context around incidents with a consistent ribbon that never leaves you.",
+            "image": "54.png",
+            "product": 25
+          },
+          {
+            "id":55,
+            "title":"Orchestration",
+            "description":"Automate routine tasks using prebuilt workflows that align to common use cases. Or build your own workflows with our no-to-low code, drag-and-drop canvas.",
+            "image": "55.png",
+            "product": 5
+          },
+          {
+            "id":56,
+            "title":"Simple GUI-driven menu system to deploy clusters",
+            "description":"You don’t have to know the technical details of Kubernetes to deploy a cluster. Just fill in the questions and CCP will do the work.",
+            "image": "56.png",
+            "product": 26
+          },
+          {
+            "id":57,
+            "title":"The ability to deploy Kubernetes clusters in air-gapped sites",
+            "description":"CCP tenant images contain all the necessary binaries and don’t need internet access to function.",
+            "image": "57.png",
+            "product": 26
+          },
+          {
+            "id":58,
+            "title":"Choice of networking solutions",
+            "description":"Use Cisco’s ACI plug-in, an industry standard Calico network, or if scaling is your priority, choose Contiv with VPP. All work seamlessly with CCP.",
+            "image": "58.png",
+            "product": 26
+          },
+          {
+            "id":59,
+            "title":"Automated monthly updates",
+            "description":"Bug fixes, feature enhancements, and CVE remedies are pushed automatically every month—not only for Kubernetes, but also for the underlying operating system.",
+            "image": "59.png",
+            "product": 5
+          },
+          {
+            "id":60,
+            "title":"Built-in visibility and monitoring",
+            "description":"CCP lets you see what’s going on inside clusters to stay on top of usage patterns and address potential problems before they negatively impact the business.",
+            "image": "60.png",
+            "product": 5
+          },
+          {
+            "id":61,
+            "title":"Flexibility",
+            "description":"SaaS or air-gapped on-premises Kubernetes lifecycle management.",
+            "image": "61.png",
+            "product": 27
+          },
+          {
+            "id":62,
+            "title":"Automation",
+            "description":"Self-service cluster deployment with optional add-ins of 100 percent upstream Kubernetes clusters.",
+            "image": "62.png",
+            "product": 27
+          },
+          {
+            "id":63,
+            "title":"Public cloud integration",
+            "description":"Intersight Kubernetes Service integrates with AWS EKS, Microsoft Azure AKS, and Google Cloud GKE.",
+            "image": "63.png",
+            "product": 27
+          },
+          {
+            "id":64,
+            "title":"Enhanced security and availability",
+            "description":"Built for the enterprise with support for multimaster clusters and self-healing.",
+            "image": "64.png",
+            "product": 6
+          },
+          {
+            "id":65,
+            "title":"Full-stack visibility",
+            "description":"Provides visibility into application and infrastructure interdependencies and their impact on workload performance.",
+            "image": "65.png",
+            "product": 28
+          },
+          {
+            "id":66,
+            "title":"Intelligent insight",
+            "description":"Uses AI-assisted analytics to analyze complex telemetry data and make resource recommendations so you don’t have to.",
+            "image": "66.png",
+            "product": 28
+          },
+          {
+            "id":67,
+            "title":"Automated actions",
+            "description":"Implements resource recommendations automatically in real time, simplifying operations and increasing efficiency.",
+            "image": "67.png",
+            "product": 28
+          },
+          {
+            "id":68,
+            "title":"Hybrid cloud optimization",
+            "description":"One platform for optimizing IT resources and ensuring application performance across all your clouds.",
+            "image": "68.png",
+            "product": 6
+          },
+          {
+            "id":69,
+            "title":"Accelerate growth",
+            "description":"Realize the benefits of an Azure Stack Hub solution architected for rapid scalability and cloud-native applications.",
+            "image": "69.png",
+            "product": 29
+          },
+          {
+            "id":70,
+            "title":"Simplified management",
+            "description":"Free up resources and achieve full control of your Azure Stack Hub through policy-based management tools.",
+            "image": "70.png",
+            "product": 29
+          },
+          {
+            "id":71,
+            "title":"World-class partnership",
+            "description":"Cisco and Microsoft deliver Azure Stack Hub by collaborating on joint development and support to help ensure customer success.",
+            "image": "71.png",
+            "product": 29
+          },
+          {
+            "id":72,
+            "title":"Multicloud blueprint",
+            "description":"Abstract application profiles from infrastructure to standardize application lifecycle management across all clouds. Use one automation artifact to design, deploy and optimize infrastructure and applications to multiple cloud or on-premises environments.",
+            "image": "72.png",
+            "product": 30
+          },
+          {
+            "id":73,
+            "title":"Multicloud governance",
+            "description":"Enable policy-based, self-service deployment of infrastructure and applications, on-premises and in public clouds. Create governance policies that are aligned with your objectives and provide centralized visibility and control.",
+            "image": "73.png",
+            "product": 30
+          },
+          {
+            "id":74,
+            "title":"Cost optimization",
+            "description":"Comprehensive cost reporting and visibility of workloads, network, storage, and/or enhanced services across public and private cloud infrastructures. Enterprises can significantly reduce their cloud spend through optimization recommendations, for example, instance rightsizing, reserved instance recommendations, and suspension policies.",
+            "image": "74.png",
+            "product": 30
+          },
+          {
+            "id":75,
+            "title":"DevOps integration",
+            "description":"Simplify business processes and reduce human error by automating workflows and repetitive tasks to achieve technical integrations and/or business processes. Efficiently manage artifact flow of the deployment pipeline for applications during development, testing, and production lifecycle stages using project dashboards and native integrations with CI/CD tools.",
+            "image": "75.png",
+            "product": 6
+          },
+      {
+         "id":76,
+         "title":"Centralized management",
+         "description":"IT Ops, DevOps and Development get a single self-service portal to model, deploy, and manage applications. Administrators get visibility and governance of applications, clouds, and users.",
+         "image":"76.png",
+         "product":7
+      },
+      {
+         "id":77,
+         "title":"Maximized investment",
+         "description":"Utilize added functionality from new modules leveraging Cisco's investments in multicloud, cloud-native capabilities, and out-of-the-box integrations, including Cisco ACI, ServiceNow, and Single Sign-On.",
+         "image":"77.png",
+         "product":7
+      },
+      {
+         "id":78,
+         "title":"Increased control",
+         "description":"Apply IT policies and controls to consistently guide user decisions and achieve reliable, repeatable results that help reduce risk and improve security.",
+         "image":"78.png",
+         "product":7
+      },
+      {
+         "id":79,
+         "title":"End-to-end management",
+         "description":"Manage the lifecycle of existing (VMs, bare metal) and new (containers) infrastructure and applications, on-premises and in multiple clouds.",
+         "image":"79.png",
+         "product":8
+      },
+      {
+         "id":80,
+         "title":"Robust agility",
+         "description":"Allows application deployment within sites and across global data centers without complex Data Center Interconnect (DCI) infrastructure.",
+         "image":"80.png",
+         "product":8
+      },
+      {
+         "id":81,
+         "title":"Automation",
+         "description":"Automate the interconnect of multiple on-premises and cloud data centers.",
+         "image":"81.png",
+         "product":8
+      },
+      {
+         "id":82,
+         "title":"Multi-tenant security",
+         "description":"Provides a command-line interface (CLI) and GUI, which utilize the APIs to manage the fabric holistically.",
+         "image":"82.png",
+         "product":9
+      },
+      {
+         "id":83,
+         "title":"Disaster recovery",
+         "description":"Robust implementation of multi-tenant security, quality of service (QoS), and high availability.",
+         "image":"83.png",
+         "product":9
+      },
+      {
+         "id":84,
+         "title":"Improve business agility",
+         "description":"Reduce time to market of network services, and time from device introduction or features updates to actual network deployment. Deliver frequent, domain-specific content asynchronous from the management platform.",
+         "image":"84.png",
+         "product":9
+      },
+      {
+         "id":85,
+         "title":"Increase operational efficiencies",
+         "description":"Resolve network issues faster, and quickly identify affected circuits and virtual connections through automated provisioning of services.",
+         "image":"85.png",
+         "product":10
+      },
+      {
+         "id":86,
+         "title":"Simplify with a single-product experience",
+         "description":"Benefit from a shared information model, consistent workflows and UI, and easier deployment.",
+         "image":"86.png",
+         "product":10
+      },
+      {
+         "id":87,
+         "title":"Reduce total cost of ownership",
+         "description":"Get integrated, end-to-end management for the entire carrier network, supporting multiple domains, right out of the box.",
+         "image":"87.png",
+         "product":10
+      },
+      {
+         "id":88,
+         "title":"Unify your architecture",
+         "description":"The Cisco Cloud-to-client, open, multivendor, multi-technology 5G architecture simplifies the complicated.",
+         "image":"88.png",
+         "product":11
+      },
+      {
+         "id":89,
+         "title":"Reduce your costs",
+         "description":"Simplified IP network operations and service creation improves efficiency.",
+         "image":"89.png",
+         "product":11
+      },
+      {
+         "id":90,
+         "title":"Monetize your network",
+         "description":"An application and mode-driven cloud platform freely and quickly monetizes new services.",
+         "image":"90.png",
+         "product":11
+      },
+      {
+        "id":91,
+        "title":"Mitigate your risk",
+        "description":"Secured and trusted solutions for your network establishes premium value with your customers.",
+        "image": "91.png",
+        "product":12
+      },
+      {
+        "id":92,
+        "title":"Support for a wide range of network access technologies",
+        "description":"Cisco Prime Access Registrar supports service provider Wi-Fi (SP Wi-Fi), Vo-WiFi, femtocell, Connected Grid, LTE, DSL, Code Division Multiple Access (CDMA), General Packet Radio Service (GPRS), and Universal Mobile Telecommunications Service (UMTS), WLAN, WiMAX, dialup, and others. By standardizing on one common AAA server platform, this solution reduces operational and capital expenses and provides flexibility in AAA choice.",
+        "image": "92.png",
+        "product": 12
+      },
+      {
+        "id":93,
+        "title":"Speed and scalability",
+        "description":"True 64bit architecture providing exceptional RADIUS and Diameter performance and scalability to support large service deployments and millions of simultaneous active sessions.",
+        "image": "93.png",
+        "product": 12
+      },
+        {
+        "id":94,
+        "title":"Mitigate your risk",
+        "description":"Secured and trusted solutions for your network establishes premium value with your customers.",
+        "image": "94.png",
+        "product":13
+      },
+      {
+        "id":95,
+        "title":"Session management",
+        "description":"Session and resource management tools track user sessions and dynamically allocate resources such as IP addresses and user or group session limits.",
+        "image": "95.png",
+        "product": 13
+      },
+      {
+        "id":96,
+        "title":"Broad integration capabilities",
+        "description":"Cisco Prime Access Registrar supports integration with an extensive variety of external data stores.",
+        "image": "96.png",
+        "product": 13
+      },
+      {
+        "id":97,
+        "title":"Easy installation",
+        "description":"Install a Catalyst switch in less than 5 minutes, in three simple steps: Power up, open a browser, install.",
+        "image": "97.png",
+        "product": 14
+      },
+      {
+        "id":98,
+        "title":"Quick troubleshooting",
+        "description":"The rich feature set of Cisco Catalyst diagnostic tools helps you troubleshoot the network and the device with just a few mouse clicks.",
+        "image": "98.png",
+        "product": 14
+      },
+      {
+        "id":99,
+        "title":"Simple configuration",
+        "description":"Implement network policies with ease. Get a simple view of configuring policies for switches, ports, and network segments.",
+        "image": "99.png",
+        "product": 14
+      },
+      {
+        "id":100,
+        "title":"Comprehensive monitoring",
+        "description":"Use a single dashboard panel to monitor switch stacks or clusters, ports, and endpoint client status with real-time statistics.",
+        "image": "100.png",
+        "product": 15
+      },
+      {
+        "id":101,
+        "title":"Open automation",
+        "description":"Orchestrate and manage Cisco and third-party infrastructure to deliver on-premises private cloud.",
+        "image": "101.png",
+        "product": 15
+      },
+      {
+        "id":102,
+        "title":"Core to edge",
+        "description":"Rapidly and consistently deploy infrastructure resources in your data center, ROBO, and edge environments.",
+        "image": "102.png",
+        "product": 15
+      }
+    ],
+    "Role": [
+      {
+        "id": 1,
+        "title": "Area Manager",
+        "description": "Area managers are responsible for ensuring the proper and effective operation of a business. This role requires individuals to oversee the day-to-day work and operations of lower-level employees to ensure adherence to organization guidelines. Area managers may also take on human resources duties, to include interviewing and hiring new staff. This role may also require creating and implementing new operational standards.",
+        "image": "1-icon.png",
+        "icon": "1-image.png",
+        "responsibility1": "Managing relationships with clients and stakeholders",
+        "responsibility2": "Managing large and diverse teams",
+        "responsibility3": "Designing and signing off on contracts"
+      },
+      {
+        "id": 2,
+        "title": "Project Manager",
+        "description": "The Project Manager manages key client projects. Project management responsibilities include the coordination and completion of projects on time within budget and within scope. Oversee all aspects of projects. Set deadlines, assign responsibilities and monitor and summarize progress of project. Prepare reports for upper management regarding status of project.",
+        "image": "2-icon.png",
+        "icon": "2-image.png",
+        "responsibility1": "Designing risk mitigation plan",
+        "responsibility2": "Ensuring projects meet deadlines",
+        "responsibility3": "Coordinating staff and internal resources"
+      },
+      {
+        "id": 3,
+        "title": "Assistance Referent",
+        "description": "Assistance Referent representative will often be the first point of contact with a customer has with an organisation, so it is essential for them to create a good impression. Thus, they need to be polite and approachable, confident and have the ability to remain patient and calm in difficult or stressful situations.",
+        "image": "3-icon.png",
+        "icon": "3-image.png",
+        "responsibility1": "Giving information and helping to solve customer problems",
+        "responsibility2": "Selling products and taking orders",
+        "responsibility3": "Making sure that the customer's experience is a positive one"
+      }
+    ]
+}
