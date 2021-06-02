@@ -4,10 +4,12 @@
       <div>
         <h1>TechToch</h1>
       </div>
-      <a href="#about"><button class="strong">Discover more</button></a>
+      <NuxtLink to="#about"
+        ><button class="strong">Discover more</button></NuxtLink
+      >
     </section>
-    <a id="about" />
     <card-section
+      id="about"
       :props="['light', 'right']"
       :subtitle="'WHO WE ARE'"
       :text="[
@@ -17,8 +19,7 @@
       :image="'/company/milan.png'"
       :alt="'Comapny city image'"
     />
-    <a id="values" />
-    <section class="vertical strong">
+    <section class="vertical strong" id="values">
       <h2>OUR VALUES</h2>
       <p>
         We believe that science and engineering need to be seen as one. It is

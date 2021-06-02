@@ -11,9 +11,8 @@
       :link="'#allAreas'"
       :button="'Discover more'"
     />
-    <section class="vertical strong">
-      <a id="allAreas" />
-      <h3>Areas</h3>
+    <section class="vertical strong" id="allAreas">
+      <h3 id="allAreas">Areas</h3>
       <p>
         From networking and data center to collaboration and security, we have
         IT solutions to meet your organization's needs.<br />

@@ -11,7 +11,12 @@
             :class="{ sender: message.sender }"
           >
             <div v-if="message.sender" class="chat_img">
-              <img loading="lazy" class="chat_icon" src="/chatbot.png" />
+              <img
+                loading="lazy"
+                class="chat_icon"
+                src="/chatbot.png"
+                alt="chatbot icon"
+              />
             </div>
             <div class="message-content" :class="{ sender: message.sender }">
               {{ message.content }}
@@ -158,7 +163,7 @@ export default {
 
 img.chat_icon {
   width: 40px;
-  height: 40px;
+  height: auto;
   border-radius: 10%;
 }
 

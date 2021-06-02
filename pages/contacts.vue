@@ -8,8 +8,7 @@
       </p>
     </section>
     <section class="horizontal strong">
-      <div class="contactInfos">
-        <a id="number" />
+      <div class="contactInfos" id="number">
         <h2>Call Us</h2>
         <p>+02 35467832</p>
       </div>
@@ -26,8 +25,7 @@
         <h2>HEADQUARTER</h2>
         <p>Via San Vito, 9, 20123 MILAN (MI) - LOMBARDIA</p>
       </div>
-      <div class="mapouter">
-        <a id="map" />
+      <div class="mapouter" id="map">
         <div class="gmap_canvas">
           <iframe
             id="gmap_canvas"
@@ -38,8 +36,7 @@
         </div>
       </div>
     </section>
-    <section class="vertical strong">
-      <a id="form" />
+    <section class="vertical strong" id="form">
       <h2>Contact Us</h2>
       <form class="contact">
         <p>Name*</p>
@@ -55,16 +52,6 @@
     </section>
   </main>
 </template>
-
-<script>
-export default {
-  mounted() {
-    setTimeout(() => {
-      //TODO: controllare # -> this.Rounter.push(...)
-    }, 1000)
-  }
-}
-</script>
 
 <style scoped>
 div.text {

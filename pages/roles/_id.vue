@@ -32,8 +32,7 @@
         <card-preview :title="data.responsibility3" :image="'/roles/3.png'" />
       </div>
     </section>
-    <section class="vertical light">
-      <a id="people" />
+    <section class="vertical light" id="people">
       <h2>Who are our {{ data.title }}s</h2>
       <div class="grid">
         <card-preview
