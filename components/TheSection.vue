@@ -4,8 +4,8 @@
       <img loading="lazy" :src="image" :alt="alt" />
     </div>
     <div class="text">
-      <h1 v-if="title != undefined">{{ title }}</h1>
-      <h2 v-if="subtitle != undefined">{{ subtitle }}</h2>
+      <h1 v-if="title != ''">{{ title }}</h1>
+      <h2 v-if="subtitle != ''">{{ subtitle }}</h2>
       <p v-for="p in text" :key="p">{{ p }}</p>
       <NuxtLink :to="link" v-if="props[2] != undefined">
         <button :class="props[2]">{{ button }}</button></NuxtLink
