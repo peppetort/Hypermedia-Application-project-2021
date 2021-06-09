@@ -2,7 +2,7 @@
   <main class="container">
     <nav-bar
       :path="[
-        ['/roles', 'All roles'],
+        ['/roles', 'Team'],
         [`/roles/${data.id}`, `${data.title}`]
       ]"
       :look="'strong'"

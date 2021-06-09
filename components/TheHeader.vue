@@ -3,7 +3,7 @@
     <div class="header">
       <div class="logo">
         <NuxtLink to="/">
-          <img loading="lazy" src="/logo-small.png" alt="company logo icon" />
+          <img loading="lazy" src="/logo-long.svg" alt="company logo icon" />
         </NuxtLink>
       </div>
       <div class="nav-mobile">
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <NuxtLink to="/roles">Roles</NuxtLink>
+          <NuxtLink to="/roles">Team</NuxtLink>
           <div class="dropdown-content">
             <NuxtLink
               v-for="role in roles"
@@ -56,7 +56,7 @@
     <div class="mobile-menu" id="mobile-menu" @click="toggleMenu">
       <NuxtLink to="/areas">Areas</NuxtLink>
       <NuxtLink to="/products">Products</NuxtLink>
-      <NuxtLink to="/roles">Roles</NuxtLink>
+      <NuxtLink to="/roles">Team</NuxtLink>
       <NuxtLink to="/company">Company</NuxtLink>
       <NuxtLink to="/contacts">Contacts</NuxtLink>
     </div>
@@ -102,11 +102,14 @@ div.container {
   height: auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 1;
 }
 
 div.header {
   height: 40px;
-  /* background-color: #bdbdbd; */
   background: black;
   display: flex;
   flex-direction: row;
@@ -154,7 +157,6 @@ div.dropdown-content {
   position: absolute;
   top: 50px;
   background: black;
-  /* background-color: #f2f2f2; */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -186,6 +188,7 @@ div.nav-mobile img {
 
 div.mobile-menu {
   display: none;
+  background: black;
   flex-direction: column;
   align-items: center;
   text-align: center;

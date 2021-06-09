@@ -32,6 +32,10 @@ html {
   box-sizing: border-box;
 }
 
+main {
+  margin-top: 50px;
+}
+
 h1 {
   font-size: 60px;
 }
@@ -46,7 +50,7 @@ p {
 
 section {
   display: flex;
-  padding: 50px;
+  padding: 10px;
 }
 
 section.light {

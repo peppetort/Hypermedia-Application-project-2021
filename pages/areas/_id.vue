@@ -2,19 +2,17 @@
   <main class="container">
     <nav-bar
       :path="[
-        ['/areas', 'All areas'],
+        ['/areas', 'Areas'],
         [`/areas/${data.id}`, `${data.title}`]
       ]"
       :look="'strong'"
     />
     <card-section
-      :props="['strong', 'left', 'light']"
+      :props="['strong', 'left']"
       :title="data.title"
       :text="[data.subtitle]"
       :image="`data:image/png;base64,${data.main_image}`"
       :alt="`Image for ${data.title}`"
-      :link="'/contacts'"
-      :button="'Contact Us'"
     />
     <card-section
       :props="['light', 'right']"
@@ -54,7 +52,7 @@
         />
       </div>
       <NuxtLink id="link-products" :to="`/products/area/${data.id}`"
-        >See More ></NuxtLink
+        >More products ></NuxtLink
       >
     </section>
     <card-section

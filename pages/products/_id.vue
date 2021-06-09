@@ -2,7 +2,7 @@
   <main class="container">
     <nav-bar
       :path="[
-        ['/products', 'All products'],
+        ['/products', 'Products'],
         [`/products/area/${data.area}`, `${data.area_ref.title} products`],
         [`/products/${data.id}`, `${data.title}`]
       ]"

@@ -2,7 +2,7 @@
   <main class="container">
     <nav-bar
       :path="[
-        ['/roles', 'All roles'],
+        ['/roles', 'Team'],
         [`/roles/${data.role}`, `${data.rol.title}`],
         [`/roles/people/${data.id}`, `${data.name} ${data.surname}`]
       ]"
@@ -26,7 +26,7 @@
       :image="`data:image/png;base64,${data.image}`"
       :alt="`Portrait of ${data.name} ${data.surname}`"
       :link="`/areas/${data.area.id}`"
-      :button="`${data.area.title}`"
+      :button="`${data.area.title} area`"
     />
     <section class="vertical light" v-if="data.products != undefined">
       <h2>{{ data.rol.title }} of</h2>

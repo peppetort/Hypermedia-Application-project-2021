@@ -1,12 +1,6 @@
 <template>
   <div class="footer">
     <div class="content">
-      <h2>Want to discover more?</h2>
-      <NuxtLink to="/contacts"
-        ><button class="light">Contact Us</button></NuxtLink
-      >
-    </div>
-    <div class="content">
       <div class="right">
         <img loading="lazy" src="/logo-long.svg" alt="company logo with name" />
         <p>2010 - 2021</p>
@@ -23,7 +17,7 @@
           >
         </div>
         <div class="column">
-          <NuxtLink to="/roles" class="title">Roles</NuxtLink>
+          <NuxtLink to="/roles" class="title">Team</NuxtLink>
           <NuxtLink
             v-for="role in roles"
             :key="role.id"
@@ -36,7 +30,7 @@
           <NuxtLink
             v-for="area in areas"
             :key="area.id"
-            :to="`/products//areas/${area.id}`"
+            :to="`/products/areas/${area.id}`"
             >{{ area.title }}</NuxtLink
           >
         </div>

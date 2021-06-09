@@ -1,15 +1,13 @@
 <template>
   <main class="container">
     <card-section
-      :props="['light', 'left', 'strong']"
+      :props="['light', 'left']"
       :title="'OUR AREAS'"
       :text="[
         'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'
       ]"
       :image="'/areas/areas.png'"
       :alt="'Image for all areas'"
-      :link="'#allAreas'"
-      :button="'Discover more'"
     />
     <section class="vertical strong" id="allAreas">
       <h3 id="allAreas">Areas</h3>
