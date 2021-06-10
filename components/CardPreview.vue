@@ -1,23 +1,14 @@
 <template>
-  <div>
-    <NuxtLink :to="`${link}`" v-if="link != ''">
-      <div class="card">
-        <div class="image">
-          <img loading="lazy" :src="image" :alt="alt" />
-        </div>
-        <div class="text">
-          <p>{{ title }}</p>
-        </div>
-      </div>
-    </NuxtLink>
-    <div class="card" v-if="link == ''">
-      <div class="image">
-        <img loading="lazy" :src="image" :alt="alt" />
-      </div>
-      <div class="text">
-        <p>{{ title }}</p>
-      </div>
+  <div class="card">
+    <div class="image">
+      <img loading="lazy" :src="image" :alt="alt" />
     </div>
+    <div class="text">
+      <p>{{ title }}</p>
+    </div>
+    <NuxtLink :to="link" v-if="button == true">
+      <button class="strong">View more</button></NuxtLink
+    >
   </div>
 </template>
 
@@ -26,8 +17,8 @@ export default {
   props: {
     title: { type: String, default: () => '' },
     image: { type: String, default: () => '' },
-    link: { type: String, default: () => '' },
-    alt: { type: String, default: () => '' }
+    alt: { type: String, default: () => '' },
+    button: { type: Boolean, default: () => true }
   }
 }
 </script>
@@ -42,11 +33,12 @@ div.card {
 
 div.image {
   width: 100%;
+  max-height: 300px;
 }
 
 div.image img {
-  height: 150px;
-  width: auto;
+  max-width: 100%;
+  height: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -67,9 +59,9 @@ div.text p {
   word-break: keep-all;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
   div.card {
     width: 80%;
   }
-} */
+}
 </style>

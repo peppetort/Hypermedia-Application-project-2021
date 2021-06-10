@@ -48,7 +48,7 @@
           :title="product.title"
           :image="`data:image/png;base64,${product.image}`"
           :alt="`Image of ${product.title}`"
-          :link="`/products/${product.id}`"
+          :button="false"
         />
       </div>
       <NuxtLink id="link-products" :to="`/products/area/${data.id}`"
