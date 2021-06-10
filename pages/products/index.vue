@@ -18,22 +18,24 @@
     </section>
     <section class="vertical light">
       <h2>Select your Area</h2>
-      <div class="links">
-        <NuxtLink
+      <div class="cards">
+        <card-preview
           v-for="area in data"
           :key="area.id"
-          :to="`products/area/${area.id}`"
-          ><button class="strong">
-            {{ area.title }}
-          </button></NuxtLink
-        >
+          :title="area.title"
+          :image="`data:image/png;base64,${area.main_image}`"
+          :alt="`Image of ${area.title}`"
+          :link="`/areas/${area.id}`"
+        ></card-preview>
       </div>
     </section>
   </main>
 </template>
 
 <script>
+import CardPreview from '~/components/CardPreview.vue'
 export default {
+  components: { CardPreview },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/areas')
     return { data }
