@@ -10,22 +10,26 @@
 <script>
 export default {
   props: {
-    path: { type: Array, default: () => [] }
+    path: { type: Array, default: () => [] },
+    look: { type: String, default: () => 'light' }
   }
 }
 </script>
 
 <style scoped>
 div.nav {
-  padding-bottom: 5px;
-  padding-left: 30px;
+  padding-left: 10px;
   height: auto;
   display: flex;
   flex-direction: row;
-  position: fixed;
-  top: 59px;
-  width: 100%;
-  background: black;
+}
+
+div.light {
+  background-color: white;
+}
+
+div.strong {
+  background-color: #f2f2f2;
 }
 
 div.nav > div {
@@ -36,12 +40,7 @@ div.nav > div {
   height: 30px;
 }
 
-div.nav p {
-  color: white;
-}
-
 div.nav a {
-  color: white;
   font-weight: bold;
   margin-right: 10px;
   font-size: 16px;

@@ -6,7 +6,9 @@
     <div class="text">
       <h1 v-if="title != ''">{{ title }}</h1>
       <h2 v-if="subtitle != ''">{{ subtitle }}</h2>
-      <p v-for="p in text" :key="p">{{ p }}</p>
+      <div class="description">
+        <p v-for="p in text" :key="p">{{ p }}</p>
+      </div>
       <NuxtLink :to="link" v-if="props[2] != undefined">
         <button :class="props[2]">{{ button }}</button></NuxtLink
       >
@@ -43,14 +45,14 @@ section.left {
 
 div.text {
   width: 50%;
-  padding-top: 80px;
-  padding-left: 100px;
+}
+
+div.description {
+  width: 90%;
 }
 
 div.image {
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 40%;
+  width: 50%;
 }
 
 div.image img {
@@ -59,7 +61,6 @@ div.image img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
 }
 
 @media (max-width: 1150px) {

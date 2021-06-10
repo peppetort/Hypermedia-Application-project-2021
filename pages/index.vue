@@ -8,16 +8,21 @@
         <h3>"Between hope and possible, there’s a bridge"</h3>
       </div>
     </section>
-    <card-section
-      :props="['strong', 'left', 'light']"
-      :subtitle="`Need to improve the ${data.title} of your company?`"
-      :image="`data:image/png;base64,${data.main_image}`"
-      :alt="`Image for ${data.title}`"
-      :link="`/areas/${data.id}`"
-      :button="'Discover More'"
-    />
+    <section class="vertical strong">
+      <h2>Areas</h2>
+      <div class="cards">
+        <card-preview
+          v-for="area in data"
+          :key="area.id"
+          :title="area.title"
+          :image="`data:image/png;base64,${area.main_image}`"
+          :alt="`Image of ${area.title}`"
+          :link="`/areas/${area.id}`"
+        />
+      </div>
+    </section>
     <section class="vertical">
-      <h2>Our most popular products</h2>
+      <h2>Best sellers</h2>
       <div class="cards">
         <card-preview
           v-for="product in data.products"
@@ -58,13 +63,12 @@
 </template>
 
 <script>
-import CardSection from '~/components/TheSection.vue'
 import CardPreview from '~/components/CardPreview.vue'
 export default {
-  components: { CardSection, CardPreview },
+  components: { CardPreview },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/areas/3')
-    data.products = (await $axios.get(`api/products`)).data.slice(10, 14)
+    const { data } = await $axios.get('/api/areas')
+    data.products = (await $axios.get(`/api/products`)).data.slice(10, 14)
     return { data }
   }
 }
@@ -84,17 +88,20 @@ div.slogan h3 {
 }
 
 div.cards img {
-  width: 100px;
+  width: 200px;
   height: auto;
   display: block;
-  padding-inline: 50px;
+  padding: 50px;
 }
 
 section.home {
-  background-image: url('/expl.gif');
+  /*   background-image: url('/expl.gif'); */
   background-repeat: no-repeat;
   background-position: 50% -130px;
   background-size: 1000px;
+  background-color: black;
+  height: 700px;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {

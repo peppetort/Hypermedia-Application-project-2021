@@ -5,23 +5,23 @@
         ['/areas', 'Areas'],
         [`/areas/${data.id}`, `${data.title}`]
       ]"
-      :look="'strong'"
+      :look="'light'"
     />
     <card-section
-      :props="['strong', 'left']"
+      :props="['light', 'left']"
       :title="data.title"
       :text="[data.subtitle]"
       :image="`data:image/png;base64,${data.main_image}`"
       :alt="`Image for ${data.title}`"
     />
     <card-section
-      :props="['light', 'right']"
+      :props="['strong', 'right']"
       :subtitle="'Description'"
       :text="[data.description]"
       :image="`data:image/png;base64,${data.second_image}`"
       :alt="`Second image for ${data.title}`"
     />
-    <section class="vertical strong">
+    <section class="vertical light">
       <h2>Features</h2>
       <p>Solutions that matter for your organization​</p>
       <div class="cards">
@@ -35,7 +35,7 @@
         />
       </div>
     </section>
-    <section class="vertical light">
+    <section class="vertical strong">
       <h2>What product we offer</h2>
       <p>
         "If you don't try area product, you won't become the superhero you were
@@ -55,15 +55,15 @@
         >More products ></NuxtLink
       >
     </section>
-    <card-section
-      :props="['strong', 'left', 'light']"
-      :subtitle="`${data.title} Area Manager`"
-      :text="[`${data.resp.name}  ${data.resp.surname}`]"
-      :image="`data:image/png;base64,${data.resp.image}`"
-      :alt="`Portrait of ${data.title} area manager`"
-      :link="`/roles/people/${data.responsible}`"
-      :button="'Discover More'"
-    />
+    <section class="vertical light">
+      <card-person
+        :title="`${data.title} Area Manager`"
+        :name="`${data.resp.name}  ${data.resp.surname}`"
+        :image="`data:image/png;base64,${data.resp.image}`"
+        :alt="`Portrait of ${data.title} area manager`"
+        :link="`/roles/people/${data.responsible}`"
+      />
+    </section>
   </main>
 </template>
 
@@ -72,8 +72,9 @@ import NavBar from '~/components/TheNavBar.vue'
 import CardSection from '~/components/TheSection.vue'
 import FeatureCard from '~/components/CardFeauture.vue'
 import CardPreview from '~/components/CardPreview.vue'
+import CardPerson from '~/components/CardPerson.vue'
 export default {
-  components: { NavBar, CardSection, FeatureCard, CardPreview },
+  components: { NavBar, CardSection, FeatureCard, CardPreview, CardPerson },
   async asyncData({ $axios, params }) {
     const { id } = params
     const { data } = await $axios.get(`/api/areas/${id}`)
@@ -91,7 +92,7 @@ export default {
 <style scoped>
 #link-products {
   text-align: right;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: bold;
   margin-top: 80px;
   margin-right: 80px;

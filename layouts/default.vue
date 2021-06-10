@@ -33,7 +33,7 @@ html {
 }
 
 main {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 h1 {
@@ -42,6 +42,7 @@ h1 {
 
 h2 {
   font-size: 35px;
+  font-weight: bold;
 }
 
 p {
@@ -50,7 +51,6 @@ p {
 
 section {
   display: flex;
-  padding: 10px;
 }
 
 section.light {
@@ -64,10 +64,12 @@ section.strong {
 section.vertical {
   flex-direction: column;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 section.horizontal {
   flex-direction: row;
+  padding: 40px;
 }
 
 div.cards {
@@ -76,17 +78,16 @@ div.cards {
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
 }
 
 div.links {
   display: flex;
   flex-direction: row;
-  width: 600px;
+  width: 650px;
   justify-content: space-between;
-  padding: 5px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
 }
 div.grid {
   display: grid;

@@ -9,14 +9,13 @@
       :image="'/areas/areas.png'"
       :alt="'Image for all areas'"
     />
-    <section class="vertical strong" id="allAreas">
-      <h3 id="allAreas">Areas</h3>
+    <section class="vertical strong">
+      <h2>Areas</h2>
       <p>
         From networking and data center to collaboration and security, we have
         IT solutions to meet your organization's needs.<br />
         Find out how we can help.
       </p>
-
       <div class="links">
         <NuxtLink v-for="area in data" :key="area.id" :to="`/areas/${area.id}`"
           ><button class="strong">
