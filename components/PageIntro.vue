@@ -1,8 +1,14 @@
 <template>
-  <section
-    :class="`vertical animated  ${dimension}`"
-    :style="`background-image: url(${gif})`"
-  >
+  <section :class="`vertical animated  ${dimension}`">
+    <video
+      v-if="loop == true"
+      :src="video"
+      type="video/mp4"
+      autoplay
+      muted
+      loop
+    />
+    <video v-if="loop == false" :src="video" type="video/mp4" autoplay muted />
     <h1 v-if="title != ''">{{ title }}</h1>
     <div class="image" v-if="image != ''">
       <img loading="lazy" :src="image" :alt="alt" />
@@ -20,7 +26,8 @@ export default {
   props: {
     title: { type: String, default: () => '' },
     subtitle: { type: String, default: () => '' },
-    gif: { type: String, default: () => '' },
+    video: { type: String, default: () => '' },
+    loop: { type: Boolean, default: () => true },
     image: { type: String, default: () => '' },
     alt: { type: String, default: () => '' },
     dimension: { type: String, default: () => 'large' }
@@ -30,9 +37,8 @@ export default {
 
 <style scoped>
 section.animated {
-  background-repeat: no-repeat;
-  background-position: 50% -130px;
-  background-color: black;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
   color: white;
 }
@@ -43,6 +49,16 @@ section.large {
 
 section.small {
   height: 500px;
+}
+
+section.animated video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 div.image img {
