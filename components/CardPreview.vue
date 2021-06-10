@@ -1,16 +1,23 @@
 <template>
-  <div class="card">
-    <NuxtLink :to="link" v-if="button == false && link != false">
+  <div>
+    <div class="card" v-if="link != ''">
+      <NuxtLink :to="link">
+        <div class="image">
+          <img loading="lazy" :src="image" :alt="alt" />
+        </div>
+        <div class="text">
+          <p>{{ title }}</p>
+        </div>
+      </NuxtLink>
+    </div>
+    <div class="card" v-if="link == ''">
       <div class="image">
         <img loading="lazy" :src="image" :alt="alt" />
       </div>
       <div class="text">
         <p>{{ title }}</p>
       </div>
-    </NuxtLink>
-    <NuxtLink :to="link" v-if="button == true">
-      <button class="light">{{ title }}</button></NuxtLink
-    >
+    </div>
   </div>
 </template>
 
@@ -20,8 +27,7 @@ export default {
     title: { type: String, default: () => '' },
     image: { type: String, default: () => '' },
     alt: { type: String, default: () => '' },
-    link: { type: String, default: () => '' },
-    button: { type: Boolean, default: () => true }
+    link: { type: String, default: () => '' }
   }
 }
 </script>
@@ -32,6 +38,7 @@ div.card {
   display: flex;
   flex-direction: column;
   margin-inline: 35px;
+  margin-top: 20px;
 }
 
 div.image {
@@ -41,14 +48,14 @@ div.image {
 
 div.image img {
   max-width: 100%;
-  height: 200px;
+  height: 150px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 div.text {
-  width: 100%;
+  width: 90%;
   text-decoration: none;
 }
 
@@ -64,7 +71,8 @@ div.text p {
 
 @media (max-width: 600px) {
   div.card {
-    width: 80%;
+    margin-inline: 0px;
+    margin-top: 50px;
   }
 }
 </style>

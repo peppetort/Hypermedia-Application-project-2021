@@ -34,25 +34,25 @@
         ></card-feature>
       </div>
     </section>
-    <card-section
-      :props="['light', 'left', 'light']"
-      :subtitle="'Project Manager'"
-      :text="[`${data.man.name} ${data.man.surname}`]"
-      :image="`data:image/png;base64,${data.man.image}`"
-      :link="`/roles/people/${data.manager}`"
-      :alt="`Portrait of ${data.title} project manager`"
-      :button="'Discover More'"
-    />
-    <section class="vertical strong">
-      <h2>Responsible for Assistence</h2>
+    <section class="vertical">
+      <card-person
+        :title="'Project Manager'"
+        :name="`${data.man.name} ${data.man.surname}`"
+        :image="`data:image/png;base64,${data.man.image}`"
+        :link="`/roles/people/${data.manager}`"
+        :alt="`Portrait of ${data.title} project manager`"
+      />
+    </section>
+    <section class="vertical">
       <div class="cards">
-        <card-preview
+        <card-person
           v-for="ass in data.assistence"
           :key="ass.id"
-          :title="`${ass.name} ${ass.surname}`"
+          :title="'Assistance Referent'"
+          :name="`${ass.name} ${ass.surname}`"
           :image="`data:image/png;base64,${ass.image}`"
-          :alt="`Portrait of ${ass.name} ${ass.surname}`"
           :link="`/roles/people/${ass.id}`"
+          :alt="`Portrait of ${ass.name} `"
         />
       </div>
     </section>
@@ -63,9 +63,9 @@
 import NavBar from '~/components/TheNavBar.vue'
 import CardSection from '~/components/TheSection.vue'
 import CardFeature from '~/components/CardFeauture.vue'
-import CardPreview from '~/components/CardPreview.vue'
+import CardPerson from '~/components/CardPerson.vue'
 export default {
-  components: { NavBar, CardSection, CardFeature, CardPreview },
+  components: { NavBar, CardSection, CardFeature, CardPerson },
   async asyncData({ $axios, params }) {
     const { id } = params
     const { data } = await $axios.get(`/api/products/${id}`)

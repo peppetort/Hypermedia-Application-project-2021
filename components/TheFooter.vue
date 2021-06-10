@@ -124,7 +124,7 @@ div.column .title {
   margin-bottom: 10px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
   div.content {
     text-align: center;
     flex-direction: column;

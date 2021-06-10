@@ -62,19 +62,21 @@ div.image img {
   margin-bottom: auto;
 }
 
-/* @media (max-width: 1150px) {
+@media (max-width: 1150px) {
   div.image {
     width: 100%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
   }
+
   div.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     text-align: center;
-    padding-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-bottom: 50px;
   }
-} */
+}
 </style>

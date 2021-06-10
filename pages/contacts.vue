@@ -104,18 +104,29 @@ form.contact textarea {
   border: 2px solid;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
   section.horizontal {
     flex-direction: column;
     align-items: center;
-    padding: 0px;
+    padding-inline: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-inline: auto;
   }
 
-  div.text {
-    padding-top: 0px;
-    padding-left: 0px;
+  div.verticalLine {
+    border-top: 3px solid black;
+    width: 80%;
+  }
+
+  div.contactInfos {
     text-align: center;
-    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  div.contactInfos h2 {
+    font-size: 24px;
   }
 }
 </style>

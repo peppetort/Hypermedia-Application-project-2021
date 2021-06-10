@@ -62,10 +62,10 @@ div.text p {
   word-break: keep-all;
 }
 
-/* @media (max-width: 1300px) {
+@media (max-width: 1300px) {
   div.card {
     width: 80%;
     height: auto;
   }
-} */
+}
 </style>

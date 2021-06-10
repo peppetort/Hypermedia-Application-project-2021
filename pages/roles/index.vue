@@ -1,9 +1,10 @@
 <template>
   <main class="container">
     <page-intro
-      :title="'Our Team'"
+      :title="'OUR TEAM'"
       :subtitle="'We have a team of specialists for every need. Every day they create, test and produce cutting-edge products for your organization'"
-      :image="'/roles/work.gif'"
+      :gif="'/roles/work.gif'"
+      :dimension="'small'"
     />
     <section class="vertical light">
       <div class="cards">

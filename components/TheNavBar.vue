@@ -18,6 +18,7 @@ export default {
 
 <style scoped>
 div.nav {
+  padding-top: 10px;
   padding-left: 10px;
   height: auto;
   display: flex;

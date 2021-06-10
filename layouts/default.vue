@@ -98,10 +98,9 @@ div.links {
   margin-left: auto;
   margin-right: auto;
 }
+
 div.grid {
   display: grid;
-  padding-left: 5%;
-  padding-right: 5%;
   grid-gap: 5%;
   grid-template-columns: repeat(4, minmax(100px, 1fr));
   grid-auto-rows: minmax(100px, 100%);
@@ -150,20 +149,23 @@ a:hover {
   color: grey;
 }
 
+@media (max-width: 500px) {
+  section.vertical {
+    padding-inline: 10px;
+  }
+}
+
+@media (max-width: 1150px) {
+  section.horizontal {
+    padding-inline: 10px;
+  }
+}
+
 @media (max-width: 800px) {
   div.links {
     flex-direction: column;
     align-items: center;
     width: auto;
-  }
-}
-
-@media (max-width: 1300px) {
-  div.cards {
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 

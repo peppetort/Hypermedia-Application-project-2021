@@ -1,13 +1,10 @@
 <template>
   <main class="container">
-    <card-section
-      :props="['light', 'left']"
+    <page-intro
       :title="'OUR AREAS'"
-      :text="[
-        'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'
-      ]"
-      :image="'/areas/areas.png'"
-      :alt="'Image for all areas'"
+      :subtitle="'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'"
+      :gif="'/areas/work.gif'"
+      :dimension="'small'"
     />
     <section class="vertical strong">
       <h2>Areas</h2>
@@ -51,8 +48,9 @@
 
 <script>
 import CardSection from '~/components/TheSection.vue'
+import PageIntro from '~/components/PageIntro.vue'
 export default {
-  components: { CardSection },
+  components: { CardSection, PageIntro },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/areas')
     return { data }

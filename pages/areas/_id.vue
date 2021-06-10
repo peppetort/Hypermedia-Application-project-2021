@@ -41,7 +41,7 @@
           :title="product.title"
           :image="`data:image/png;base64,${product.image}`"
           :alt="`Image of ${product.title}`"
-          :button="false"
+          :link="`/products/${product.id}`"
         />
       </div>
       <div class="link">

@@ -26,7 +26,7 @@
       :image="`data:image/png;base64,${data.image}`"
       :alt="`Portrait of ${data.name} ${data.surname}`"
       :link="`/areas/${data.area.id}`"
-      :button="`${data.area.title} area`"
+      :button="`${data.area.title}`"
     />
     <section class="vertical strong" v-if="data.products != undefined">
       <h2>{{ data.rol.title }} of</h2>

@@ -1,23 +1,11 @@
 <template>
   <main class="container">
-    <section class="vertical light">
-      <h1>Our Products</h1>
-      <div class="description">
-        <p>
-          Want some help finding products that fit your needs? We can provide
-          your organization with solutions for everything from networking and
-          data center to collaboration and security. Find the options best
-          suited to your business needs.
-        </p>
-      </div>
-      <div class="image">
-        <img
-          loading="lazy"
-          src="/products/product.webp"
-          alt="PC showning product example"
-        />
-      </div>
-    </section>
+    <page-intro
+      :title="'OUR PRODUCTS'"
+      :subtitle="'Want some help finding products that fit your needs? We can provide your organization with solutions for everything from networking and data center to collaboration and security. Find the options best suited to your business needs.'"
+      :gif="'/products/work.gif'"
+      :dimension="'small'"
+    />
     <section class="vertical strong">
       <h2>Select your Area</h2>
       <div class="cards">
@@ -36,21 +24,12 @@
 
 <script>
 import CardPreview from '~/components/CardPreview.vue'
+import PageIntro from '~/components/PageIntro.vue'
 export default {
-  components: { CardPreview },
+  components: { CardPreview, PageIntro },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/areas')
     return { data }
   }
 }
 </script>
-
-<style scoped>
-div.image img {
-  max-width: 60%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>

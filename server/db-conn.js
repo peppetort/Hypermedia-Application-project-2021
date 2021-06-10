@@ -51,7 +51,6 @@ function defineDatabaseStructure() {
   const Role = db.define('Role', {
     title: DataTypes.STRING,
     description: DataTypes.STRING(1000),
-    image: DataTypes.STRING(300000),
     icon: DataTypes.STRING(300000),
     responsibility1: DataTypes.STRING(1000),
     responsibility2: DataTypes.STRING(1000),
@@ -88,8 +87,8 @@ function defineDatabaseStructure() {
 async function initializeDatabase() {
   defineDatabaseStructure()
   await db.sync()
-  // Remove comment only if db is empty
-  //insertData()
+  /*   await db.sync({ force: true })
+  insertData() */
   return db
 }
 
@@ -106,15 +105,6 @@ function insertRole(role) {
   const path = require('path')
 
   role.forEach(async (el) => {
-    var imagePath = path.join(
-      __dirname,
-      '..',
-      'DB',
-      'Images',
-      'Role',
-      el['image'].toString()
-    )
-
     var iconPath = path.join(
       __dirname,
       '..',
@@ -127,7 +117,6 @@ function insertRole(role) {
       id: el['id'],
       title: el['title'],
       description: el['description'],
-      image: getImage(imagePath),
       icon: getImage(iconPath),
       responsibility1: el['responsibility1'],
       responsibility2: el['responsibility2'],
@@ -179,7 +168,6 @@ function insertArea(area) {
     )
     var secondPath = path.join(
       __dirname,
-      '..',
       '..',
       'DB',
       'Images',

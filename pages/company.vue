@@ -1,21 +1,25 @@
 <template>
   <main class="container">
-    <section class="vertical strong">
-      <div>
-        <h1>TechToch</h1>
-      </div>
-    </section>
-    <card-section
-      id="about"
-      :props="['light', 'right']"
-      :subtitle="'WHO WE ARE'"
-      :text="[
-        'Founded in Italy in 2000, today TechToch is a multinational group that focuses its consulting offering on hard technology challenges with large-scale business impact in performance engineering, analytics, security and IoT.',
-        'By working with some of the most demanding enterprise customers worldwide, X has systematically spun-off, and invested in, industry-leading software companies.'
-      ]"
-      :image="'/company/milan.png'"
-      :alt="'Comapny city image'"
+    <page-intro
+      :title="'TechToch'"
+      :subtitle="'TechToch technology is creating a world of potential'"
+      :gif="'/company/work.gif'"
+      :dimension="'small'"
     />
+    <section class="vertical">
+      <h2>WHO WE ARE</h2>
+      <p>
+        Founded in Italy in 2000, today TechToch is a multinational group that
+        focuses its consulting offering on hard technology challenges with
+        large-scale business impact in performance engineering, analytics,
+        security and IoT.
+      </p>
+      <p>
+        By working with some of the most demanding enterprise customers
+        worldwide, X has systematically spun-off, and invested in,
+        industry-leading software companies.
+      </p>
+    </section>
     <section class="vertical strong" id="values">
       <h2>OUR VALUES</h2>
       <p>
@@ -46,9 +50,9 @@
 </template>
 
 <script>
-import CardSection from '~/components/TheSection.vue'
 import CardPreview from '~/components/CardPreview.vue'
+import PageIntro from '~/components/PageIntro.vue'
 export default {
-  components: { CardSection, CardPreview }
+  components: { CardPreview, PageIntro }
 }
 </script>

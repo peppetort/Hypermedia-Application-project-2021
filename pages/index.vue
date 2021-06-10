@@ -1,9 +1,10 @@
 <template>
   <main class="container">
     <page-intro
-      :title="'TECHTOCH'"
+      :image="'/logo-long.svg'"
+      :alt="'Company logo'"
       :subtitle="'Between hope and possible, there’s a bridge'"
-      :image="'/expl.gif'"
+      :gif="'/expl.gif'"
     />
     <section class="vertical strong">
       <h2>Areas</h2>
@@ -36,21 +37,25 @@
       <div class="cards">
         <a href="https://www.cisco.com/" title="Image of Cisco"
           ><img
+            class="partners"
             src="https://www.freepnglogos.com/uploads/cisco-png-logo/new-cisco-logo-png-1.png"
             alt="new cisco logo png"
         /></a>
         <a href="https://www.google.com/" title="Image of Google"
           ><img
+            class="partners"
             src="https://www.freepnglogos.com/uploads/new-google-logo-png-0.png"
             alt="google logos png"
         /></a>
         <a href="https://www.netflix.com" title="Image of Netflix"
           ><img
+            class="partners"
             src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
             alt="netflix logo"
         /></a>
         <a href="https://www.microsoft.com" title="Image of Microsoft"
           ><img
+            class="partners"
             src="https://www.freepnglogos.com/uploads/microsoft-logo-png-transparent-background-1.png"
             alt="microsoft logo png transparent background"
         /></a>
@@ -85,21 +90,19 @@ div.slogan h3 {
   color: white;
 }
 
-div.cards img {
+img.partners {
   width: 200px;
   height: auto;
   display: block;
   padding: 50px;
 }
 
-@media (max-width: 600px) {
-  div.image img {
-    width: 100%;
-  }
-
-  div.cards img {
-    padding-inline: 0px;
-    padding-top: 50px;
+@media (max-width: 500px) {
+  img.partners {
+    width: 100px;
+    padding-inline: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }
 </style>

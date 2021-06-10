@@ -14,7 +14,7 @@
       :alt="`${data.title} second image`"
       :text="[data.description]"
       :link="'#people'"
-      :button="'Who we are'"
+      :button="'View more'"
     />
     <section class="vertical strong">
       <div class="text">
@@ -28,7 +28,7 @@
     </section>
     <section class="vertical light" id="people">
       <h2>Who are our {{ data.title }}s</h2>
-      <div class="grid">
+      <div class="cards">
         <card-preview
           v-for="person in data.empl"
           :key="person.id"

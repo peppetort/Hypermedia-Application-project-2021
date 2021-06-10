@@ -32,9 +32,9 @@ div.container {
   border-radius: 5px;
   display: flex;
   flex-direction: row;
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 500px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 30px;
   align-items: center;
 }
@@ -56,5 +56,17 @@ div.text {
   width: 100%;
   text-decoration: none;
   text-align: left;
+}
+
+@media (max-width: 700px) {
+  div.container {
+    flex-direction: column;
+    width: auto;
+  }
+
+  div.text {
+    text-align: center;
+    padding: 10px;
+  }
 }
 </style>
