@@ -27,6 +27,9 @@ export default {
 
 <style scoped>
 div.container {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   width: 800px;

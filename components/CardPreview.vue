@@ -1,13 +1,15 @@
 <template>
   <div class="card">
-    <div class="image">
-      <img loading="lazy" :src="image" :alt="alt" />
-    </div>
-    <div class="text">
-      <p>{{ title }}</p>
-    </div>
+    <NuxtLink :to="link" v-if="button == false && link != false">
+      <div class="image">
+        <img loading="lazy" :src="image" :alt="alt" />
+      </div>
+      <div class="text">
+        <p>{{ title }}</p>
+      </div>
+    </NuxtLink>
     <NuxtLink :to="link" v-if="button == true">
-      <button class="strong">View more</button></NuxtLink
+      <button class="light">{{ title }}</button></NuxtLink
     >
   </div>
 </template>
@@ -18,6 +20,7 @@ export default {
     title: { type: String, default: () => '' },
     image: { type: String, default: () => '' },
     alt: { type: String, default: () => '' },
+    link: { type: String, default: () => '' },
     button: { type: Boolean, default: () => true }
   }
 }

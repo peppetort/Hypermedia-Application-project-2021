@@ -238,7 +238,7 @@
         "second_image": "cloud-2.png",
         "responsible": 4
       }
-      
+
     ],
       "Product":[
         {
@@ -268,7 +268,7 @@
           "area": 1,
           "manager": 5
         },
-      
+
         {
           "id": 4,
           "title": "Catalyst 1000 Series Switches",
@@ -341,7 +341,7 @@
           "area": 2,
           "manager": 6
         },
-      
+
         {
           "id": 12,
           "title": "Firepower 2100 Series",
@@ -351,7 +351,7 @@
           "area": 2,
           "manager": 6
         },
-      
+
         {
           "id": 13,
           "title": "Firepower 4100 Series",
@@ -361,7 +361,7 @@
           "area": 2,
           "manager": 6
         },
-      
+
         {
           "id": 14,
           "title": "Firepower 9300",
@@ -371,7 +371,7 @@
           "area": 2,
           "manager": 6
         },
-      
+
         {
           "id": 15,
           "title": "Industrial Security Appliance 3000 (ISA)",
@@ -886,7 +886,7 @@
         "description":"With DNA, you can create policies that reflect your organization's business intent for particular aspects of your network, such as network access. DNA Center takes the information collected in a policy and translates it into network-specific and device-specific configurations.",
         "image":"1.png",
         "area":1
-         
+
     },
     {
         "id":2,
@@ -894,7 +894,7 @@
         "description":"Use the collection and correlation of performance data to obtain business nsights, proactively identify issues, and get actionable guidance to deliver better, more personalized experiences. Improve service and keep operations secure by automating many of your repetitive tasks ",
         "image":"2.png",
         "area":1
-         
+
     },
     {
         "id":3,
@@ -902,7 +902,7 @@
         "description":"With location-based services you can monitor presence and compliance with physical-distancing guidelines, help ensure safety of employees by using insights from location-based services and get crucial information through captive portals and engagement toolkits.",
         "image":"3.png",
         "area":1
-         
+
     },
     {
       "id":4,
@@ -910,7 +910,7 @@
       "description":"Combine network and security functionality in a single, cloud-native service to help secure access wherever users and applications reside",
       "image":"4.png",
       "area":2
-       
+
   },
   {
       "id":5,
@@ -918,7 +918,7 @@
       "description":"Boost operational productivity using a cloud-native platform with analytics and automation built in",
       "image":"5.png",
       "area":2
-       
+
   },
   {
       "id":6,
@@ -926,7 +926,7 @@
       "description":"Balance security and usability while you protect against threats to users, networks, and applications",
       "image":"6.png",
       "area":2
-       
+
   },
   {
     "id":7,
@@ -934,7 +934,7 @@
     "description":"A health crisis or natural disaster can threaten worker safety and topple your industrial productivity. Plan for the unexpected and build a trusted workplace. Empower your team to monitor, manage and optimize equipment and processes like they’re on the factory floor or in the field – from anywhere.",
     "image":"7.png",
     "area":3
-     
+
 },
 {
   "id":8,
@@ -942,7 +942,7 @@
   "description":"Choose from a variety of management tools that allow you to design, provision, enable policy, and assure network performance from one place. Easily deploy and operate remotely at scale with centralized management of IoT infrastructure and applications.Gain full visibility into the network and automation devices. Faster troubleshooting minimizes network downtime.",
   "image":"8.png",
   "area":3
-   
+
 },
 {
   "id":9,
@@ -950,7 +950,7 @@
   "description":"We often hear customers describe what it is they want out of an IoT deployment: a dashboard with buttons that allows them to see data or analytics of that data to understand what is happening in the operating environment. It’s obvious they have a clear vision of the outcome they want, but they don’t know how to get there. And they can’t — at least, not by themselves.",
   "image":"9.png",
   "area":3
-   
+
 },
 {
   "id":10,
@@ -958,7 +958,7 @@
   "description":"Our security products give you the scope, scale, and capabilities to keep up with the complexity and volume of threats.",
   "image":"10.png",
   "area":4
-   
+
 },
 {
 "id":11,
@@ -966,7 +966,7 @@
 "description":"Our networking solutions take a software-delivered approach to automate and assure services across your WAN, campus, and branch networks.",
 "image":"11.png",
 "area":4
-  
+
 },
 {
 "id":12,
@@ -974,7 +974,7 @@
 "description":"Accelerate teamwork and create more meaningful experiences.",
 "image":"12.png",
 "area":4
- 
+
 },
 {
   "id":13,
@@ -1612,7 +1612,6 @@
         "id": 1,
         "title": "Area Manager",
         "description": "Area managers are responsible for ensuring the proper and effective operation of a business. This role requires individuals to oversee the day-to-day work and operations of lower-level employees to ensure adherence to organization guidelines. Area managers may also take on human resources duties, to include interviewing and hiring new staff. This role may also require creating and implementing new operational standards.",
-        "image": "1-icon.png",
         "icon": "1-image.png",
         "responsibility1": "Managing relationships with clients and stakeholders",
         "responsibility2": "Managing large and diverse teams",
@@ -1622,7 +1621,6 @@
         "id": 2,
         "title": "Project Manager",
         "description": "The Project Manager manages key client projects. Project management responsibilities include the coordination and completion of projects on time within budget and within scope. Oversee all aspects of projects. Set deadlines, assign responsibilities and monitor and summarize progress of project. Prepare reports for upper management regarding status of project.",
-        "image": "2-icon.png",
         "icon": "2-image.png",
         "responsibility1": "Designing risk mitigation plan",
         "responsibility2": "Ensuring projects meet deadlines",
@@ -1632,7 +1630,6 @@
         "id": 3,
         "title": "Assistance Referent",
         "description": "Assistance Referent representative will often be the first point of contact with a customer has with an organisation, so it is essential for them to create a good impression. Thus, they need to be polite and approachable, confident and have the ability to remain patient and calm in difficult or stressful situations.",
-        "image": "3-icon.png",
         "icon": "3-image.png",
         "responsibility1": "Giving information and helping to solve customer problems",
         "responsibility2": "Selling products and taking orders",

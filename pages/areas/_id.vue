@@ -5,21 +5,14 @@
         ['/areas', 'Areas'],
         [`/areas/${data.id}`, `${data.title}`]
       ]"
-      :look="'light'"
+      :look="'strong'"
     />
     <card-section
-      :props="['light', 'left']"
+      :props="['strong', 'left']"
       :title="data.title"
-      :text="[data.subtitle]"
+      :text="[data.description]"
       :image="`data:image/png;base64,${data.main_image}`"
       :alt="`Image for ${data.title}`"
-    />
-    <card-section
-      :props="['strong', 'right']"
-      :subtitle="'Description'"
-      :text="[data.description]"
-      :image="`data:image/png;base64,${data.second_image}`"
-      :alt="`Second image for ${data.title}`"
     />
     <section class="vertical light">
       <h2>Features</h2>
@@ -51,9 +44,9 @@
           :button="false"
         />
       </div>
-      <NuxtLink id="link-products" :to="`/products/area/${data.id}`"
-        >More products ></NuxtLink
-      >
+      <div class="link">
+        <NuxtLink :to="`/products/area/${data.id}`">More products ></NuxtLink>
+      </div>
     </section>
     <section class="vertical light">
       <card-person
@@ -90,12 +83,15 @@ export default {
 </script>
 
 <style scoped>
-#link-products {
+div.link {
+  width: 100%;
+  margin-top: 70px;
   text-align: right;
+}
+
+div.link a {
   font-size: 25px;
   font-weight: bold;
-  margin-top: 80px;
-  margin-right: 80px;
   text-decoration: none;
 }
 </style>
