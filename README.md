@@ -117,7 +117,7 @@ Clickable component formed by image and text used to show the preview of objects
 Component that represent a multimodal chatbot that interacts with the website
 
 
-- **`chat_list`** list of messages visualized in the chat synchronized with a property in the store through a watcher
+- **`chat_list`** list of messages visualized in the chat synchronized with a property in the store through a watcher: messages that arrive from the chat and that are sent are added in the store, and the watcher update the list
 
 
 ### Plugins
