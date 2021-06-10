@@ -60,7 +60,7 @@ section {
 }
 
 section.light {
-  background-color: white;
+  background-color: #ffff;
 }
 
 section.strong {

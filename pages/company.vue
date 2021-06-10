@@ -6,7 +6,7 @@
       :video="'/company/work.mp4'"
       :dimension="'small'"
     />
-    <section class="vertical">
+    <section class="vertical light">
       <h2>WHO WE ARE</h2>
       <p>
         Founded in Italy in 2000, today TechToch is a multinational group that
