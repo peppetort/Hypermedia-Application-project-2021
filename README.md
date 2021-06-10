@@ -114,7 +114,11 @@ Clickable component formed by image and text used to show the preview of objects
 
 #### **Chat.vue**
 
-//TODO
+Component that represent a multimodal chatbot that interacts with the website
+
+
+- **`chat_list`** list of messages visualized in the chat synchronized with a property in the store through a watcher
+
 
 ### Plugins
 
