@@ -13,7 +13,7 @@
       :image="`data:image/png;base64,${data.icon}`"
       :alt="`${data.title} second image`"
       :link="'#people'"
-      :button="'Discover More'"
+      :button="'Who we are'"
     />
     <card-section
       :props="['light', 'right']"

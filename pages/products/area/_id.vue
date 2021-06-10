@@ -12,10 +12,9 @@
         <NuxtLink :to="`/areas/${data.id}`">{{ data.title }}</NuxtLink>
         Products
       </h1>
-      <p>{{ data.description }}</p>
-      <NuxtLink to="/contacts"
-        ><button class="strong">Contact us</button></NuxtLink
-      >
+      <div class="description">
+        <p>{{ data.description }}</p>
+      </div>
     </section>
     <section class="vertical light">
       <div class="grid">

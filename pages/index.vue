@@ -95,10 +95,9 @@ div.cards img {
 }
 
 section.home {
-  /*   background-image: url('/expl.gif'); */
+  background-image: url('/expl.gif');
   background-repeat: no-repeat;
   background-position: 50% -130px;
-  background-size: 1000px;
   background-color: black;
   height: 700px;
   justify-content: center;

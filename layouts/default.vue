@@ -64,12 +64,14 @@ section.strong {
 section.vertical {
   flex-direction: column;
   text-align: center;
+  align-items: center;
   padding-bottom: 30px;
 }
 
 section.horizontal {
   flex-direction: row;
   padding: 40px;
+  padding-inline: 80px;
 }
 
 div.cards {
@@ -79,6 +81,10 @@ div.cards {
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
+}
+
+div.description {
+  width: 80%;
 }
 
 div.links {

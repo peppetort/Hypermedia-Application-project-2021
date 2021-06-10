@@ -47,10 +47,6 @@ div.text {
   width: 50%;
 }
 
-div.description {
-  width: 90%;
-}
-
 div.image {
   width: 50%;
 }

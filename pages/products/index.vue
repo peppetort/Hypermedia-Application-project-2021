@@ -2,12 +2,14 @@
   <main class="container">
     <section class="vertical light">
       <h1>Our Products</h1>
-      <p>
-        Want some help finding products that fit your needs? We can provide your
-        organization with solutions for everything from networking and data
-        center to collaboration and security. Find the options best suited to
-        your business needs.
-      </p>
+      <div class="description">
+        <p>
+          Want some help finding products that fit your needs? We can provide
+          your organization with solutions for everything from networking and
+          data center to collaboration and security. Find the options best
+          suited to your business needs.
+        </p>
+      </div>
       <div class="image">
         <img
           loading="lazy"
@@ -16,7 +18,7 @@
         />
       </div>
     </section>
-    <section class="vertical light">
+    <section class="vertical strong">
       <h2>Select your Area</h2>
       <div class="cards">
         <card-preview
@@ -45,7 +47,7 @@ export default {
 
 <style scoped>
 div.image img {
-  max-width: 100%;
+  max-width: 60%;
   height: auto;
   display: block;
   margin-left: auto;
