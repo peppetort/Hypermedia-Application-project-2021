@@ -35,7 +35,7 @@
       <img
         loading="lazy"
         class="chat_btn"
-        src="https://img.icons8.com/ios-filled/452/chat--v1.png"
+        src="/chat_logo.png"
         alt="chatbot icon"
       />
     </div>
@@ -100,15 +100,13 @@ export default {
 }
 .button {
   margin-top: 20px;
-  height: 40px;
   width: 40px;
-  border: 1px solid black;
-  border-radius: 100%;
   padding: 10px;
   float: right;
+  margin-right: 20px;
 }
 .button img {
-  width: 100%;
+  width: 150%;
 }
 .chat-container {
   border: 1px solid black;
