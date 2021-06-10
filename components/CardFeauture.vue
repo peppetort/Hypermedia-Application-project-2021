@@ -27,8 +27,8 @@ div.card {
   border-color: black;
   border-style: solid;
   background: white;
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   margin-inline: 35px;
@@ -62,10 +62,10 @@ div.text p {
   word-break: keep-all;
 }
 
-@media (max-width: 1300px) {
+/* @media (max-width: 1300px) {
   div.card {
     width: 80%;
     height: auto;
   }
-}
+} */
 </style>

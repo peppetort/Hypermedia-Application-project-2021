@@ -42,12 +42,11 @@ div.card {
 
 div.image {
   width: 100%;
-  max-height: 300px;
 }
 
 div.image img {
-  max-width: 100%;
-  height: 200px;
+  height: 150px;
+  width: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -68,9 +67,9 @@ div.text p {
   word-break: keep-all;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   div.card {
     width: 80%;
   }
-}
+} */
 </style>

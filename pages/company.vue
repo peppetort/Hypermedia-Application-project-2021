@@ -4,9 +4,6 @@
       <div>
         <h1>TechToch</h1>
       </div>
-      <NuxtLink to="#about"
-        ><button class="strong">Discover more</button></NuxtLink
-      >
     </section>
     <card-section
       id="about"

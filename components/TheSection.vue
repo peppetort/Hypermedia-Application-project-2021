@@ -45,21 +45,24 @@ section.left {
 
 div.text {
   width: 50%;
+  padding-top: 50px;
 }
 
 div.image {
   width: 50%;
+  display: flex;
 }
 
 div.image img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-@media (max-width: 1150px) {
+/* @media (max-width: 1150px) {
   div.image {
     width: 100%;
     height: auto;
@@ -67,13 +70,11 @@ div.image img {
     margin-right: auto;
   }
   div.text {
-    padding-top: 0px;
-    padding-left: 0px;
     width: 100%;
     text-align: center;
     padding-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
   }
-}
+} */
 </style>

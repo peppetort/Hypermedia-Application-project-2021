@@ -6,11 +6,11 @@
         [`/roles/${data.role}`, `${data.rol.title}`],
         [`/roles/people/${data.id}`, `${data.name} ${data.surname}`]
       ]"
-      :look="'strong'"
+      :look="'light'"
     />
     <card-section
       v-if="data.area == undefined"
-      :props="['strong', 'left']"
+      :props="['light', 'left']"
       :title="`${data.name} ${data.surname}`"
       :subtitle="`${data.rol.title}`"
       :text="[data.phone, data.email, data.description]"
@@ -19,7 +19,7 @@
     />
     <card-section
       v-if="data.area != undefined"
-      :props="['strong', 'left', 'strong']"
+      :props="['light', 'left', 'strong']"
       :title="`${data.name} ${data.surname}`"
       :subtitle="`${data.area.title} ${data.rol.title}`"
       :text="[data.phone, data.email, data.description]"
@@ -28,7 +28,7 @@
       :link="`/areas/${data.area.id}`"
       :button="`${data.area.title} area`"
     />
-    <section class="vertical light" v-if="data.products != undefined">
+    <section class="vertical strong" v-if="data.products != undefined">
       <h2>{{ data.rol.title }} of</h2>
       <div class="grid">
         <card-preview

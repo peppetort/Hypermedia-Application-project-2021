@@ -1,41 +1,30 @@
 <template>
   <main class="container">
-    <section class="vertical strong">
-      <h1>Our Roles</h1>
-      <p>
-        We have a team of specialists for every need. Every day they create,
-        test and produce cutting-edge products for your organization
-      </p>
+    <page-intro
+      :title="'Our Team'"
+      :subtitle="'We have a team of specialists for every need. Every day they create, test and produce cutting-edge products for your organization'"
+      :image="'/roles/work.gif'"
+    />
+    <section class="vertical light">
+      <div class="cards">
+        <card-preview
+          v-for="role in data"
+          :key="role.id"
+          :title="`${role.title}`"
+          :image="`data:image/png;base64,${role.icon}`"
+          :alt="`${role.title} image`"
+          :link="`/roles/${role.id}`"
+        />
+      </div>
     </section>
-    <div v-for="(role, index) in data" :key="role.id">
-      <card-section
-        v-if="index % 2 == 0"
-        :props="['light', 'left', 'light']"
-        :subtitle="role.title"
-        :text="[role.description]"
-        :image="`data:image/png;base64,${role.image}`"
-        :alt="`${role.title} main image`"
-        :link="`/roles/${role.id}`"
-        :button="'Discover More'"
-      />
-      <card-section
-        v-if="index % 2 != 0"
-        :props="['strong', 'right', 'light']"
-        :subtitle="role.title"
-        :text="[role.description]"
-        :image="`data:image/png;base64,${role.image}`"
-        :alt="`${role.title} main image`"
-        :link="`/roles/${role.id}`"
-        :button="'Discover More'"
-      />
-    </div>
   </main>
 </template>
 
 <script>
-import CardSection from '~/components/TheSection.vue'
+import PageIntro from '~/components/PageIntro.vue'
+import CardPreview from '~/components/CardPreview.vue'
 export default {
-  components: { CardSection },
+  components: { CardPreview, PageIntro },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/roles')
     return { data }

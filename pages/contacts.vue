@@ -2,28 +2,39 @@
   <main class="container">
     <section class="vertical light">
       <h1>Contacts</h1>
-      <p>
-        Tell us about your issue so we can get you to the right people, as soon
-        as possible.
-      </p>
+      <div class="description">
+        <p>
+          Tell us about your issue so we can get you to the right people, as
+          soon as possible.
+        </p>
+      </div>
     </section>
     <section class="horizontal strong">
       <div class="contactInfos" id="number">
         <h2>Call Us</h2>
-        <p>+02 35467832</p>
+        <p>Tel: +02 35467832</p>
+        <p>Fax: +02 45623981</p>
       </div>
       <div class="verticalLine" />
       <div class="contactInfos">
-        <h2>Send Us a Message</h2>
-        <NuxtLink to="#form"
-          ><button class="strong">Send Message</button></NuxtLink
-        >
+        <h2>HEADQUARTER</h2>
+        <p>Via San Vito, 9, 20123 MILAN (MI) - LOMBARDIA</p>
       </div>
     </section>
     <section class="horizontal light">
       <div class="text">
-        <h2>HEADQUARTER</h2>
-        <p>Via San Vito, 9, 20123 MILAN (MI) - LOMBARDIA</p>
+        <h2>Contact Us</h2>
+        <form class="contact">
+          <p>Name*</p>
+          <input type="text" />
+          <p>Surname*</p>
+          <input type="text" />
+          <p>Email*</p>
+          <input type="email" />
+          <p>Message*</p>
+          <textarea type="text" />
+        </form>
+        <button class="strong">Send</button>
       </div>
       <div class="mapouter" id="map">
         <div class="gmap_canvas">
@@ -36,33 +47,19 @@
         </div>
       </div>
     </section>
-    <section class="vertical strong" id="form">
-      <h2>Contact Us</h2>
-      <form class="contact">
-        <p>Name*</p>
-        <input type="text" />
-        <p>Surname*</p>
-        <input type="text" />
-        <p>Email*</p>
-        <input type="email" />
-        <p>Message*</p>
-        <textarea />
-        <button class="strong">Submit</button>
-      </form>
-    </section>
   </main>
 </template>
 
 <style scoped>
 div.text {
-  min-width: 400px;
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  padding-top: 100px;
-  padding-left: 100px;
+  align-items: center;
+  text-align: center;
 }
 
 div.contactInfos {
-  min-width: 400px;
   width: 50%;
   text-align: center;
 }
@@ -73,8 +70,7 @@ div.verticalLine {
 }
 
 div.mapouter {
-  height: 100%;
-  width: 100%;
+  width: 80%;
 }
 
 div.gmap_canvas {
@@ -88,35 +84,24 @@ div.gmap_canvas {
 div.gmap_canvas iframe {
   width: 100%;
   min-width: 100px;
-  height: 500px;
+  height: 600px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-form.contact {
-  padding: 10px;
-  margin-inline: auto;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-}
-
 form.contact input {
   height: 35px;
-  width: 200px;
+  width: 300px;
   border-radius: 5px;
 }
 
 form.contact textarea {
+  height: 150px;
+  width: 300px;
   resize: none;
-  height: 200px;
-  width: auto;
   border-radius: 5px;
-}
-
-form.contact button {
-  margin-top: 50px;
+  border: 2px solid;
 }
 
 @media (max-width: 1400px) {

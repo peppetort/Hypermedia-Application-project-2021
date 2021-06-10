@@ -38,19 +38,25 @@ main {
 
 h1 {
   font-size: 60px;
+  margin: 0px 10px 10px 10px;
 }
 
 h2 {
   font-size: 35px;
   font-weight: bold;
+  margin: 0px 10px 10px 10px;
 }
 
 p {
   font-size: 23px;
+  margin: 10px;
+  line-height: 1.7;
 }
 
 section {
   display: flex;
+  padding: 40px;
+  padding-inline: 80px;
 }
 
 section.light {
@@ -65,13 +71,10 @@ section.vertical {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding-bottom: 30px;
 }
 
 section.horizontal {
   flex-direction: row;
-  padding: 40px;
-  padding-inline: 80px;
 }
 
 div.cards {

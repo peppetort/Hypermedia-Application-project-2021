@@ -5,22 +5,16 @@
         ['/roles', 'Team'],
         [`/roles/${data.id}`, `${data.title}`]
       ]"
-      :look="'strong'"
+      :look="'light'"
     />
     <card-section
-      :props="['strong', 'left', 'strong']"
+      :props="['light', 'left', 'strong']"
       :title="data.title"
       :image="`data:image/png;base64,${data.icon}`"
       :alt="`${data.title} second image`"
+      :text="[data.description]"
       :link="'#people'"
       :button="'Who we are'"
-    />
-    <card-section
-      :props="['light', 'right']"
-      :subtitle="'Description'"
-      :text="[data.description]"
-      :image="`data:image/png;base64,${data.image}`"
-      :alt="`${data.title} main image`"
     />
     <section class="vertical strong">
       <div class="text">

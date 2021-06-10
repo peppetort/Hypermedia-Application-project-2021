@@ -54,7 +54,4 @@ div.text {
   text-decoration: none;
   text-align: left;
 }
-
-@media (max-width: 600px) {
-}
 </style>

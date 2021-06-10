@@ -1,13 +1,10 @@
 <template>
   <main class="container">
-    <section class="vertical home">
-      <div class="image">
-        <img loading="lazy" src="/logo-long.svg" alt="Company logo" />
-      </div>
-      <div class="slogan">
-        <h3>"Between hope and possible, there’s a bridge"</h3>
-      </div>
-    </section>
+    <page-intro
+      :title="'TECHTOCH'"
+      :subtitle="'Between hope and possible, there’s a bridge'"
+      :image="'/expl.gif'"
+    />
     <section class="vertical strong">
       <h2>Areas</h2>
       <div class="cards">
@@ -64,8 +61,9 @@
 
 <script>
 import CardPreview from '~/components/CardPreview.vue'
+import PageIntro from '~/components/PageIntro.vue'
 export default {
-  components: { CardPreview },
+  components: { CardPreview, PageIntro },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/areas')
     data.products = (await $axios.get(`/api/products`)).data.slice(10, 14)
@@ -92,15 +90,6 @@ div.cards img {
   height: auto;
   display: block;
   padding: 50px;
-}
-
-section.home {
-  background-image: url('/expl.gif');
-  background-repeat: no-repeat;
-  background-position: 50% -130px;
-  background-color: black;
-  height: 700px;
-  justify-content: center;
 }
 
 @media (max-width: 600px) {
