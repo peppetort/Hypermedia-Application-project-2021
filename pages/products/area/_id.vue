@@ -3,17 +3,19 @@
     <nav-bar
       :path="[
         ['/products', 'Products'],
-        [`/products/area/${data.id}`, `${data.title} products`]
+        [`/products/area/${data.area.id}`, `${data.area.title} products`]
       ]"
       :look="'light'"
     />
     <section class="vertical light">
       <h1>
-        <NuxtLink :to="`/areas/${data.id}`">{{ data.title }}</NuxtLink>
+        <NuxtLink :to="`/areas/${data.area.id}`">{{
+          data.area.title
+        }}</NuxtLink>
         Products
       </h1>
       <div class="description">
-        <p>{{ data.description }}</p>
+        <p>{{ data.area.description }}</p>
       </div>
     </section>
     <section class="vertical light">
@@ -38,8 +40,9 @@ export default {
   components: { NavBar, CardPreview },
   async asyncData({ $axios, params }) {
     const { id } = params
-    const { data } = await $axios.get(`api/areas/${id}`)
-    data.products = (await $axios.get(`api/products/area/${id}`)).data
+    const area = (await $axios.get(`api/areas/${id}`)).data
+    const products = (await $axios.get(`api/products/area/${id}`)).data
+    const data = { area, products }
     return { data }
   }
 }

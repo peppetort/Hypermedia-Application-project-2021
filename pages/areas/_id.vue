@@ -3,16 +3,16 @@
     <nav-bar
       :path="[
         ['/areas', 'Areas'],
-        [`/areas/${data.id}`, `${data.title}`]
+        [`/areas/${data.area.id}`, `${data.area.title}`]
       ]"
       :look="'strong'"
     />
     <card-section
       :props="['strong', 'left']"
-      :title="data.title"
-      :text="[data.description]"
-      :image="`data:image/png;base64,${data.main_image}`"
-      :alt="`Image for ${data.title}`"
+      :title="data.area.title"
+      :text="[data.area.description]"
+      :image="`data:image/png;base64,${data.area.main_image}`"
+      :alt="`Image for ${data.area.title}`"
     />
     <section class="vertical light">
       <h2>Features</h2>
@@ -45,16 +45,18 @@
         />
       </div>
       <div class="link">
-        <NuxtLink :to="`/products/area/${data.id}`">More products ></NuxtLink>
+        <NuxtLink :to="`/products/area/${data.area.id}`"
+          >More products ></NuxtLink
+        >
       </div>
     </section>
     <section class="vertical light">
       <card-person
-        :title="`${data.title} Area Manager`"
-        :name="`${data.resp.name}  ${data.resp.surname}`"
-        :image="`data:image/png;base64,${data.resp.image}`"
-        :alt="`Portrait of ${data.title} area manager`"
-        :link="`/roles/people/${data.responsible}`"
+        :title="`${data.area.title} Area Manager`"
+        :name="`${data.manager.name}  ${data.manager.surname}`"
+        :image="`data:image/png;base64,${data.manager.image}`"
+        :alt="`Portrait of ${data.area.title} area manager`"
+        :link="`/roles/people/${data.area.responsible}`"
       />
     </section>
   </main>
@@ -70,13 +72,14 @@ export default {
   components: { NavBar, CardSection, FeatureCard, CardPreview, CardPerson },
   async asyncData({ $axios, params }) {
     const { id } = params
-    const { data } = await $axios.get(`/api/areas/${id}`)
-    data.features = (await $axios.get(`/api/features/area/${id}`)).data
-    data.products = (await $axios.get(`api/products/area/${id}`)).data.slice(
+    const area = (await $axios.get(`/api/areas/${id}`)).data
+    const features = (await $axios.get(`/api/features/area/${id}`)).data
+    const products = (await $axios.get(`/api/products/area/${id}`)).data.slice(
       0,
       4
     )
-    data.resp = (await $axios.get(`/api/person/${data.responsible}`)).data
+    const manager = (await $axios.get(`/api/person/${area.responsible}`)).data
+    const data = { area, features, products, manager }
     return { data }
   }
 }

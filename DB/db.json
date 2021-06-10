@@ -208,7 +208,6 @@
         "description": "Enterprise networks today face unrelenting challenges . A completely new approach to design, deployment, and management is required. Digital Network Architecture  helps you build the new network for campus, branch, and WAN and deliver better experiences so you can focus on your business, not on your network. ",
         "subtitle": "The intent-based network. Build a strong resilient buisness. Focus on what you need to get done, not on how you do it",
         "main_image": "network-1.png",
-        "second_image": "network-2.png",
         "responsible": 1
       },
        {
@@ -217,7 +216,6 @@
         "description": "As a security professional today, you’re dealing with unprecedented challenges. Your business leaders want you to secure everything with limited resources, while your infrastructure continues to evolve and become more complex.But it doesn’t have to be this way",
         "subtitle": "Combine network and security functionality in a single, cloud-native service to help secure access wherever users and applications reside",
         "main_image": "security-1.png",
-        "second_image": "security-2.png",
         "responsible": 2
       },
       {
@@ -226,7 +224,6 @@
         "description": "Securely connect assets, applications, and data in real-time to apply transformative business changes in both carpeted and non-carpeted spaces.",
         "subtitle": "Improve business outcomes with our end-to-end IoT portfolio",
         "main_image": "iot-1.png",
-        "second_image": "iot-2.png",
         "responsible": 3
       },
       {
@@ -235,7 +232,6 @@
         "description": "From the data center to the cloud to the Internet of Things, software helps you secure your network, collaborate freely, analyze data, and run your infrastructure. Whether you buy individually, in bundles, or an enterprise agreement, we have flexible options for a subscription that fits your needs.   ",
         "subtitle": "Turn your vision of an intelligent network to reality with Software",
         "main_image": "cloud-1.png",
-        "second_image": "cloud-2.png",
         "responsible": 4
       }
 

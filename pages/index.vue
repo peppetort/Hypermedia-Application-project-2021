@@ -4,13 +4,14 @@
       :image="'/logo-long.svg'"
       :alt="'Company logo'"
       :subtitle="'Between hope and possible, there’s a bridge'"
-      :gif="'/expl.gif'"
+      :video="'/expl.mp4'"
+      :loop="false"
     />
     <section class="vertical strong">
       <h2>Areas</h2>
       <div class="cards">
         <card-preview
-          v-for="area in data"
+          v-for="area in data.areas"
           :key="area.id"
           :title="area.title"
           :image="`data:image/png;base64,${area.main_image}`"
@@ -70,8 +71,9 @@ import PageIntro from '~/components/PageIntro.vue'
 export default {
   components: { CardPreview, PageIntro },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/areas')
-    data.products = (await $axios.get(`/api/products`)).data.slice(10, 14)
+    const areas = (await $axios.get('/api/areas')).data
+    const products = (await $axios.get('/api/products')).data.slice(10, 14)
+    const data = { areas, products }
     return { data }
   }
 }

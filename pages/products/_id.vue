@@ -3,22 +3,22 @@
     <nav-bar
       :path="[
         ['/products', 'Products'],
-        [`/products/area/${data.area}`, `${data.area_ref.title} products`],
-        [`/products/${data.id}`, `${data.title}`]
+        [`/products/area/${data.product.area}`, `${data.area.title} products`],
+        [`/products/${data.product.id}`, `${data.product.title}`]
       ]"
       :look="'light'"
     />
     <section class="vertical light">
-      <h1>{{ data.title }}</h1>
+      <h1>{{ data.product.title }}</h1>
     </section>
     <card-section
       :props="['light', 'left', 'light']"
-      :subtitle="data.subtitle"
-      :text="[data.description]"
-      :image="`data:image/png;base64,${data.image}`"
-      :alt="`Image of ${data.title}`"
-      :link="`/areas/${data.area_ref.id}`"
-      :button="`#${data.area_ref.title.toLowerCase()}`"
+      :subtitle="data.product.subtitle"
+      :text="[data.product.description]"
+      :image="`data:image/png;base64,${data.product.image}`"
+      :alt="`Image of ${data.product.title}`"
+      :link="`/areas/${data.area.id}`"
+      :button="`#${data.area.title.toLowerCase()}`"
     />
     <section class="vertical strong">
       <h2>Features</h2>
@@ -29,7 +29,7 @@
           :key="feature.id"
           :title="feature.title"
           :image="feature.image"
-          :alt="`Icon of feature number ${feature.id} of ${data.title}}`"
+          :alt="`Icon of feature number ${feature.id} of ${data.product.title}}`"
           :text="feature.description"
         ></card-feature>
       </div>
@@ -37,22 +37,22 @@
     <section class="vertical">
       <card-person
         :title="'Project Manager'"
-        :name="`${data.man.name} ${data.man.surname}`"
-        :image="`data:image/png;base64,${data.man.image}`"
-        :link="`/roles/people/${data.manager}`"
-        :alt="`Portrait of ${data.title} project manager`"
+        :name="`${data.manager.name} ${data.manager.surname}`"
+        :image="`data:image/png;base64,${data.manager.image}`"
+        :link="`/roles/people/${data.product.manager}`"
+        :alt="`Portrait of ${data.product.title} project manager`"
       />
     </section>
     <section class="vertical">
       <div class="cards">
         <card-person
-          v-for="ass in data.assistence"
-          :key="ass.id"
+          v-for="person in data.referents"
+          :key="person.id"
           :title="'Assistance Referent'"
-          :name="`${ass.name} ${ass.surname}`"
-          :image="`data:image/png;base64,${ass.image}`"
-          :link="`/roles/people/${ass.id}`"
-          :alt="`Portrait of ${ass.name} `"
+          :name="`${person.name} ${person.surname}`"
+          :image="`data:image/png;base64,${person.image}`"
+          :link="`/roles/people/${person.id}`"
+          :alt="`Portrait of ${person.name} `"
         />
       </div>
     </section>
@@ -68,13 +68,15 @@ export default {
   components: { NavBar, CardSection, CardFeature, CardPerson },
   async asyncData({ $axios, params }) {
     const { id } = params
-    const { data } = await $axios.get(`/api/products/${id}`)
-    data.area_ref = (await $axios.get(`/api/areas/${data.area}`)).data
-    data.features = (await $axios.get(`/api/features/product/${data.id}`)).data
-    data.man = (await $axios.get(`/api/person/${data.manager}`)).data
-    data.assistence = (
-      await $axios.get(`/api/assistance/product/${data.id}`)
+    const product = (await $axios.get(`/api/products/${id}`)).data
+    const area = (await $axios.get(`/api/areas/${product.area}`)).data
+    const features = (await $axios.get(`/api/features/product/${product.id}`))
+      .data
+    const manager = (await $axios.get(`/api/person/${product.manager}`)).data
+    const referents = (
+      await $axios.get(`/api/assistance/product/${product.id}`)
     ).data
+    const data = { product, area, features, manager, referents }
     return { data }
   }
 }

@@ -4,17 +4,15 @@ const pg = require('pg')
 pg.defaults.ssl = true
 
 //TODO: cambiare con process.env.DATABASE_URL quando pushato su heroku
-const db = new Sequelize(
-  'postgres://wxreoxkuwuwpat:5440d56f5038c3bd4f0fb39d0227952f0147fb76a2311184a272aac31546b4b2@ec2-34-253-116-145.eu-west-1.compute.amazonaws.com:5432/dbr6pff9k296r2',
-  {
-    ssl: true,
-    schema: 'hypermediaProject2021',
-    define: {
-      timestamps: false
-    },
-    dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }
-  }
-)
+//TODO: cambiare con 'postgres://wxreoxkuwuwpat:5440d56f5038c3bd4f0fb39d0227952f0147fb76a2311184a272aac31546b4b2@ec2-34-253-116-145.eu-west-1.compute.amazonaws.com:5432/dbr6pff9k296r2' in dev
+const db = new Sequelize(process.env.DATABASE_URL, {
+  ssl: true,
+  schema: 'hypermediaProject2021',
+  define: {
+    timestamps: false
+  },
+  dialectOptions: { ssl: { require: true, rejectUnauthorized: false } }
+})
 
 /**
  * Function to define the structure of the database
@@ -39,8 +37,7 @@ function defineDatabaseStructure() {
     title: DataTypes.STRING,
     description: DataTypes.STRING(1000),
     subtitle: DataTypes.STRING(500),
-    main_image: DataTypes.STRING(200000),
-    second_image: DataTypes.STRING(200000)
+    main_image: DataTypes.STRING(200000)
   })
   const Product = db.define('Product', {
     title: DataTypes.STRING,
@@ -86,9 +83,9 @@ function defineDatabaseStructure() {
  */
 async function initializeDatabase() {
   defineDatabaseStructure()
-  await db.sync()
-  /*   await db.sync({ force: true })
-  insertData() */
+  //await db.sync()
+  await db.sync({ force: true })
+  insertData()
   return db
 }
 
@@ -166,15 +163,6 @@ function insertArea(area) {
       el['id'].toString(),
       el['main_image'].toString()
     )
-    var secondPath = path.join(
-      __dirname,
-      '..',
-      'DB',
-      'Images',
-      'Area',
-      el['id'].toString(),
-      el['second_image'].toString()
-    )
 
     await Area.create({
       id: el['id'],
@@ -182,7 +170,6 @@ function insertArea(area) {
       description: el['description'],
       subtitle: el['subtitle'],
       main_image: getImage(mainPath),
-      second_image: getImage(secondPath),
       responsible: el['responsible']
     })
   })

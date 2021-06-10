@@ -3,7 +3,7 @@
     <page-intro
       :title="'OUR AREAS'"
       :subtitle="'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'"
-      :gif="'/areas/work.gif'"
+      :video="'/areas/work.mp4'"
       :dimension="'small'"
     />
     <section class="vertical strong">
@@ -14,14 +14,17 @@
         Find out how we can help.
       </p>
       <div class="links">
-        <NuxtLink v-for="area in data" :key="area.id" :to="`/areas/${area.id}`"
+        <NuxtLink
+          v-for="area in data.areas"
+          :key="area.id"
+          :to="`/areas/${area.id}`"
           ><button class="strong">
             {{ area.title }}
           </button></NuxtLink
         >
       </div>
     </section>
-    <div v-for="(area, index) in data" :key="area.id">
+    <div v-for="(area, index) in data.areas" :key="area.id">
       <card-section
         v-if="index % 2 != 0"
         :props="['strong', 'left', 'light']"
@@ -52,7 +55,8 @@ import PageIntro from '~/components/PageIntro.vue'
 export default {
   components: { CardSection, PageIntro },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/areas')
+    const areas = (await $axios.get('/api/areas')).data
+    const data = { areas }
     return { data }
   }
 }
