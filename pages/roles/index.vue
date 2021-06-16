@@ -3,7 +3,7 @@
     <page-intro
       :title="'OUR TEAM'"
       :subtitle="'We have a team of specialists for every need. Every day they create, test and produce cutting-edge products for your organization'"
-      :video="'/roles/work.mp4'"
+      :video="'/roles/roles.mp4'"
       :dimension="'small'"
     />
     <section class="vertical light">

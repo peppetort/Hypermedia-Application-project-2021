@@ -3,7 +3,7 @@
     <page-intro
       :title="'TechToch'"
       :subtitle="'TechToch technology is creating a world of potential'"
-      :video="'/company/work.mp4'"
+      :video="'/company/company.mp4'"
       :dimension="'small'"
     />
     <section class="vertical light">

@@ -3,7 +3,7 @@
     <page-intro
       :title="'OUR PRODUCTS'"
       :subtitle="'Want some help finding products that fit your needs? We can provide your organization with solutions for everything from networking and data center to collaboration and security. Find the options best suited to your business needs.'"
-      :video="'/products/work.mp4'"
+      :video="'/products/products.mp4'"
       :dimension="'small'"
     />
     <section class="vertical strong">

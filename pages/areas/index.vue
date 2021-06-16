@@ -3,7 +3,7 @@
     <page-intro
       :title="'OUR AREAS'"
       :subtitle="'When everyone and everything is connected, anything is possible. Build network access that\'s wireless-first, cloud-driven, data-optimized,and highly secure.'"
-      :video="'/areas/work.mp4'"
+      :video="'/areas/areas.mp4'"
       :dimension="'small'"
     />
     <section class="vertical strong">
