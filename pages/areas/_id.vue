@@ -29,10 +29,10 @@
       </div>
     </section>
     <section class="vertical strong">
-      <h2>What product we offer</h2>
+      <h2>What products we offer</h2>
       <p>
-        "If you don't try area product, you won't become the superhero you were
-        meant to be"​
+        "If you don't try {{ data.area.title }} product, you won't become the
+        superhero you were meant to be"​
       </p>
       <div class="cards">
         <card-preview

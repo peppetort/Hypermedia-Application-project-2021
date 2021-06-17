@@ -129,4 +129,10 @@ form.contact textarea {
     font-size: 24px;
   }
 }
+
+@media (max-width: 450px) {
+  div.contactInfos p {
+    font-size: 16px;
+  }
+}
 </style>

@@ -74,4 +74,10 @@ div.image img {
     width: 300px;
   }
 }
+
+@media screen and (max-height: 736px) {
+  section.animated {
+    height: 480px;
+  }
+}
 </style>
