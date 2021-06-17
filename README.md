@@ -35,6 +35,7 @@
 1. Development of a third of the pages
 2. Development of components
 3. Development of the back-end function to populate the DB
+4. Writing of technical documentation
 
 ## Technical Documentation
 
@@ -48,8 +49,6 @@ By sending a request to the specific URL, the data is extracted from the databas
 To implement the DB we used _Sequelize_.<br/>
 For the purpose of the project every time we force the creation of the tables and repopulate the DB.<br/>
 The population is done through a function that reads a JSON file in which the content for each table is specified. <br/> In JSON the images are specified as relative path, so they are read by the function and encoded in Base64.
-
-(The "DB" folder has not been pushed to heroku but a git deployment branch has been created and the "DB" folder ignored)
 
 ### Components
 
@@ -87,6 +86,24 @@ In order to be able to increase the adaptability of the component, we have made 
 
 - **`button`** attribute if present (optional) specifies the text to disaply inside the button
 
+#### **PageIntro.vue**
+
+Represents the introductory section repeated on the main pages. It is composed of a div with a video as a background.
+
+- **`title`** if specified (optional) inserts an element of type _h1_
+
+- **`subtitle`** inserts an element of type _h2_
+
+- **`video`** is the link to the background video
+
+- **`loop`** specifies whether the video should be looped or not
+
+- **`image`** if specified (optional) is the link to the image that will appear in the center of the div
+
+- **`alt`** specifies the _alt_ for the image
+
+- **`dimension`** specifies the height of the div between two possible choices [```large``` or ``` small```]
+
 #### **TheNavBar.vue**
 
 Represents the Orientation Info. It allows you to see your position within the site with respect to the parent pages.
@@ -108,17 +125,25 @@ Component that represents a card with a title an image and a text used to descri
 Clickable component formed by image and text used to show the preview of objects
 
 - **`title`** inserts an element of type _p_
-- **`ink`** specifies the link to go to when the component is pressed
+- **`link`** specifies the link to go to when the component is pressed
 - **`image`** attribute specifies the image to display
 - **`alt`** attribute specifies the _alt_ for the image
+
+#### **CardPerson.vue**
+
+Represents the card dedicated to a person in order to create a preview and provide a quick link to his page
+
+- **`title`** inserts an element of type _h2_ which specifies the role
+- **`name`** inserts an element of type _p_ specifying the name
+- **`link`** specifies the link to go to when the button is pressed
+- **`image`** specifies the image of the person to display
+- **`alt`** specifies the _alt_ for the image
 
 #### **Chat.vue**
 
 Component that represent a multimodal chatbot that interacts with the website
 
-
 - **`chat_list`** list of messages visualized in the chat synchronized with a property in the store through a watcher: messages that arrive from the chat and that are sent are added in the store, and the watcher update the list
-
 
 ### Plugins
 
@@ -126,4 +151,6 @@ Component that represent a multimodal chatbot that interacts with the website
 
 ## Usage of Nuxt best practices
 
-//TODO
+In order to have better performances and to optimize the site for SEO we have chosen to use the Server Side Rendering approach.<br/>
+We have also created as many components as possible to make the page structure modular.<br/>
+For each component created we have tried to make it as parametric as possible in order to favor the reusability of the code
