@@ -43,7 +43,12 @@ div.nav > div {
 
 div.nav a {
   font-weight: bold;
-  margin-right: 10px;
+  margin-right: 5px;
   font-size: 16px;
+}
+
+div.nav p {
+  margin-right: 0px;
+  margin-left: 0px;
 }
 </style>
