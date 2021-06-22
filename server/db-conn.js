@@ -84,9 +84,9 @@ function defineDatabaseStructure() {
 async function initializeDatabase() {
   defineDatabaseStructure()
   //TODO: commentare db.sync e decommentare db.sync({force: true}) e insertData()
-  //await db.sync()
-  await db.sync({ force: true })
-  insertData()
+  await db.sync()
+  /*   await db.sync({ force: true })
+  insertData() */
   return db
 }
 
