@@ -42,7 +42,7 @@
 ### Server
 
 To implement the server we used the _Express_ framework.<br/>
-By sending a request to the specific URL, the data is extracted from the database and sent back in the form of JSON
+By sending a request to the specific URL, the data is extracted from the database and sent back in the form of JSON.
 
 ### DB
 
@@ -56,6 +56,7 @@ The population is done through a function that reads a JSON file in which the co
 
 Repeated on each page, it represents the navigation bar through which you can navigate the site. <br/>
 In order to improve the responsiveness of the site, when the screen size drops below 900px, the menu turns into a _burger menu_. Then the `<div class = "nav-mobile">` is shown and the `<div class =" nav ">` is hidden.
+
 
 #### **TheFooter.vue**
 
@@ -152,5 +153,8 @@ Component that represent a multimodal chatbot that interacts with the website
 ## Usage of Nuxt best practices
 
 In order to have better performances and to optimize the site for SEO we have chosen to use the Server Side Rendering approach.<br/>
-We have also created as many components as possible to make the page structure modular.<br/>
-For each component created we have tried to make it as parametric as possible in order to favor the reusability of the code
+We have also created as many components as possible to make the page structure modular, therefore easier to modify, restructure and read.<br/
+For each component created we have tried to make it as parametric as possible in order to favor the reusability of the code written duringthe development of the application</br>
+Since we wanted a code that's as modular as possible and since we created various components that are always present during the visualization of the website, such as <code>TheHeader.vue</code>, <code>TheFooter.vue</code> or <code>TheNavbar.vue</code>, we decided to use a single and shared layout page, that serves as a template, with the header already on top and the footer on bottom in every page. It also contains CSS styles that will be valid for the whole website.</br>
+Since the header and the footer are used inside of the layout, and therefore they're instantiated before the data fetch, we used the store in order to make the needed dynamic data from the database available earlier.</br>
+
