@@ -151,7 +151,7 @@ Component that represent a multimodal chatbot that interacts with the website
 
 ### Plugins
 
-//TODO
+The only plugin we have used is mmcc, which allowed us to create a modal chatbot inside our application by providing a WebSocket to communicate with the backed chatbot service. The advantage of using it is that can be easily integrated by simply installing it and importing all the needed components. 
 
 ## Usage of Nuxt best practices
 
