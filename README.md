@@ -55,12 +55,15 @@ The population is done through a function that reads a JSON file in which the co
 #### **TheHeader.vue**
 
 Repeated on each page, it represents the navigation bar through which you can navigate the site. <br/>
-In order to improve the responsiveness of the site, when the screen size drops below 900px, the menu turns into a _burger menu_. Then the `<div class = "nav-mobile">` is shown and the `<div class =" nav ">` is hidden.
+In order to improve the responsiveness of the site, when the screen size drops below 900px, the menu turns into a _burger menu_. Then the `<div class = "nav-mobile">` is shown and the `<div class =" nav ">` is hidden.</br>
+The header sticks to the top and is present in every phase of the navigation in order to have an effective way to move around the website in every moment.</br>
+It consists in a menù bar that contains links to all the main pages of TechToch.</br>
 
 
 #### **TheFooter.vue**
 
-Repeated on each page, it represents the footer of the site.
+Repeated on each page, it represents the footer of the site.</br>
+
 
 #### **TheSection.vue**
 
