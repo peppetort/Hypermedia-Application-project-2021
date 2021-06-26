@@ -26,6 +26,8 @@
 - Mail: tommaso1.sacchetti@mail.polimi.it
 
 1. Development of a third of the pages
+2. Writing of technical documentation
+3. Content of the website
 
 ### Giuseppe Tortorelli
 
@@ -34,8 +36,7 @@
 
 1. Development of a third of the pages
 2. Development of components
-3. Development of the back-end function to populate the DB
-4. Writing of technical documentation
+3. Writing of technical documentation
 
 ## Technical Documentation
 
@@ -59,11 +60,9 @@ In order to improve the responsiveness of the site, when the screen size drops b
 The header sticks to the top and is present in every phase of the navigation in order to have an effective way to move around the website in every moment.</br>
 It consists in a menù bar that contains links to all the main pages of TechToch.</br>
 
-
 #### **TheFooter.vue**
 
 Repeated on each page, it represents the footer of the site.</br>
-
 
 #### **TheSection.vue**
 
@@ -151,7 +150,7 @@ Component that represent a multimodal chatbot that interacts with the website
 
 ### Plugins
 
-The only plugin we have used is mmcc, which allowed us to create a modal chatbot inside our application by providing a WebSocket to communicate with the backed chatbot service. The advantage of using it is that can be easily integrated by simply installing it and importing all the needed components. 
+The only plugin we have used is mmcc, which allowed us to create a modal chatbot inside our application by providing a WebSocket to communicate with the backed chatbot service. The advantage of using it is that can be easily integrated by simply installing it and importing all the needed components.
 
 ## Usage of Nuxt best practices
 
@@ -160,4 +159,3 @@ We have also created as many components as possible to make the page structure m
 For each component created we have tried to make it as parametric as possible in order to favor the reusability of the code written duringthe development of the application</br>
 Since we wanted a code that's as modular as possible and since we created various components that are always present during the visualization of the website, such as <code>TheHeader.vue</code>, <code>TheFooter.vue</code> or <code>TheNavbar.vue</code>, we decided to use a single and shared layout page, that serves as a template, with the header already on top and the footer on bottom in every page. It also contains CSS styles that will be valid for the whole website.</br>
 Since the header and the footer are used inside of the layout, and therefore they're instantiated before the data fetch, we used the store in order to make the needed dynamic data from the database available earlier.</br>
-
